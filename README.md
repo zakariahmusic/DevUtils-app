@@ -18,6 +18,13 @@ Development environment:
 - Swift Package Manager
 - Carthage
 
+# Build Instructions
+ - Clone repository
+ - Bootstrap carthage:
+     `carthage bootstrap --platform macOS`
+ - Update signing Team to be your Personal or organizational Team.
+ - Run
+
 # Report bugs
 
 Feel free to create a new issue in this repo to report bugs.
