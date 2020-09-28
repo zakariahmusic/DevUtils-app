@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="JSONFormatterSettingViewController" customModule="DevUtils" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="o6I-SS-98Z">
+                    <rect key="frame" x="18" y="59" width="444" height="18"/>
+                    <buttonCell key="cell" type="check" title="Auto detect when input is a valid JSON" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="jzk-y7-bUJ">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="pi6-tq-se1" name="value" keyPath="values.json-formatter-auto-activate-valid-json" id="21R-az-mr2"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0GE-v0-2ih">
+                    <rect key="frame" x="14" y="13" width="144" height="32"/>
+                    <buttonCell key="cell" type="push" title="Reset to Defaults" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jmF-uh-C0G">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="resetButtonAction:" target="-2" id="UIP-ee-3hM"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="o6I-SS-98Z" secondAttribute="trailing" constant="20" id="1BT-c6-0tU"/>
+                <constraint firstItem="o6I-SS-98Z" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="Udd-GR-CaV"/>
+                <constraint firstItem="0GE-v0-2ih" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="Wy5-PX-UIS"/>
+                <constraint firstItem="o6I-SS-98Z" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="cHj-ug-5sH"/>
+                <constraint firstItem="0GE-v0-2ih" firstAttribute="top" secondItem="o6I-SS-98Z" secondAttribute="bottom" constant="20" id="fMB-hU-YZH"/>
+                <constraint firstAttribute="bottom" secondItem="0GE-v0-2ih" secondAttribute="bottom" constant="20" id="y3t-fJ-MLa"/>
+            </constraints>
+            <point key="canvasLocation" x="140" y="154"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="pi6-tq-se1"/>
+    </objects>
+</document>
