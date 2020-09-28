@@ -16,6 +16,7 @@ Development environment:
 - Swift 5.1+
 - XCode 11.1+
 - Swift Package Manager
+- Carthage
 
 # Report bugs
 
