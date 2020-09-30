@@ -11,6 +11,9 @@
 
 <b>DevUtils</b> helps you with your tiny daily tasks with just a single click! It's totally open source and work offline. You can buy the pre-built app by visiting the website https://devutils.app or you can build the app from source by yourself!
 
+# A friendly note from author
+DevUtils is a **paid open source** app. That means I'm selling the [pre-built version of the app](https://devutils.app) to earn some revenue for my time. I'm glad that you like the app and you are free to build it for your own use. I trust that you will not redistribute the app in any other means. Thank you very much! :)
+
 # Source code
 Development environment:
 - Swift 5.1+
