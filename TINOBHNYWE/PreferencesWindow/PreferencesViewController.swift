@@ -9,6 +9,7 @@
 import Cocoa
 import ShortcutRecorder
 import SwiftyBeaver
+import Sparkle
 
 class PreferencesViewController: NSViewController, HotkeyRecorderDelegate {
   @IBOutlet weak var showDockIconCheckbox: NSButton!
@@ -17,6 +18,10 @@ class PreferencesViewController: NSViewController, HotkeyRecorderDelegate {
   @IBOutlet weak var launchAtLoginCheckbox: NSButton!
   @IBOutlet weak var automaticClipboardCheckbox: NSButton!
   @IBOutlet weak var writeDebugLogsCheckbox: NSButton!
+  @IBOutlet weak var autoUpdateQuestionButton: NSButton!
+  @IBOutlet weak var autoUpdateCheckbox: NSButton!
+  @IBOutlet weak var autoUpdateIntervalButton: NSPopUpButton!
+  @IBOutlet var sparkleUpdater: SUUpdater!
   
   struct NotificationNames {
     static let userDefaultsChanged = Notification.Name(rawValue: "userDefaultsChanged")
@@ -72,6 +77,22 @@ class PreferencesViewController: NSViewController, HotkeyRecorderDelegate {
     launchAtLoginCheckbox.objectValue = AppState.getLaunchAtLogin()
     automaticClipboardCheckbox.objectValue = AppState.getAutomaticClipboard()
     writeDebugLogsCheckbox.objectValue = AppState.getWriteDebugLog()
+    
+    if AppState.isSandboxed() {
+      autoUpdateQuestionButton.isHidden = false
+      sparkleUpdater.automaticallyChecksForUpdates = false
+      autoUpdateCheckbox.isEnabled = false
+      autoUpdateIntervalButton.isEnabled = false
+    }
+  }
+  
+  @IBAction func autoUpdateQuestionButtonAction(_ sender: Any) {
+    let alert = NSAlert()
+    alert.messageText = "App installed via App Store"
+    alert.informativeText = "You are running the app installed from App Store. Updates will be managed by App Store."
+    alert.alertStyle = .warning
+    alert.addButton(withTitle: "Ok")
+    alert.runModal()
   }
   
   @IBAction func showDockIconAction(_ sender: Any) {

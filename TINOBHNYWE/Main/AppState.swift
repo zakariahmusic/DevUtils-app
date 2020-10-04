@@ -37,12 +37,6 @@ class AppState {
     image: NSImage(named: "clock.fill")!,
     viewControllerType: UnixTimeViewController.self
   )
-//  static var URLEncodeTool = Tool.init(
-//    id: "urlencode",
-//    name: "URL Encode/Decode",
-//    image: NSImage(named: "percent")!,
-//    viewControllerType: URLEncodeViewController.self
-//  )
   static var JSONFormatterTool = Tool.init(
     id: "jsonformatter",
     name: "JSON Formatter/Validator",
@@ -63,7 +57,7 @@ class AppState {
   )
   static var HTMLEncodeTool = Tool.init(
     id: "htmlencode",
-    name: "HTML Entity Encode/Decode",
+    name: "HTML Entity Encoder/Decoder",
     image: NSImage(named: "htmlentities")!,
     viewControllerType: SharedEndecodeViewController.self,
     implementation: HTMLEntityEndecodeTool.self,
@@ -71,7 +65,7 @@ class AppState {
   )
   static var Base64EncodeTool = Tool.init(
     id: "base64encode",
-    name: "Base64 Encode/Decode",
+    name: "Base64 Encoder/Decoder",
     image: NSImage(named: "base64")!,
     viewControllerType: SharedEndecodeViewController.self,
     implementation: Base64EndecodeTool.self,
@@ -79,7 +73,7 @@ class AppState {
   )
   static var URLEncodeTool = Tool.init(
     id: "urlencode",
-    name: "URL Encode/Decode",
+    name: "URL Encoder/Decoder",
     image: NSImage(named: "percent")!,
     viewControllerType: SharedEndecodeViewController.self,
     implementation: URLEndecodeTool.self,
@@ -87,11 +81,18 @@ class AppState {
   )
   static var BackslashTool = Tool.init(
     id: "backslash",
-    name: "Backslash Escape/Unescape",
+    name: "Backslash Escaper/Unescaper",
     image: NSImage(named: "backslash")!,
     viewControllerType: SharedEndecodeViewController.self,
     implementation: BackslashEscapeTool.self,
     settingViewControllerType: BackslashEscapeSettingViewController.self
+  )
+  
+  static var UUIDTool = Tool.init(
+    id: "uuidtool",
+    name: "UUID Generator/Decoder",
+    image: NSImage(named: "uuid")!,
+    viewControllerType: UUIDToolViewController.self
   )
   
   static var tools: [Tool] = [
@@ -102,7 +103,8 @@ class AppState {
     Base64EncodeTool,
     QueryStringParserTool,
     HTMLEncodeTool,
-    BackslashTool
+    BackslashTool,
+    UUIDTool
   ]
 
   static func shouldShowDockIcon() -> Bool {
@@ -135,6 +137,14 @@ class AppState {
   
   static func setWriteDebugLog(_ value: Bool) {
     UserDefaults.standard.set(value, forKey: "write-debug-logs")
+  }
+  
+  static func getToolsSortOrder() -> String {
+    return UserDefaults.standard.value(forKey: "tools-sort-order") as? String ?? "default"
+  }
+  
+  static func setToolsSortOrder(_ value: String) {
+    UserDefaults.standard.set(value, forKey: "tools-sort-order")
   }
   
   static func getGlobalHotkeyPreference() -> Shortcut {
@@ -215,4 +225,10 @@ class AppState {
         defaultValue, forKeyPath: keyPath)
     }
   }
+  
+  static func isSandboxed() -> Bool {
+      let environ = ProcessInfo.processInfo.environment
+      return (nil != environ["APP_SANDBOX_CONTAINER_ID"])
+  }
+  
 }

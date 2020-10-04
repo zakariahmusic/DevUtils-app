@@ -121,13 +121,25 @@
                                                 <action selector="openLogsDirButtonAction:" target="6HZ-ko-cfY" id="6WC-Y1-hab"/>
                                             </connections>
                                         </button>
+                                        <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5bw-FU-IV4">
+                                            <rect key="frame" x="331" y="48" width="21" height="17"/>
+                                            <buttonCell key="cell" type="recessed" title="?" bezelStyle="recessed" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QQa-k6-RWZ">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="systemBold" size="12"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="autoUpdateQuestionButtonAction:" target="6HZ-ko-cfY" id="AAg-yu-Jgf"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="5bw-FU-IV4" firstAttribute="leading" secondItem="giQ-ov-AJ6" secondAttribute="trailing" constant="8" id="0uV-ML-pIZ"/>
                                         <constraint firstItem="giQ-ov-AJ6" firstAttribute="centerY" secondItem="YRI-aK-1Qg" secondAttribute="centerY" id="1yo-Wy-fzM"/>
                                         <constraint firstAttribute="trailing" secondItem="Jna-2L-IaX" secondAttribute="trailing" constant="20" id="BMA-wi-sga"/>
                                         <constraint firstAttribute="trailing" secondItem="Zik-Jg-36U" secondAttribute="trailing" constant="20" id="FK4-en-X7E"/>
                                         <constraint firstItem="PC2-8W-HDa" firstAttribute="top" secondItem="Zik-Jg-36U" secondAttribute="bottom" constant="20" id="Kfw-0U-Ir2"/>
                                         <constraint firstItem="giQ-ov-AJ6" firstAttribute="leading" secondItem="YRI-aK-1Qg" secondAttribute="trailing" constant="8" id="Ljy-ya-Qw7"/>
+                                        <constraint firstItem="5bw-FU-IV4" firstAttribute="centerY" secondItem="giQ-ov-AJ6" secondAttribute="centerY" id="Mhl-1e-hsO"/>
                                         <constraint firstAttribute="trailing" secondItem="PC2-8W-HDa" secondAttribute="trailing" constant="20" id="P30-0N-eYU"/>
                                         <constraint firstItem="YRI-aK-1Qg" firstAttribute="top" secondItem="Jna-2L-IaX" secondAttribute="bottom" constant="20" id="Vvw-i9-Nsy"/>
                                         <constraint firstItem="Irs-sZ-FjY" firstAttribute="leading" secondItem="ZMd-yk-FEh" secondAttribute="leading" constant="20" id="Y1u-fq-BQL"/>
@@ -275,11 +287,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="autoUpdateCheckbox" destination="YRI-aK-1Qg" id="I5N-Yc-RLT"/>
+                        <outlet property="autoUpdateIntervalButton" destination="giQ-ov-AJ6" id="uto-dC-gV6"/>
+                        <outlet property="autoUpdateQuestionButton" destination="5bw-FU-IV4" id="WEW-wd-ShW"/>
                         <outlet property="automaticClipboardCheckbox" destination="PxH-fG-gg9" id="aeZ-3W-soB"/>
                         <outlet property="hotkeyRecorder" destination="qXm-ey-JFz" id="ZIp-5M-Nvt"/>
                         <outlet property="launchAtLoginCheckbox" destination="Zik-Jg-36U" id="Mnd-ic-w6B"/>
                         <outlet property="showDockIconCheckbox" destination="PC2-8W-HDa" id="0RK-zA-poP"/>
                         <outlet property="showStatusIconCheckbox" destination="Jna-2L-IaX" id="BfH-q4-xDE"/>
+                        <outlet property="sparkleUpdater" destination="emr-Ku-gbi" id="GVt-Of-ump"/>
                         <outlet property="writeDebugLogCheckbox" destination="ZMd-yk-FEh" id="94G-hD-uVG"/>
                         <outlet property="writeDebugLogsCheckbox" destination="Irs-sZ-FjY" id="hGo-Fs-4wj"/>
                     </connections>

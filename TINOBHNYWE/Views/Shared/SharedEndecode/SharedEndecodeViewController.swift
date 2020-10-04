@@ -40,12 +40,8 @@ class SharedEndecodeViewController: ToolViewController, NSTextViewDelegate, Tool
   override func viewDidLoad() {
     super.viewDidLoad()
     log.debug("viewDidLoad: \(String(describing: endecodeTool))")
-    inputTextView.setMonoFont()
-    inputTextView.nicePadding()
-    inputTextView.usesFindBar = true
-    outputTextView.nicePadding()
-    outputTextView.setMonoFont()
-    outputTextView.usesFindBar = true
+    inputTextView.setupStandardTextview()
+    outputTextView.setupStandardTextview()
     
     self.settingViewController?.delegate = self
     if self.endecodeTool.getSampleString() != nil {

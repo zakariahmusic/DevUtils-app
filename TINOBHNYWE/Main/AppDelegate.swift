@@ -32,9 +32,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
   var manualLaunch: Bool = true
   let launcherAppId = "tonyapp.devutils.launcher"
+  @IBOutlet weak var toolsSortOrderDefaultMenuItem: NSMenuItem!
+  @IBOutlet weak var toolsSortOrderAlphabetMenuItem: NSMenuItem!
   
+
   struct NotificationNames {
     static let AppActivated = Notification.Name("AppActivatedNotification")
+    static let AppToolsOrderChanged = Notification.Name("AppToolsOrderChanged")
+  }
+  
+  func disableSparkleUpdate() {
+    let mainMenu = NSApp.mainMenu!
+    let appMenu = mainMenu.item(at: 0)!.submenu
+    let checkUpdateItem = appMenu?.item(withTitle: "Check for Updates...")
+    checkUpdateItem?.isHidden = true
+  }
+  
+
+  func setUpSandboxed() {
+    log.info("App sandbox: \(AppState.isSandboxed())")
+    
+    if !AppState.isSandboxed() {
+      return;
+    }
+    
+    disableSparkleUpdate()
   }
   
   @IBAction func preferenceMenuAction(_ sender: Any) {
@@ -64,7 +86,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     log.info("App version: \(AppState.getAppVersion())")
   }
-  
+
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     // resetAllDefaults()
     
@@ -78,6 +100,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     setupAppWindow()
     setupHotkey()
     setupStatusIcon()
+    setUpSandboxed()
     refreshAppIconsStatus()
     setupObservers()
     killLauncherApp()
@@ -298,5 +321,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
           .post(name: .killLauncher, object: Bundle.main.bundleIdentifier!)
     }
   }
+  
+  @IBAction func toolsSortOrderDefaultAction(_ sender: Any) {
+    toolsSortOrderDefaultMenuItem.state = .on
+    toolsSortOrderAlphabetMenuItem.state = .off
+    AppState.setToolsSortOrder("default")
+    
+    NotificationCenter.default.post(
+      name: AppDelegate.NotificationNames.AppToolsOrderChanged,
+      object: nil
+    )
+  }
+  
+  @IBAction func toolsSortOrderAlphabetAction(_ sender: Any) {
+    toolsSortOrderDefaultMenuItem.state = .off
+    toolsSortOrderAlphabetMenuItem.state = .on
+    AppState.setToolsSortOrder("alphabet")
+    
+    NotificationCenter.default.post(
+      name: AppDelegate.NotificationNames.AppToolsOrderChanged,
+      object: nil
+    )
+  }
+  
 }
 
