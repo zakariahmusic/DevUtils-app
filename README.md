@@ -27,6 +27,10 @@ Development environment:
      `carthage bootstrap --platform macOS`
  - Update signing Team to be your Personal or organizational Team.
  - Run
+ 
+# License
+- This project is made available under a GPLv3 license for personal use only.
+- For enterprise/commercial usages, please contact license@devutils.app to purchase a commercial license.
 
 # Report bugs
 
@@ -34,4 +38,5 @@ Feel free to create a new issue in this repo to report bugs.
 
 # Contact
 - **FAQs**: Please check https://devutils.app/faqs
-- **Contact me**: admin@devutils.app
+- **Email**: admin@devutils.app
+- **Twitter**: https://twitter.com/devutils_app

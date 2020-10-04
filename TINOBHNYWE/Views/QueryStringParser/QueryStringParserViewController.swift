@@ -15,12 +15,8 @@ class QueryStringParserViewController: ToolViewController, NSTextViewDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    inputTextView.setMonoFont()
-    inputTextView.nicePadding()
-    inputTextView.usesFindBar = true
-    outputTextView.nicePadding()
-    outputTextView.setMonoFont()
-    outputTextView.usesFindBar = true
+    inputTextView.setupStandardTextview()
+    outputTextView.setupStandardTextview()
     QueryStringParserViewController.ensureDefaults()
     if pendingInput != nil {
       activate(input: pendingInput!)

@@ -22,6 +22,13 @@ extension NSTextView {
     self.textContainerInset = .init(width: 3, height: 8)
   }
   
+  func setupStandardTextview() {
+    self.setMonoFont()
+    self.nicePadding()
+    self.usesFindBar = true
+    self.isAutomaticQuoteSubstitutionEnabled = false
+  }
+  
   func setStringRetrainUndo(_ value: String) {
     self.selectAll(self)
     self.insertText(

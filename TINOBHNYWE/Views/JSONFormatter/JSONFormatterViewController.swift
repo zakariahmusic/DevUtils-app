@@ -18,12 +18,8 @@ class JSONFormatterViewController: ToolViewController, NSTextViewDelegate {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    inputTextView.setMonoFont()
-    inputTextView.nicePadding()
-    inputTextView.usesFindBar = true
-    outputTextView.nicePadding()
-    outputTextView.setMonoFont()
-    outputTextView.usesFindBar = true
+    inputTextView.setupStandardTextview()
+    outputTextView.setupStandardTextview()
     JSONFormatterViewController.ensureDefaults()
     if pendingInput != nil {
       activate(input: pendingInput!)
@@ -50,12 +46,19 @@ class JSONFormatterViewController: ToolViewController, NSTextViewDelegate {
         return false
     }
     
+    guard let replaceQuotes = NSUserDefaultsController.shared.value(
+      forKeyPath: "values.json-formatter-replace-smart-quotes") as? Bool else {
+        return true
+    }
+    
+    let inputString = replaceQuotes ? input.replaceSmartQuotes() : input
+    
     if !autoActivate {
       log.debug("JSONFormatter auto activate disabled")
       return false
     }
     
-    guard let jsonData = input.data(using: .utf8) else {
+    guard let jsonData = inputString.data(using: .utf8) else {
       log.debug("JSONFormatter decode the input string")
       return false
     }
@@ -77,6 +80,7 @@ class JSONFormatterViewController: ToolViewController, NSTextViewDelegate {
   
   static func ensureDefaults(_ forceDefaults: Bool = false) {
     AppState.ensureDefault("values.json-formatter-auto-activate-valid-json", true, forceDefaults)
+    AppState.ensureDefault("values.json-formatter-replace-smart-quotes", true, forceDefaults)
   }
   
   @IBAction func settingButtonAction(_ sender: NSButton) {
@@ -152,7 +156,12 @@ class JSONFormatterViewController: ToolViewController, NSTextViewDelegate {
       format = "\t"
     }
     
-    outputTextView.setJSONString(inputTextView.string, format)
+    let replaceQuotes = NSUserDefaultsController.shared.value(
+      forKeyPath: "values.json-formatter-replace-smart-quotes") as? Bool ?? true
+    
+    let inputString = replaceQuotes ? inputTextView.string.replaceSmartQuotes() : inputTextView.string
+    
+    outputTextView.setJSONString(inputString, format)
   }
   
   @IBAction func optionPopUpButtonAction(_ sender: Any) {

@@ -30,6 +30,7 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
   
   var enableNotificationOnChange: Bool = true
   var state = State.emptyState()
+  var tools: [Tool] = []
   
   struct NotificationNames {
     static let selectionChanged = "selectionChangedNotification"
@@ -44,14 +45,40 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
     Developer Utilities for macOS \(AppState.getAppVersion())
     https://DevUtils.app
     """
+    
 
+    refreshTools()
+    outlineView.reloadData()
+    
     NotificationCenter.default.addObserver(
       self,
       selector: #selector(handleStateChanged(_:)),
       name: Notification.Name(OutlineViewController.NotificationNames.stateChanged),
       object: nil)
+    
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(handleToolsOrderChanged(_:)),
+      name: AppDelegate.NotificationNames.AppToolsOrderChanged,
+      object: nil)
   }
   
+  func refreshTools() {
+    tools = AppState.tools.map { $0 } // shallow copy
+    
+    if AppState.getToolsSortOrder() == "alphabet" {
+      tools.sort { (t1, t2) -> Bool in
+        return t2.name.compare(t1.name).rawValue > 0
+      }
+    }
+  }
+  
+  @objc
+  func handleToolsOrderChanged(_ notification: Notification) {
+    refreshTools()
+    outlineView.reloadData()
+  }
+
   @objc
   func handleStateChanged(_ notification: Notification) {
     // Assuming selectRowIndexes triggers the delegate synchronously
@@ -73,7 +100,7 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
     
     guard
       let selectedTool = self.state.selectedTool,
-      let index = AppState.tools.firstIndex(of: selectedTool) else {
+      let index = tools.firstIndex(of: selectedTool) else {
         outlineView.deselectAll(self)
         return
     }
@@ -85,7 +112,7 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
   }
   
   func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
-    return AppState.tools.count
+    return tools.count
   }
   
   func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
@@ -93,7 +120,7 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
   }
   
   func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
-    return AppState.tools[index]
+    return tools[index]
   }
   
   func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {

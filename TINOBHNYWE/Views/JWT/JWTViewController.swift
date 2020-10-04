@@ -128,22 +128,11 @@ class JWTViewController: ToolViewController, NSTextViewDelegate, NSTextFieldDele
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    inputTextView.nicePadding()
-    inputTextView.setMonoFont()
-    headerTextView.nicePadding()
-    headerTextView.setMonoFont()
-    payloadTextView.nicePadding()
-    payloadTextView.setMonoFont()
-    publicKeyTextView.nicePadding()
-    publicKeyTextView.setMonoFont()
-    privateKeyTextView.nicePadding()
-    privateKeyTextView.setMonoFont()
-    
-    inputTextView.usesFindBar = true
-    headerTextView.usesFindBar = true
-    payloadTextView.usesFindBar = true
-    publicKeyTextView.usesFindBar = true
-    privateKeyTextView.usesFindBar = true
+    inputTextView.setupStandardTextview()
+    headerTextView.setupStandardTextview()
+    payloadTextView.setupStandardTextview()
+    publicKeyTextView.setupStandardTextview()
+    privateKeyTextView.setupStandardTextview()
     
     headerTextView.setHighlight(false)
     headerTextView.textColor = #colorLiteral(red: 0.9843137255, green: 0.003921568627, blue: 0.3568627451, alpha: 1)

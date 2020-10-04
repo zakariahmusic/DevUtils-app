@@ -132,4 +132,16 @@ extension String {
     self.init(attributedString.string)
     
   }
+  
+  var isInt: Bool {
+      return Int(self) != nil
+  }
+  
+  func replaceSmartQuotes() -> String {
+    return self
+      .replacingOccurrences(of: "‘", with: "'")
+      .replacingOccurrences(of: "’", with: "'")
+      .replacingOccurrences(of: "“", with: "\"")
+      .replacingOccurrences(of: "”", with: "\"")
+  }
 }
