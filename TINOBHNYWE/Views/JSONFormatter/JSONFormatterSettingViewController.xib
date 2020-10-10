@@ -32,7 +32,7 @@
                         </button>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gpm-Gp-Qb6">
                             <rect key="frame" x="18" y="49" width="333" height="18"/>
-                            <buttonCell key="cell" type="check" title="Replace smart quotes (“…”) with dump quotes (&quot;...&quot;)" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="QZv-rC-ZaE">
+                            <buttonCell key="cell" type="check" title="Replace smart quotes (“…”) with dumb quotes (&quot;...&quot;)" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="QZv-rC-ZaE">
                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
