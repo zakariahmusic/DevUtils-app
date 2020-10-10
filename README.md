@@ -2,7 +2,7 @@
 <h3 align="center">Developer Utilities for macOS</h3>
 
 <p align="center">
-  <img src="https://devutils.app/screenshot-light-min.png">
+  <img src="https://devutils.app/screenshot-light.png">
   <br/>
   <a href="https://devutils.app/#download">🚀 &nbsp; Download</a> | <a href="https://devutils.app/demo">🎬 &nbsp; Demo & Screenshots</a> | <a href="https://github.com/DevUtilsApp/DevUtils-app/tree/master/TINOBHNYWE">📝 &nbsp; View source</a>
 </p>
