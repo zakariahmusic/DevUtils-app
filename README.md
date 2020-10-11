@@ -27,7 +27,7 @@ Development environment:
  
      `carthage bootstrap --platform macOS`
  
- - Update signing Team to be your Personal or organizational Team in XCode. This is needed to build the app locally. As the signing step could be different between XCode versions, I may not be able to support you on this (help wanted, feel free to open PR to update this instruction). Please also check these articles to see if it helps:
+ - Update signing Team to be your Personal or organizational Team in XCode. This is needed to build the app locally. As the signing step could be different between XCode versions, I may not be able to support you on this (help wanted, feel free to open a PR to update this instruction). Please also check these articles to see if it helps:
    - https://developer.apple.com/support/code-signing/
    - https://help.apple.com/xcode/mac/current/#/dev60b6fbbc7 
  - Run the app in XCode.
@@ -35,10 +35,6 @@ Development environment:
 # License
 - This project is made available under a GPLv3 license for personal use only.
 - For enterprise/commercial usages, please contact license@devutils.app to purchase a commercial license.
-
-# Report bugs
-
-Feel free to create a new issue in this repo to report bugs.
 
 # Contact
 - **FAQs**: Please check https://devutils.app/faqs
