@@ -104,7 +104,7 @@ class QueryStringParserViewController: ToolViewController, NSTextViewDelegate {
       return
     }
     
-    outputTextView.setJSONString(string, 2)
+    outputTextView.setJSONString(string)
   }
   
   func parseQueryString(_ query: String) -> [String: Any] {

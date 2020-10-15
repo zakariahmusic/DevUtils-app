@@ -13,7 +13,8 @@ class JSONTextView: NSTextView {
   
   var highlightr: Highlightr! = Highlightr()
   var enableHighlight: Bool = true
-  var currentFormat: Any?
+  var currentFormat: Int?
+  var currentSpaces: Bool = true
   
   required init?(coder: NSCoder) {
     super.init(coder: coder)
@@ -32,9 +33,12 @@ class JSONTextView: NSTextView {
     self.enableHighlight = value
   }
   
-  func setJSONString(_ value: String, _ format: Any? = nil) {
+  // format = nil means compact (minified)
+  func setJSONString(_ value: String, format: Int? = 2, spaces: Bool = true) {
     currentFormat = format
-    let output = value.pretifyJSON(format: format)
+    currentSpaces = spaces
+    var errors: [JSONParseError] = []
+    let output = value.pretifyJSONv2(format: format, spaces: spaces, errors: &errors)
     
     if output != nil && output != "undefined" {
       self.string = ""
@@ -44,6 +48,20 @@ class JSONTextView: NSTextView {
         }
       } else {
         self.string = output!
+      }
+      
+      if errors.count > 0 {
+        errors.forEach { (e) in
+          self.textStorage?.addAttributes(
+            [
+              NSAttributedString.Key.backgroundColor: NSColor.red,
+              NSAttributedString.Key.foregroundColor: NSColor.black,
+              NSAttributedString.Key.underlineStyle: 1,
+            ],
+            range: .init(location: e.offset, length: e.length)
+          )
+        }
+        
       }
     } else {
       self.string = "Invalid JSON"
@@ -61,7 +79,7 @@ class JSONTextView: NSTextView {
   @objc
   func interfaceModeChanged(sender: NSNotification) {
     setTheme()
-    setJSONString(self.string, currentFormat)
+    setJSONString(self.string, format: currentFormat, spaces: currentSpaces)
   }
   
   deinit {

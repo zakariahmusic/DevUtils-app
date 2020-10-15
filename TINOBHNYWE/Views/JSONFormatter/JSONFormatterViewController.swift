@@ -36,7 +36,19 @@ class JSONFormatterViewController: ToolViewController, NSTextViewDelegate {
     
     log.debug("JSON tool activated: \(input)")
     inputTextView.string = input.value
-    refresh()
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+      // This is delayed to avoid an layout issue with the JSONTextView loaded
+      // when the viewDidLoad have not finished yet (?)
+      // Reproduce this:
+      // 1. Copy a JSON text
+      // 2. Close app window
+      // 3. Press hotkey, app should be activated with JSON tool
+      // 4. Select another tool
+      // 5. Repeat from step 3
+      //
+      // Observe the JSONTextView shrinking overtime
+      self.refresh()
+    }
   }
   
   override func matchInput(input: String) -> Bool {
@@ -147,13 +159,17 @@ class JSONFormatterViewController: ToolViewController, NSTextViewDelegate {
       outputTextView.string = ""
       return
     }
-    var format: Any! = nil
+    var format: Int? = nil
+    var spaces: Bool = true
+    
     if optionPopUpButton.titleOfSelectedItem == "4 spaces" {
       format = 4
     } else if optionPopUpButton.titleOfSelectedItem == "2 spaces" {
       format = 2
-    } else if optionPopUpButton.titleOfSelectedItem == "1 tab" {
-      format = "\t"
+    }
+    
+    if optionPopUpButton.titleOfSelectedItem == "1 tab" {
+      spaces = false
     }
     
     let replaceQuotes = NSUserDefaultsController.shared.value(
@@ -161,7 +177,7 @@ class JSONFormatterViewController: ToolViewController, NSTextViewDelegate {
     
     let inputString = replaceQuotes ? inputTextView.string.replaceSmartQuotes() : inputTextView.string
     
-    outputTextView.setJSONString(inputString, format)
+    outputTextView.setJSONString(inputString, format: format, spaces: spaces)
   }
   
   @IBAction func optionPopUpButtonAction(_ sender: Any) {
