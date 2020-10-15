@@ -21,7 +21,6 @@ class PreferencesViewController: NSViewController, HotkeyRecorderDelegate {
   @IBOutlet weak var autoUpdateQuestionButton: NSButton!
   @IBOutlet weak var autoUpdateCheckbox: NSButton!
   @IBOutlet weak var autoUpdateIntervalButton: NSPopUpButton!
-  @IBOutlet var sparkleUpdater: SUUpdater!
   
   struct NotificationNames {
     static let userDefaultsChanged = Notification.Name(rawValue: "userDefaultsChanged")
@@ -80,7 +79,6 @@ class PreferencesViewController: NSViewController, HotkeyRecorderDelegate {
     
     if AppState.isSandboxed() {
       autoUpdateQuestionButton.isHidden = false
-      sparkleUpdater.automaticallyChecksForUpdates = false
       autoUpdateCheckbox.isEnabled = false
       autoUpdateIntervalButton.isEnabled = false
     }

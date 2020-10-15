@@ -10,7 +10,7 @@ import Cocoa
 
 extension NSTextView {
   func setMonoFont() {
-    if let menlo = NSFont(name: "Menlo", size: 12) {
+    if let menlo = NSFont(name: AppState.TEXTVIEW_MONO_FONT, size: 12) {
       self.typingAttributes = [
         NSAttributedString.Key.font: menlo,
         NSAttributedString.Key.foregroundColor: NSColor.textColor
@@ -27,6 +27,12 @@ extension NSTextView {
     self.nicePadding()
     self.usesFindBar = true
     self.isAutomaticQuoteSubstitutionEnabled = false
+    self.isAutomaticDataDetectionEnabled = false
+    self.isAutomaticLinkDetectionEnabled = false
+    self.isAutomaticTextReplacementEnabled = false
+    self.isAutomaticDashSubstitutionEnabled = false
+    self.isAutomaticSpellingCorrectionEnabled = false
+    self.allowsUndo = true
   }
   
   func setStringRetrainUndo(_ value: String) {

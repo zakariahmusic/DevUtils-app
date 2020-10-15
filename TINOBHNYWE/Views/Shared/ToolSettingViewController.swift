@@ -30,9 +30,9 @@ class ToolSettingViewController: NSViewController {
   func ensureDefaults(_ forceDefaults: Bool = false) {
   }
   
-  func readBool(_ key: String) -> Bool {
+  func readBool(_ key: String, _ defaultValue: Bool = false) -> Bool {
     guard let value = NSUserDefaultsController.shared.value(forKeyPath: "values." + key) as? Bool else {
-      return false
+      return defaultValue
     }
     
     return value

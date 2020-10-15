@@ -9,9 +9,21 @@
 import Foundation
 import JavaScriptCore
 
+public class JSONParseError {
+  var error: Int
+  var offset: Int
+  var length: Int
+  
+  init(object: NSObject) {
+    self.error = object.value(forKey: "error") as? Int ?? 0
+    self.offset = object.value(forKey: "offset") as? Int ?? 0
+    self.length = object.value(forKey: "length") as? Int ?? 0
+  }
+}
+
 extension String {
   func encodeUrl() -> String? {
-    return self.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlUserAllowed)
+    return self.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlUserAllowed)
   }
   
   func decodeUrl() -> String? {
@@ -80,6 +92,56 @@ extension String {
     context.setObject(format, forKeyedSubscript: "format" as NSString)
     context.setObject(self, forKeyedSubscript: "json" as NSString)
     let result = context.evaluateScript("JSON.stringify(JSON.parse(json), null, format)")
+    return result?.toString()
+  }
+  
+  public func pretifyJSONv2(format: Int? = nil, spaces: Bool = true, errors: inout [JSONParseError]) -> String? {
+    let context = JSContext()!
+    context.setObject(format, forKeyedSubscript: "tabSize" as NSString)
+    context.setObject(spaces, forKeyedSubscript: "useSpace" as NSString)
+    context.setObject(self, forKeyedSubscript: "input" as NSString)
+    context.evaluateScript(JSONHelper.jsonFormatterCode())
+
+    var result: JSValue?
+    
+    if format == nil && spaces {
+      result = context.evaluateScript(
+        """
+        var result = input;
+        try {
+          result = JSON.stringify(JSON.parse(input));
+        } catch { /* It's ok to skip error here, we parse error later. */ }
+        result;
+        """
+      )
+    } else {
+      // Return best effort formatted JSON
+      result = context.evaluateScript(
+        """
+        var result = applyEditOperations(
+          input,
+          jsonFormatter.format(
+            input,
+            undefined,
+            { insertSpaces: useSpace, tabSize: tabSize || 2 }
+          )
+        );
+        result;
+        """
+      )
+    }
+    
+    // Get syntax errors
+    if let errs = context.evaluateScript("var errors = []; json.parse(result, errors); errors;") {
+      if let objArray = errs.toArray() as? [NSObject] {
+        (objArray.map({ (obj) -> JSONParseError in
+          return JSONParseError.init(object: obj)
+        })).forEach { (e) in
+          errors.append(e)
+        }
+      }
+    }
+    
     return result?.toString()
   }
   

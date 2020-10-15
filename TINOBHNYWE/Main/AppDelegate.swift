@@ -11,6 +11,8 @@ import HotKey
 import ShortcutRecorder
 import ServiceManagement
 import SwiftyBeaver
+import JavaScriptCore
+
 let log = SwiftyBeaver.self
 
 extension Notification.Name {

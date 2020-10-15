@@ -58,10 +58,10 @@ class JWTViewController: ToolViewController, NSTextViewDelegate, NSTextFieldDele
     if components.count != 3 {
       return false
     }
-    if JWTDecoder.data(base64urlEncoded: components[0]) == nil {
+    if components[0].fromBase64() == nil {
       return false
     }
-    if JWTDecoder.data(base64urlEncoded: components[1]) == nil {
+    if components[1].fromBase64() == nil {
       return false
     }
     return true
@@ -201,7 +201,7 @@ class JWTViewController: ToolViewController, NSTextViewDelegate, NSTextFieldDele
     }
     
     if let json = String(data: updatedJsonData, encoding: .utf8) {
-      headerTextView.setJSONString(json, 2)
+      headerTextView.setJSONString(json)
     }
   }
   
@@ -289,7 +289,7 @@ class JWTViewController: ToolViewController, NSTextViewDelegate, NSTextFieldDele
     headerTextView.string = ""
     if let header = JWTDecoder.data(base64urlEncoded: components[0]) {
       if let headerJson = String(data: header, encoding: .utf8) {
-        headerTextView.setJSONString(headerJson, 2)
+        headerTextView.setJSONString(headerJson)
       } else {
         showInvalidField("Header", "Encoding Error")
         success = false
@@ -303,7 +303,7 @@ class JWTViewController: ToolViewController, NSTextViewDelegate, NSTextFieldDele
     if components.count > 1 {
       if let payload = JWTDecoder.data(base64urlEncoded: components[1]) {
         if let payloadJson = String(data: payload, encoding: .utf8) {
-          payloadTextView.setJSONString(payloadJson, 2)
+          payloadTextView.setJSONString(payloadJson)
         } else {
           showInvalidField("Payload", "Encoding Error")
           success = false
@@ -480,18 +480,21 @@ class JWTViewController: ToolViewController, NSTextViewDelegate, NSTextFieldDele
   }
   
   @IBAction func sampleButtonAction(_ sender: Any) {
-    headerTextView.setJSONString("""
+    headerTextView.setJSONString(
+      """
       {"typ": "JWT", "alg": "\(algoPopUpButton.titleOfSelectedItem ?? "HS256")"}
       """
-      , 2)
+    )
     
-    payloadTextView.setJSONString("""
+    payloadTextView.setJSONString(
+      """
       {
         "sub": "1234567890",
         "name": "John Doe",
         "iat": 1516239022
       }
-      """, 2)
+      """
+    )
     
     secretTextField.stringValue = "your-secret"
     

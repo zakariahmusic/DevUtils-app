@@ -176,7 +176,7 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
   }
   
   @IBAction func sendFeedbackButtonAction(_ sender: Any) {
-    let emailUrl = URL(string: "mailto:feedback@devutils.app?subject=Feedback%20for%20DevUtils.app")!
+    let emailUrl = URL(string: "mailto:feedback@devutils.app?subject=\("Feedback for DevUtils.app version \(AppState.getAppVersion())".encodeUrl() ?? "unknown")")!
     
     if NSWorkspace.shared.open(emailUrl) {
       log.debug("Email client opened")

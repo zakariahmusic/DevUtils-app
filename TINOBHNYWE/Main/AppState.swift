@@ -31,6 +31,8 @@ class ActivationValue: CustomStringConvertible {
 }
 
 class AppState {
+  static let TEXTVIEW_MONO_FONT = "Menlo"
+  
   static var UnixTimeTool = Tool.init(
     id: "unixtime",
     name: "Unix Time Converter",
@@ -95,6 +97,20 @@ class AppState {
     viewControllerType: UUIDToolViewController.self
   )
   
+  static var HTMLPreviewTool = Tool.init(
+    id: "htmlpreview",
+    name: "HTML Preview",
+    image: NSImage(named: "htmltag")!,
+    viewControllerType: HTMLPreviewViewController.self
+  )
+  
+  static var TextDiffTool = Tool.init(
+    id: "textdiff",
+    name: "Text Diff Checker",
+    image: NSImage(named: "textdiff")!,
+    viewControllerType: TextDiffViewController.self
+  )
+  
   static var tools: [Tool] = [
     UnixTimeTool,
     URLEncodeTool,
@@ -104,7 +120,9 @@ class AppState {
     QueryStringParserTool,
     HTMLEncodeTool,
     BackslashTool,
-    UUIDTool
+    UUIDTool,
+    HTMLPreviewTool,
+    TextDiffTool
   ]
 
   static func shouldShowDockIcon() -> Bool {

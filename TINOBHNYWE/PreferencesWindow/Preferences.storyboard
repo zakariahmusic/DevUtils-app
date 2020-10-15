@@ -295,7 +295,6 @@
                         <outlet property="launchAtLoginCheckbox" destination="Zik-Jg-36U" id="Mnd-ic-w6B"/>
                         <outlet property="showDockIconCheckbox" destination="PC2-8W-HDa" id="0RK-zA-poP"/>
                         <outlet property="showStatusIconCheckbox" destination="Jna-2L-IaX" id="BfH-q4-xDE"/>
-                        <outlet property="sparkleUpdater" destination="emr-Ku-gbi" id="GVt-Of-ump"/>
                         <outlet property="writeDebugLogCheckbox" destination="ZMd-yk-FEh" id="94G-hD-uVG"/>
                         <outlet property="writeDebugLogsCheckbox" destination="Irs-sZ-FjY" id="hGo-Fs-4wj"/>
                     </connections>
