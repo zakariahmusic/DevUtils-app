@@ -74,6 +74,7 @@ class WelcomeViewController: ToolViewController {
   }
   
   @IBAction func copyButtonAction(_ sender: Any) {
+    NSPasteboard.general.clearContents()
     NSPasteboard.general.setString(inputTextView.string, forType: .string)
   }
 }

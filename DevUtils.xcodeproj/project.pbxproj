@@ -59,12 +59,12 @@
 		A557A111248CA97200BD90C3 /* Base64SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A557A10F248CA97200BD90C3 /* Base64SettingViewController.xib */; };
 		A55F534524A9E9FB00DC4C3E /* Base64EndecodeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F534424A9E9FB00DC4C3E /* Base64EndecodeTool.swift */; };
 		A55F534724AAC50200DC4C3E /* URLEndecodeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F534624AAC50200DC4C3E /* URLEndecodeTool.swift */; };
-		A564006F252F5ECB00273357 /* JSONFormatterHelper.js in Resources */ = {isa = PBXBuildFile; fileRef = A564006E252F5ECB00273357 /* JSONFormatterHelper.js */; };
-		A5640071252F5F5200273357 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5640070252F5F5200273357 /* JSONHelper.swift */; };
+		A5640071252F5F5200273357 /* JSHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5640070252F5F5200273357 /* JSHelpers.swift */; };
 		A56A9CCB2523795A00ECF032 /* UUIDToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56A9CC92523795A00ECF032 /* UUIDToolViewController.swift */; };
 		A56A9CCC2523795A00ECF032 /* UUIDToolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A56A9CCA2523795A00ECF032 /* UUIDToolViewController.xib */; };
 		A56A9CCF25237FE500ECF032 /* IntergerFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56A9CCE25237FE500ECF032 /* IntergerFormatter.swift */; };
 		A572CD7D2470EBC300394087 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572CD7C2470EBC300394087 /* Date.swift */; };
+		A57D2C46253805380069A8FD /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57D2C45253805380069A8FD /* Array.swift */; };
 		A57E11F52478FE3500ACF76D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E11F42478FE3500ACF76D /* String.swift */; };
 		A57E11F82479258900ACF76D /* JSONFormatterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E11F62479258900ACF76D /* JSONFormatterViewController.swift */; };
 		A57E11F92479258900ACF76D /* JSONFormatterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A57E11F72479258900ACF76D /* JSONFormatterViewController.xib */; };
@@ -96,6 +96,22 @@
 		A5B7D01124E38928001D762B /* BackslashEscapeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7D01024E38928001D762B /* BackslashEscapeTool.swift */; };
 		A5B7D01424E38DCD001D762B /* BackslashEscapeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7D01224E38DCD001D762B /* BackslashEscapeSettingViewController.swift */; };
 		A5B7D01524E38DCD001D762B /* BackslashEscapeSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5B7D01324E38DCD001D762B /* BackslashEscapeSettingViewController.xib */; };
+		A5C15E3C2532A4DB000067BF /* JSONFormatterHelper.js in Resources */ = {isa = PBXBuildFile; fileRef = A5C15E3A2532A4DB000067BF /* JSONFormatterHelper.js */; };
+		A5C15E3D2532A4DB000067BF /* prettydiff.browser.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A5C15E3B2532A4DB000067BF /* prettydiff.browser.min.js */; };
+		A5C15E402532B3C2000067BF /* HighlightedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E3F2532B3C2000067BF /* HighlightedTextView.swift */; };
+		A5C15E422532BD90000067BF /* WrapableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E412532BD90000067BF /* WrapableTextView.swift */; };
+		A5C15E46253467CC000067BF /* SharedFormatterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E44253467CC000067BF /* SharedFormatterViewController.swift */; };
+		A5C15E47253467CC000067BF /* SharedFormatterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5C15E45253467CC000067BF /* SharedFormatterViewController.xib */; };
+		A5C15E4925346A9A000067BF /* FormatterTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E4825346A9A000067BF /* FormatterTool.swift */; };
+		A5C15E4B25346CD2000067BF /* HTMLFormatterTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E4A25346CD2000067BF /* HTMLFormatterTool.swift */; };
+		A5C15E4D25347273000067BF /* FormatToolOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E4C25347273000067BF /* FormatToolOptions.swift */; };
+		A5C15E4F25347C14000067BF /* PrettydiffFormatterTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E4E25347C14000067BF /* PrettydiffFormatterTool.swift */; };
+		A5C15E5A253487D1000067BF /* CSSFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E59253487D1000067BF /* CSSFormatter.swift */; };
+		A5C15E5C253487F4000067BF /* LESSFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E5B253487F4000067BF /* LESSFormatter.swift */; };
+		A5C15E5E25348838000067BF /* SCSSFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E5D25348838000067BF /* SCSSFormatter.swift */; };
+		A5C15E6025348865000067BF /* JSFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E5F25348865000067BF /* JSFormatter.swift */; };
+		A5C15E6225348896000067BF /* XMLFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E6125348896000067BF /* XMLFormatter.swift */; };
+		A5C15E66253488DD000067BF /* ERBFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E65253488DD000067BF /* ERBFormatter.swift */; };
 		A5C95E3B25238F8700BED198 /* GeneralHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C95E3A25238F8700BED198 /* GeneralHelpers.swift */; };
 		A5C95E3D2524302F00BED198 /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C95E3C2524302F00BED198 /* UUID.swift */; };
 		A5C95E452526D0F500BED198 /* DevUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C95E442526D0F500BED198 /* DevUtilsTests.swift */; };
@@ -157,6 +173,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A59F99DE2532A46200D42AC4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -212,12 +237,12 @@
 		A557A10F248CA97200BD90C3 /* Base64SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Base64SettingViewController.xib; sourceTree = "<group>"; };
 		A55F534424A9E9FB00DC4C3E /* Base64EndecodeTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64EndecodeTool.swift; sourceTree = "<group>"; };
 		A55F534624AAC50200DC4C3E /* URLEndecodeTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEndecodeTool.swift; sourceTree = "<group>"; };
-		A564006E252F5ECB00273357 /* JSONFormatterHelper.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = JSONFormatterHelper.js; sourceTree = "<group>"; };
-		A5640070252F5F5200273357 /* JSONHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
+		A5640070252F5F5200273357 /* JSHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSHelpers.swift; sourceTree = "<group>"; };
 		A56A9CC92523795A00ECF032 /* UUIDToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDToolViewController.swift; sourceTree = "<group>"; };
 		A56A9CCA2523795A00ECF032 /* UUIDToolViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UUIDToolViewController.xib; sourceTree = "<group>"; };
 		A56A9CCE25237FE500ECF032 /* IntergerFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntergerFormatter.swift; sourceTree = "<group>"; };
 		A572CD7C2470EBC300394087 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		A57D2C45253805380069A8FD /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		A57E11EF2478DDDE00ACF76D /* NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NOTES.md; sourceTree = "<group>"; };
 		A57E11F42478FE3500ACF76D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A57E11F62479258900ACF76D /* JSONFormatterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFormatterViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +275,22 @@
 		A5B7D01024E38928001D762B /* BackslashEscapeTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackslashEscapeTool.swift; sourceTree = "<group>"; };
 		A5B7D01224E38DCD001D762B /* BackslashEscapeSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackslashEscapeSettingViewController.swift; sourceTree = "<group>"; };
 		A5B7D01324E38DCD001D762B /* BackslashEscapeSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackslashEscapeSettingViewController.xib; sourceTree = "<group>"; };
+		A5C15E3A2532A4DB000067BF /* JSONFormatterHelper.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = JSONFormatterHelper.js; sourceTree = "<group>"; };
+		A5C15E3B2532A4DB000067BF /* prettydiff.browser.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = prettydiff.browser.min.js; sourceTree = "<group>"; };
+		A5C15E3F2532B3C2000067BF /* HighlightedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedTextView.swift; sourceTree = "<group>"; };
+		A5C15E412532BD90000067BF /* WrapableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapableTextView.swift; sourceTree = "<group>"; };
+		A5C15E44253467CC000067BF /* SharedFormatterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFormatterViewController.swift; sourceTree = "<group>"; };
+		A5C15E45253467CC000067BF /* SharedFormatterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SharedFormatterViewController.xib; sourceTree = "<group>"; };
+		A5C15E4825346A9A000067BF /* FormatterTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterTool.swift; sourceTree = "<group>"; };
+		A5C15E4A25346CD2000067BF /* HTMLFormatterTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLFormatterTool.swift; sourceTree = "<group>"; };
+		A5C15E4C25347273000067BF /* FormatToolOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatToolOptions.swift; sourceTree = "<group>"; };
+		A5C15E4E25347C14000067BF /* PrettydiffFormatterTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettydiffFormatterTool.swift; sourceTree = "<group>"; };
+		A5C15E59253487D1000067BF /* CSSFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSFormatter.swift; sourceTree = "<group>"; };
+		A5C15E5B253487F4000067BF /* LESSFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LESSFormatter.swift; sourceTree = "<group>"; };
+		A5C15E5D25348838000067BF /* SCSSFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCSSFormatter.swift; sourceTree = "<group>"; };
+		A5C15E5F25348865000067BF /* JSFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSFormatter.swift; sourceTree = "<group>"; };
+		A5C15E6125348896000067BF /* XMLFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLFormatter.swift; sourceTree = "<group>"; };
+		A5C15E65253488DD000067BF /* ERBFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERBFormatter.swift; sourceTree = "<group>"; };
 		A5C95E3A25238F8700BED198 /* GeneralHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralHelpers.swift; sourceTree = "<group>"; };
 		A5C95E3C2524302F00BED198 /* UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUID.swift; sourceTree = "<group>"; };
 		A5C95E422526D0F500BED198 /* DevUtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevUtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -402,12 +443,19 @@
 		A54CB7B724701AAC006A468E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A5861F012494703A00EDC5AB /* Shared */,
+				A5C15E58253487AA000067BF /* ERBFormatter */,
+				A5C15E5625348780000067BF /* XMLFormatter */,
+				A5C15E5325348742000067BF /* JSFormatter */,
+				A5C15E5225348732000067BF /* SCSSFormatter */,
+				A5C15E51253486F2000067BF /* LESSFormatter */,
+				A5C15E50253486BF000067BF /* CSSFormatter */,
+				A56400852531FA9C00273357 /* HTMLFormatter */,
 				A5075AF8252CB5FB00F8A320 /* TextDiff */,
 				A56A9CC82523790A00ECF032 /* UUIDTool */,
 				A5CD9C982520228C001D340D /* Welcome */,
 				A5CD9C972510C260001D340D /* HTMLPreview */,
 				A5B7D00F24E388EF001D762B /* BlackslashEscape */,
-				A5861F012494703A00EDC5AB /* Shared */,
 				A5861F0D2494929500EDC5AB /* HTMLEntity */,
 				A5861EF3248FE06A00EDC5AB /* QueryStringParser */,
 				A5D4A3A7248A8E0C008ECAE9 /* Base64 */,
@@ -417,6 +465,14 @@
 				A52E1E9B248205840027F8AF /* UnixTime */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A56400852531FA9C00273357 /* HTMLFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				A5C15E4A25346CD2000067BF /* HTMLFormatterTool.swift */,
+			);
+			path = HTMLFormatter;
 			sourceTree = "<group>";
 		};
 		A56A9CC82523790A00ECF032 /* UUIDTool */ = {
@@ -433,10 +489,10 @@
 		A56A9CCD25237FD100ECF032 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				A564006E252F5ECB00273357 /* JSONFormatterHelper.js */,
+				A5C15E3E2532A4ED000067BF /* Vendors */,
 				A56A9CCE25237FE500ECF032 /* IntergerFormatter.swift */,
 				A5C95E3A25238F8700BED198 /* GeneralHelpers.swift */,
-				A5640070252F5F5200273357 /* JSONHelper.swift */,
+				A5640070252F5F5200273357 /* JSHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -450,6 +506,7 @@
 				A50D29DC247BFC8E00B1E96F /* NSTextView.swift */,
 				A5861EF1248FDC5D00EDC5AB /* URL.swift */,
 				A5C95E3C2524302F00BED198 /* UUID.swift */,
+				A57D2C45253805380069A8FD /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -465,6 +522,8 @@
 				A513041C24742AB20023D0CF /* HotkeyRecorder.xib */,
 				A513041E24742AC10023D0CF /* HotkeyRecorder.swift */,
 				A5114FDC24821C5B001A8DB5 /* JSONTextView.swift */,
+				A5C15E3F2532B3C2000067BF /* HighlightedTextView.swift */,
+				A5C15E412532BD90000067BF /* WrapableTextView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -483,9 +542,10 @@
 		A5861F012494703A00EDC5AB /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A5C15E4325346799000067BF /* SharedFormatter */,
+				A5861F022494705000EDC5AB /* SharedEndecode */,
 				A50D29DA247B6A1B00B1E96F /* ToolViewController.swift */,
 				A5A26E3C2494DBC400DB32A7 /* ToolSettingViewController.swift */,
-				A5861F022494705000EDC5AB /* SharedEndecode */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -563,6 +623,75 @@
 				A5B7D01324E38DCD001D762B /* BackslashEscapeSettingViewController.xib */,
 			);
 			path = BlackslashEscape;
+			sourceTree = "<group>";
+		};
+		A5C15E3E2532A4ED000067BF /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				A5C15E3A2532A4DB000067BF /* JSONFormatterHelper.js */,
+				A5C15E3B2532A4DB000067BF /* prettydiff.browser.min.js */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		A5C15E4325346799000067BF /* SharedFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				A5C15E44253467CC000067BF /* SharedFormatterViewController.swift */,
+				A5C15E45253467CC000067BF /* SharedFormatterViewController.xib */,
+				A5C15E4825346A9A000067BF /* FormatterTool.swift */,
+				A5C15E4C25347273000067BF /* FormatToolOptions.swift */,
+				A5C15E4E25347C14000067BF /* PrettydiffFormatterTool.swift */,
+			);
+			path = SharedFormatter;
+			sourceTree = "<group>";
+		};
+		A5C15E50253486BF000067BF /* CSSFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				A5C15E59253487D1000067BF /* CSSFormatter.swift */,
+			);
+			path = CSSFormatter;
+			sourceTree = "<group>";
+		};
+		A5C15E51253486F2000067BF /* LESSFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				A5C15E5B253487F4000067BF /* LESSFormatter.swift */,
+			);
+			path = LESSFormatter;
+			sourceTree = "<group>";
+		};
+		A5C15E5225348732000067BF /* SCSSFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				A5C15E5D25348838000067BF /* SCSSFormatter.swift */,
+			);
+			path = SCSSFormatter;
+			sourceTree = "<group>";
+		};
+		A5C15E5325348742000067BF /* JSFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				A5C15E5F25348865000067BF /* JSFormatter.swift */,
+			);
+			path = JSFormatter;
+			sourceTree = "<group>";
+		};
+		A5C15E5625348780000067BF /* XMLFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				A5C15E6125348896000067BF /* XMLFormatter.swift */,
+			);
+			path = XMLFormatter;
+			sourceTree = "<group>";
+		};
+		A5C15E58253487AA000067BF /* ERBFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				A5C15E65253488DD000067BF /* ERBFormatter.swift */,
+			);
+			path = ERBFormatter;
 			sourceTree = "<group>";
 		};
 		A5C95E432526D0F500BED198 /* DevUtilsTests */ = {
@@ -652,6 +781,7 @@
 				A59FBE5C24362BCE00C5C9BF /* Resources */,
 				A513045324758D4B0023D0CF /* Embed Frameworks */,
 				A513045A247614BA0023D0CF /* CopyFiles */,
+				A59F99DE2532A46200D42AC4 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -763,14 +893,16 @@
 				A57E11F92479258900ACF76D /* JSONFormatterViewController.xib in Resources */,
 				A5D4A3A22488ED0D008ECAE9 /* JWTSettingViewController.xib in Resources */,
 				A5861EFB2491290100EDC5AB /* QueryStringParserSettingViewController.xib in Resources */,
+				A5C15E3D2532A4DB000067BF /* prettydiff.browser.min.js in Resources */,
 				A513041D24742AB20023D0CF /* HotkeyRecorder.xib in Resources */,
 				A557A111248CA97200BD90C3 /* Base64SettingViewController.xib in Resources */,
+				A5C15E47253467CC000067BF /* SharedFormatterViewController.xib in Resources */,
 				A5A26E412494DCD800DB32A7 /* HTMLEntitySettingViewController.xib in Resources */,
 				A59FBE6624362BCF00C5C9BF /* Assets.xcassets in Resources */,
+				A5C15E3C2532A4DB000067BF /* JSONFormatterHelper.js in Resources */,
 				A5861EF7248FE09A00EDC5AB /* QueryStringParserViewController.xib in Resources */,
 				A599BFDF2529570E00CA37E6 /* LICENSE.md in Resources */,
 				A59FBE6924362BCF00C5C9BF /* Main.storyboard in Resources */,
-				A564006F252F5ECB00273357 /* JSONFormatterHelper.js in Resources */,
 				A513042924757CF30023D0CF /* WelcomeViewController.xib in Resources */,
 				A504B9A724729DDE000A91D7 /* OutputTextField.xib in Resources */,
 				A509FEC92472D309005ABCC2 /* TestCustomView.xib in Resources */,
@@ -806,33 +938,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5C15E4925346A9A000067BF /* FormatterTool.swift in Sources */,
 				A504B9A524729DB9000A91D7 /* OutputTextField.swift in Sources */,
 				A513041F24742AC10023D0CF /* HotkeyRecorder.swift in Sources */,
 				A5A26E3D2494DBC400DB32A7 /* ToolSettingViewController.swift in Sources */,
 				A5CCEAFA24B5853F00C38FB1 /* ToolOutlineTableCellView.swift in Sources */,
 				A52E1E92248009A20027F8AF /* UnixTimeSettingViewController.swift in Sources */,
+				A57D2C46253805380069A8FD /* Array.swift in Sources */,
 				A5114FDD24821C5B001A8DB5 /* JSONTextView.swift in Sources */,
 				A54CB7B524701AA4006A468E /* UnixTimeViewController.swift in Sources */,
+				A5C15E5A253487D1000067BF /* CSSFormatter.swift in Sources */,
 				A5D4A39E2485594B008ECAE9 /* Header+FromJSON.swift in Sources */,
 				A50D29DB247B6A1B00B1E96F /* ToolViewController.swift in Sources */,
 				A5861F0A2494771800EDC5AB /* HTMLEntityEndecodeTool.swift in Sources */,
 				A509FEC72472D0B8005ABCC2 /* CustomView.swift in Sources */,
 				A5FB5A042472CBD200268B3A /* NSView.swift in Sources */,
 				A54CB7A82470105A006A468E /* SplitViewController.swift in Sources */,
+				A5C15E5E25348838000067BF /* SCSSFormatter.swift in Sources */,
 				A5861EF2248FDC5D00EDC5AB /* URL.swift in Sources */,
+				A5C15E4B25346CD2000067BF /* HTMLFormatterTool.swift in Sources */,
 				A54CB7A4246FE06D006A468E /* Tool.swift in Sources */,
 				A5A26E402494DCD800DB32A7 /* HTMLEntitySettingViewController.swift in Sources */,
 				A5C95E3D2524302F00BED198 /* UUID.swift in Sources */,
 				A5B7D01424E38DCD001D762B /* BackslashEscapeSettingViewController.swift in Sources */,
 				A55F534524A9E9FB00DC4C3E /* Base64EndecodeTool.swift in Sources */,
-				A5640071252F5F5200273357 /* JSONHelper.swift in Sources */,
+				A5640071252F5F5200273357 /* JSHelpers.swift in Sources */,
 				A52E1EA224820D340027F8AF /* JSONFormatterSettingViewController.swift in Sources */,
+				A5C15E66253488DD000067BF /* ERBFormatter.swift in Sources */,
 				A5C95E3B25238F8700BED198 /* GeneralHelpers.swift in Sources */,
+				A5C15E5C253487F4000067BF /* LESSFormatter.swift in Sources */,
 				A54CB7AA247014BD006A468E /* AppState.swift in Sources */,
 				A5861EF6248FE09A00EDC5AB /* QueryStringParserViewController.swift in Sources */,
 				A52E1E99248203AC0027F8AF /* URLEncodeSettingViewController.swift in Sources */,
 				A5861F0C2494861700EDC5AB /* ToolImpl.swift in Sources */,
 				A54CB79B246EED39006A468E /* WindowController.swift in Sources */,
+				A5C15E46253467CC000067BF /* SharedFormatterViewController.swift in Sources */,
+				A5C15E6025348865000067BF /* JSFormatter.swift in Sources */,
+				A5C15E4D25347273000067BF /* FormatToolOptions.swift in Sources */,
 				A52E1E962480176D0027F8AF /* UnixTimeToISO.swift in Sources */,
 				A54CB7A6246FF0CB006A468E /* DetailViewController.swift in Sources */,
 				A5130421247533770023D0CF /* PreferencesViewController.swift in Sources */,
@@ -855,12 +997,16 @@
 				A57E11F52478FE3500ACF76D /* String.swift in Sources */,
 				A54CB7A0246FDDA2006A468E /* OutlineViewController.swift in Sources */,
 				A5C95E56252732E900BED198 /* UUIDToolSettingViewController.swift in Sources */,
+				A5C15E4F25347C14000067BF /* PrettydiffFormatterTool.swift in Sources */,
 				A599BFE6252A167700CA37E6 /* HTMLPreviewSettingViewController.swift in Sources */,
 				A513042824757CF30023D0CF /* WelcomeViewController.swift in Sources */,
+				A5C15E402532B3C2000067BF /* HighlightedTextView.swift in Sources */,
+				A5C15E6225348896000067BF /* XMLFormatter.swift in Sources */,
 				A599BFE22529F95200CA37E6 /* HTMLPreviewViewController.swift in Sources */,
 				A5D4A3A12488ED0D008ECAE9 /* JWTSettingViewController.swift in Sources */,
 				A5D4A3A424894773008ECAE9 /* Window.swift in Sources */,
 				A56A9CCB2523795A00ECF032 /* UUIDToolViewController.swift in Sources */,
+				A5C15E422532BD90000067BF /* WrapableTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1079,7 +1225,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = 432TM87K7L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1093,7 +1239,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = tonyapp.devutils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TINOBHNYWE/DevUtils-Bridging-Header.h";
@@ -1111,7 +1257,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = 432TM87K7L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1125,7 +1271,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = tonyapp.devutils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TINOBHNYWE/DevUtils-Bridging-Header.h";

@@ -71,6 +71,13 @@ class SplitViewController: NSSplitViewController {
           settingVc = settingVcType.init(nibName: settingVcType.className())
         }
         vc = t.init(endecodeTool: impl.init(), settingViewController: settingVc)
+      } else if let t = tool.viewControllerType as? SharedFormatterViewController.Type {
+        let impl = tool.implementation as! FormatterTool.Type
+        var settingVc: ToolSettingViewController? = nil
+        if let settingVcType = tool.settingViewControllerType {
+          settingVc = settingVcType.init(nibName: settingVcType.className())
+        }
+        vc = t.init(formatterTool: impl.init(), settingViewController: settingVc)
       } else {
         vc = tool.viewControllerType.init(nibName: tool.viewControllerType.className())
       }

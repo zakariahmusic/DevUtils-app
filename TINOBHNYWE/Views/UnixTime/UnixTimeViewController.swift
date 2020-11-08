@@ -9,6 +9,8 @@
 import Cocoa
 import SwiftDate
 
+let expressionRegex = try! NSRegularExpression(pattern: "^[0-9]+([+\\-*/][0-9]+)*$")
+
 func isUnix(_ input: String, _ startTime: Int, _ endTime: Int) -> Bool {
   let inputInt = Int(input)
   if inputInt == nil {
@@ -27,6 +29,20 @@ func isMillis(_ input: String, _ startTime: Int, _ endTime: Int) -> Bool {
 
 func isDateString(_ input: String) -> Bool {
   return input.toDate() != nil
+}
+
+func isValidExpression(_ str: String) -> Bool {
+  let range = NSRange(location: 0, length: str.utf16.count)
+  return expressionRegex.firstMatch(in: str, options: [], range: range) != nil
+}
+
+func getInputAsInt(_ input: String) -> Int? {
+  var timeInt = Int(input)
+  if isValidExpression(input.replacingOccurrences(of: " ", with: "")) {
+    let exp = NSExpression(format: input)
+    timeInt = exp.expressionValue(with: nil, context: nil) as? Int
+  }
+  return timeInt
 }
 
 class UnixTimeViewController: ToolViewController, NSTextFieldDelegate {
@@ -179,23 +195,25 @@ class UnixTimeViewController: ToolViewController, NSTextFieldDelegate {
       return
     }
     
+    let input = inputTextField.stringValue
+    
     let dateInRegion: DateInRegion
     if format == .UnixTime {
-      let timeInt = Int(inputTextField.stringValue)
+      let timeInt = getInputAsInt(input)
       if timeInt == nil {
         showInvalidInput()
         return
       }
       dateInRegion = DateInRegion.init(seconds: .init(timeInt!), region: .UTC)
     } else if format == .MilliSecondsSinceEpoch {
-      let timeInt = Int(inputTextField.stringValue)
+      let timeInt = getInputAsInt(input)
       if timeInt == nil {
         showInvalidInput()
         return
       }
       dateInRegion = DateInRegion.init(seconds: .init((timeInt! / 1000)), region: .UTC)
     } else if format == .Auto {
-      let d = inputTextField.stringValue.toDate()
+      let d = input.toDate()
       if d == nil {
         showInvalidInput()
         return
@@ -272,5 +290,10 @@ class UnixTimeViewController: ToolViewController, NSTextFieldDelegate {
     AppState.ensureDefault("values.unix-time-auto-detect-enabled", true, forceDefaults)
     AppState.ensureDefault("values.unix-auto-detect-start-time", "946684799", forceDefaults)
     AppState.ensureDefault("values.unix-auto-detect-end-time", "32503593600", forceDefaults)
+  }
+  
+  @IBAction func clearButtonAction(_ sender: Any) {
+    inputTextField.stringValue = ""
+    execute()
   }
 }

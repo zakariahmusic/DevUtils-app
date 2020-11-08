@@ -111,6 +111,62 @@ class AppState {
     viewControllerType: TextDiffViewController.self
   )
   
+  static var HTMLBeautifierTool = Tool.init(
+    id: "htmlformatter",
+    name: "HTML Beautifier/Minifier",
+    image: NSImage(named: "magic")!,
+    viewControllerType: SharedFormatterViewController.self,
+    implementation: HTMLFormatterTool.self
+  )
+  
+  static var CSSBeautifierTool = Tool.init(
+    id: "cssformatter",
+    name: "CSS Beautifier/Minifier",
+    image: NSImage(named: "magic")!,
+    viewControllerType: SharedFormatterViewController.self,
+    implementation: CSSFormatterTool.self
+  )
+  
+  static var LESSBeautifierTool = Tool.init(
+    id: "lessformatter",
+    name: "LESS Beautifier/Minifier",
+    image: NSImage(named: "magic")!,
+    viewControllerType: SharedFormatterViewController.self,
+    implementation: LESSFormatterTool.self
+  )
+  
+  static var SCSSBeautifierTool = Tool.init(
+    id: "scssformatter",
+    name: "SCSS Beautifier/Minifier",
+    image: NSImage(named: "magic")!,
+    viewControllerType: SharedFormatterViewController.self,
+    implementation: SCSSFormatterTool.self
+  )
+  
+  static var JSBeautifierTool = Tool.init(
+    id: "jsformatter",
+    name: "JS Beautifier/Minifier",
+    image: NSImage(named: "magic")!,
+    viewControllerType: SharedFormatterViewController.self,
+    implementation: JSFormatterTool.self
+  )
+  
+  static var XMLBeautifierTool = Tool.init(
+    id: "xmlformatter",
+    name: "XML Beautifier/Minifier",
+    image: NSImage(named: "magic")!,
+    viewControllerType: SharedFormatterViewController.self,
+    implementation: XMLFormatterTool.self
+  )
+  
+  static var ERBBeautifierTool = Tool.init(
+    id: "erbformatter",
+    name: "ERB (Ruby) Beautifier/Minifier",
+    image: NSImage(named: "magic")!,
+    viewControllerType: SharedFormatterViewController.self,
+    implementation: ERBFormatterTool.self
+  )
+  
   static var tools: [Tool] = [
     UnixTimeTool,
     URLEncodeTool,
@@ -122,7 +178,14 @@ class AppState {
     BackslashTool,
     UUIDTool,
     HTMLPreviewTool,
-    TextDiffTool
+    TextDiffTool,
+    HTMLBeautifierTool,
+    CSSBeautifierTool,
+    JSBeautifierTool,
+    //    ERBBeautifierTool,
+    //    LESSBeautifierTool,
+    //    SCSSBeautifierTool
+    XMLBeautifierTool
   ]
 
   static func shouldShowDockIcon() -> Bool {
@@ -247,6 +310,14 @@ class AppState {
   static func isSandboxed() -> Bool {
       let environ = ProcessInfo.processInfo.environment
       return (nil != environ["APP_SANDBOX_CONTAINER_ID"])
+  }
+  
+  static func getOrderedNames() -> [String]? {
+    return UserDefaults.standard.value(forKey: "custom-tools-ordered-names") as? [String]
+  }
+  
+  static func setOrderedNames(_ value: [String]) {
+    UserDefaults.standard.set(value, forKey: "custom-tools-ordered-names")
   }
   
 }

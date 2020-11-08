@@ -27,4 +27,35 @@ class GeneralHelpers {
     alert.addButton(withTitle: "OK")
     alert.runModal()
   }
+  
+  static func loadFileAsUTF8(title: String) -> String? {
+    let dialog = NSOpenPanel();
+    
+    dialog.title                   = title
+    dialog.showsResizeIndicator    = true
+    dialog.showsHiddenFiles        = true
+    dialog.canChooseDirectories    = true
+    dialog.canCreateDirectories    = false
+    dialog.allowsMultipleSelection = false
+    
+    if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+      if let url = dialog.url {
+        do {
+          return try String(contentsOf: url, encoding: .utf8)
+        } catch {
+          log.error("Failed to read file: \(error)")
+          let alert = NSAlert()
+          alert.messageText = "Cannot read the file."
+          alert.informativeText = "The file cannot be read because of this reason: " + error.localizedDescription
+          alert.alertStyle = .warning
+          alert.addButton(withTitle: "OK")
+          alert.runModal()
+        }
+      }
+    } else {
+      // User clicked on "Cancel"
+    }
+    
+    return nil
+  }
 }

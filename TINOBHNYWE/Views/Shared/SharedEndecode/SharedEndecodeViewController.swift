@@ -87,6 +87,7 @@ class SharedEndecodeViewController: ToolViewController, NSTextViewDelegate, Tool
     
     if !isViewLoaded {
       pendingInput = input
+      log.debug("input queued")
       return
     }
     

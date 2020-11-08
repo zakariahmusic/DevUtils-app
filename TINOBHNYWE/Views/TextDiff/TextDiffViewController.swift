@@ -19,8 +19,14 @@ class TextDiffViewController: ToolViewController, NSTextViewDelegate {
   @IBOutlet weak var outputHTMLCheckbox: NSButton!
   @IBOutlet weak var outputDiffCheckbox: NSButton!
   @IBOutlet weak var minimalDiffQuestionButton: NSButton!
+  @IBOutlet weak var diffPrevButton: NSButton!
+  @IBOutlet weak var diffNextButton: NSButton!
+  @IBOutlet weak var diffCountLabel: NSTextField!
   
   let dmp = DiffMatchPatch()
+  
+  var diffRanges: [NSRange] = []
+  var currentDiffRangesIndex = -1
   
   enum DiffMode {
     case characters
@@ -129,21 +135,34 @@ class TextDiffViewController: ToolViewController, NSTextViewDelegate {
 
     let s = NSMutableAttributedString()
     
+    diffRanges = []
+    currentDiffRangesIndex = -1
+    
+    var offset = 0
+    
     if getOutputMode() == .formattedText {
       d.forEach({ (diff) in
         let item = diff as! Diff
+        let length = item.text.lengthOfBytes(using: .utf8)
         
         if item.operation == DIFF_DELETE {
           s.append(deletedAttrStr(content: item.text))
+          diffRanges.append(.init(location: offset, length: length))
         } else if item.operation == DIFF_INSERT {
           s.append(addedAttrStr(content: item.text))
+          diffRanges.append(.init(location: offset, length: length))
         } else if item.operation == DIFF_EQUAL {
           s.append(equalAttrStr(content: item.text))
         } else {
           log.error("diff-match-patch returned unexpected data")
         }
+        
+        offset += length
       })
     }
+    
+    updateNextPrevButtonState()
+    // log.debug("diff ranges: \(diffRanges)")
     
     if getOutputMode() == .HTML {
       s.append(equalAttrStr(content: dmp.diff_prettyHtml(d)))
@@ -154,6 +173,42 @@ class TextDiffViewController: ToolViewController, NSTextViewDelegate {
     }
     
     diffTextView.textStorage?.setAttributedString(s)
+  }
+  
+  func updateNextPrevButtonState() {
+    diffCountLabel.stringValue = "\(diffRanges.count)"
+    
+    if diffRanges.count > 0 {
+      diffNextButton.isEnabled = true
+      diffPrevButton.isEnabled = true
+    } else {
+      diffNextButton.isEnabled = false
+      diffPrevButton.isEnabled = false
+    }
+    
+  }
+  
+  @IBAction func diffPrevButtonAction(_ sender: Any) {
+    if currentDiffRangesIndex > 0 {
+      currentDiffRangesIndex -= 1
+      updateNextPrevButtonState()
+    }
+    focusDiffRange()
+  }
+  
+  @IBAction func diffNextButtonAction(_ sender: Any) {
+    if currentDiffRangesIndex < diffRanges.count - 1 {
+      currentDiffRangesIndex += 1
+      updateNextPrevButtonState()
+    }
+    focusDiffRange()
+  }
+  
+  func focusDiffRange() {
+    // log.debug("currentDiffRangesIndex: \(currentDiffRangesIndex)")
+    if let range = diffRanges[safe: currentDiffRangesIndex] {
+      diffTextView.showFindIndicator(for: range)
+    }
   }
   
   func addedAttrStr(content: String) -> NSMutableAttributedString {
@@ -189,9 +244,7 @@ class TextDiffViewController: ToolViewController, NSTextViewDelegate {
   }
   
   @IBAction func copyButtonAction(_ sender: Any) {
-    NSPasteboard.general.clearContents()
-    NSPasteboard.general.declareTypes([.string], owner: self)
-    NSPasteboard.general.writeObjects([diffTextView.attributedString()])
+    diffTextView.copyToClipboardFormatted()
   }
   
   @IBAction func input1ClipboardButtonAction(_ sender: Any) {
@@ -235,7 +288,7 @@ class TextDiffViewController: ToolViewController, NSTextViewDelegate {
         rc = kernel_getsockname(sock,
                     (struct sockaddr *)&addr);
     else
-        rc = kernel_getpeername(sock,
+        rc2 = kernel_getpeername(sock,
                     (struct sockaddr *)&addr);
     sock_put(sock->sk);
     if (rc < 0)
@@ -246,5 +299,11 @@ class TextDiffViewController: ToolViewController, NSTextViewDelegate {
   
   @IBAction func minimalDiffLabelAction(_ sender: Any) {
     GeneralHelpers.alert(title: "Minimal Diff Format", text: "The Minimal Diff format is similar to Unidiff with some differences. Other applications may not be able to parse it.\n\nSee https://github.com/google/diff-match-patch/wiki/Unidiff for more details.")
+  }
+  
+  @IBAction func swapInputsButton(_ sender: Any) {
+    let temp = input2TextView.string
+    input2TextView.setStringRetrainUndo(input1TextView.string)
+    input1TextView.setStringRetrainUndo(temp)
   }
 }
