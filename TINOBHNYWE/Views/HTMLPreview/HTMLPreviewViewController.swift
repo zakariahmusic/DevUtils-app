@@ -48,6 +48,46 @@ class HTMLPreviewViewController: ToolViewController, WKUIDelegate, NSTextViewDel
     webView.configuration.preferences.setValue(true, forKey: "developerExtrasEnabled")
     webView.uiDelegate = self
     webView.navigationDelegate = self
+    
+    // Block all URLs except those starting with "file://"
+    let blockRules = """
+    [
+      {
+        "trigger": {
+          "url-filter": ".*"
+        },
+        "action": {
+          "type": "block"
+        }
+      },
+      {
+        "trigger": {
+          "url-filter": "file://.*"
+        },
+        "action": {
+          "type": "ignore-previous-rules"
+        }
+      }
+    ]
+    """
+    
+    if !options.enableNetwork {
+      if #available(OSX 10.13, *) {
+        WKContentRuleListStore.default().compileContentRuleList(
+          forIdentifier: "ContentBlockingRules",
+          encodedContentRuleList: blockRules) { (contentRuleList, error) in
+            if let error = error {
+              log.error("Unable to parse blocking rules: \(error)")
+              return
+            }
+            
+            let configuration = self.webView.configuration
+            configuration.userContentController.add(contentRuleList!)
+        }
+      }
+    }
+    
+    
   }
   
   override func activate(input: ActivationValue) {

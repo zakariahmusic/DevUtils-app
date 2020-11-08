@@ -31,6 +31,18 @@ class ToolSettingViewController: NSViewController {
   }
   
   func readBool(_ key: String, _ defaultValue: Bool = false) -> Bool {
+    return ToolSettingViewController.readBool(key, defaultValue)
+  }
+  
+  func readString(_ key: String, _ defaultValue: String = "") -> String {
+    return ToolSettingViewController.readString(key, defaultValue)
+  }
+  
+  func readInt(_ key: String, _ defaultValue: Int = 0) -> Int {
+    return ToolSettingViewController.readInt(key, defaultValue)
+  }
+  
+  static func readBool(_ key: String, _ defaultValue: Bool = false) -> Bool {
     guard let value = NSUserDefaultsController.shared.value(forKeyPath: "values." + key) as? Bool else {
       return defaultValue
     }
@@ -38,9 +50,17 @@ class ToolSettingViewController: NSViewController {
     return value
   }
   
-  func readString(_ key: String) -> String {
+  static func readString(_ key: String, _ defaultValue: String = "") -> String {
     guard let value = NSUserDefaultsController.shared.value(forKeyPath: "values." + key) as? String else {
-      return ""
+      return defaultValue
+    }
+    
+    return value
+  }
+  
+  static func readInt(_ key: String, _ defaultValue: Int = 0) -> Int {
+    guard let value = NSUserDefaultsController.shared.value(forKeyPath: "values." + key) as? Int else {
+      return defaultValue
     }
     
     return value

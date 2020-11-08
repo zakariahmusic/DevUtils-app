@@ -36,7 +36,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   let launcherAppId = "tonyapp.devutils.launcher"
   @IBOutlet weak var toolsSortOrderDefaultMenuItem: NSMenuItem!
   @IBOutlet weak var toolsSortOrderAlphabetMenuItem: NSMenuItem!
+  @IBOutlet weak var toolsSortOrderCustomMenuItem: NSMenuItem!
   
+  func testMe() {
+    // Test
+  }
 
   struct NotificationNames {
     static let AppActivated = Notification.Name("AppActivatedNotification")
@@ -106,6 +110,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     refreshAppIconsStatus()
     setupObservers()
     killLauncherApp()
+    setToolOrderMenuState()
     
     NSApp.servicesProvider = self
     
@@ -113,6 +118,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       UnixTimeToISOString(), forName: .init("UnixTimeToISOString"))
     
     AppState.ensureDefaultsForAutoDetect()
+    testMe()
+  }
+  
+  @IBAction func newMenuItemAction(_ sender: Any) {
+    self.myWindowController.showWindow(self)
   }
   
   func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
@@ -325,8 +335,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
   
   @IBAction func toolsSortOrderDefaultAction(_ sender: Any) {
+    setAllOrderMenuToOff()
     toolsSortOrderDefaultMenuItem.state = .on
-    toolsSortOrderAlphabetMenuItem.state = .off
     AppState.setToolsSortOrder("default")
     
     NotificationCenter.default.post(
@@ -336,7 +346,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
   
   @IBAction func toolsSortOrderAlphabetAction(_ sender: Any) {
-    toolsSortOrderDefaultMenuItem.state = .off
+    setAllOrderMenuToOff()
     toolsSortOrderAlphabetMenuItem.state = .on
     AppState.setToolsSortOrder("alphabet")
     
@@ -344,6 +354,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       name: AppDelegate.NotificationNames.AppToolsOrderChanged,
       object: nil
     )
+  }
+  
+  @IBAction func toolsSortOrderCustomAction(_ sender: Any) {
+    setAllOrderMenuToOff()
+    toolsSortOrderCustomMenuItem.state = .on
+    AppState.setToolsSortOrder("custom")
+    
+    NotificationCenter.default.post(
+      name: AppDelegate.NotificationNames.AppToolsOrderChanged,
+      object: nil
+    )
+  }
+  
+  func setAllOrderMenuToOff() {
+    toolsSortOrderDefaultMenuItem.state = .off
+    toolsSortOrderAlphabetMenuItem.state = .off
+    toolsSortOrderCustomMenuItem.state = .off
+  }
+
+  func setToolOrderMenuState() {
+    toolsSortOrderDefaultMenuItem.state = .off
+    toolsSortOrderAlphabetMenuItem.state = .off
+    if AppState.getToolsSortOrder() == "alphabet" {
+      toolsSortOrderAlphabetMenuItem.state = .on
+    } else if AppState.getToolsSortOrder() == "custom" {
+      toolsSortOrderCustomMenuItem.state = .on
+    } else {
+      toolsSortOrderDefaultMenuItem.state = .on
+    }
   }
   
 }

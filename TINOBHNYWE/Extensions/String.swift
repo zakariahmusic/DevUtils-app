@@ -14,10 +14,51 @@ public class JSONParseError {
   var offset: Int
   var length: Int
   
+  enum ParseErrorCode: Int {
+    case InvalidSymbol = 1
+    case InvalidNumberFormat = 2
+    case PropertyNameExpected = 3
+    case ValueExpected = 4
+    case ColonExpected = 5
+    case CommaExpected = 6
+    case CloseBraceExpected = 7
+    case CloseBracketExpected = 8
+    case EndOfFileExpected = 9
+    case InvalidCommentToken = 10
+    case UnexpectedEndOfComment = 11
+    case UnexpectedEndOfString = 12
+    case UnexpectedEndOfNumber = 13
+    case InvalidUnicode = 14
+    case InvalidEscapeCharacter = 15
+    case InvalidCharacter = 16
+  }
+  
   init(object: NSObject) {
     self.error = object.value(forKey: "error") as? Int ?? 0
     self.offset = object.value(forKey: "offset") as? Int ?? 0
     self.length = object.value(forKey: "length") as? Int ?? 0
+  }
+  
+  func toString() -> String {
+    switch self.error {
+    case ParseErrorCode.InvalidSymbol.rawValue: return "Invalid symbol at offset: \(self.offset)"
+    case ParseErrorCode.InvalidNumberFormat.rawValue: return "Invalid number format at offset: \(self.offset)"
+    case ParseErrorCode.PropertyNameExpected.rawValue: return "Property name expected at offset: \(self.offset)"
+    case ParseErrorCode.ValueExpected.rawValue: return "Value expected at offset: \(self.offset)"
+    case ParseErrorCode.ColonExpected.rawValue: return "Colon expected at offset: \(self.offset)"
+    case ParseErrorCode.CommaExpected.rawValue: return "Comma expected at offset: \(self.offset)"
+    case ParseErrorCode.CloseBraceExpected.rawValue: return "Close brace expected at offset: \(self.offset)"
+    case ParseErrorCode.CloseBracketExpected.rawValue: return "Close bracket expected at offset: \(self.offset)"
+    case ParseErrorCode.EndOfFileExpected.rawValue: return "End of file expected at offset: \(self.offset)"
+    case ParseErrorCode.InvalidCommentToken.rawValue: return "Invalid comment token at offset: \(self.offset)"
+    case ParseErrorCode.UnexpectedEndOfComment.rawValue: return "Unexpected end of comment at offset: \(self.offset)"
+    case ParseErrorCode.UnexpectedEndOfString.rawValue: return "Unexpected end of string at offset: \(self.offset)"
+    case ParseErrorCode.UnexpectedEndOfNumber.rawValue: return "Unexpected end of number at offset: \(self.offset)"
+    case ParseErrorCode.InvalidUnicode.rawValue: return "Invalid unicode at offset: \(self.offset)"
+    case ParseErrorCode.InvalidEscapeCharacter.rawValue: return "Invalid escape character at offset: \(self.offset)"
+    case ParseErrorCode.InvalidCharacter.rawValue: return "Invalid character at offset: \(self.offset)"
+    default:  return "Unknown parse error"
+    }
   }
 }
 
@@ -95,12 +136,14 @@ extension String {
     return result?.toString()
   }
   
-  public func pretifyJSONv2(format: Int? = nil, spaces: Bool = true, errors: inout [JSONParseError]) -> String? {
+  // TODO: move this to JSONTextView
+  public func pretifyJSONv2(format: Int? = nil, spaces: Bool = true, allowWeakJSON: Bool = false, errors: inout [JSONParseError]) -> String? {
     let context = JSContext()!
     context.setObject(format, forKeyedSubscript: "tabSize" as NSString)
     context.setObject(spaces, forKeyedSubscript: "useSpace" as NSString)
     context.setObject(self, forKeyedSubscript: "input" as NSString)
-    context.evaluateScript(JSONHelper.jsonFormatterCode())
+    context.setObject(allowWeakJSON, forKeyedSubscript: "allowWeakJSON" as NSString)
+    context.evaluateScript(JSHelpers.readJSONFormatter())
 
     var result: JSValue?
     
@@ -132,7 +175,15 @@ extension String {
     }
     
     // Get syntax errors
-    if let errs = context.evaluateScript("var errors = []; json.parse(result, errors); errors;") {
+    if let errs = context.evaluateScript("""
+      var errors = [];
+      json.parse(
+        result,
+        errors,
+        { allowTrailingComma: allowWeakJSON, disallowComments: !allowWeakJSON }
+      );
+      errors;
+    """) {
       if let objArray = errs.toArray() as? [NSObject] {
         (objArray.map({ (obj) -> JSONParseError in
           return JSONParseError.init(object: obj)
@@ -197,13 +248,5 @@ extension String {
   
   var isInt: Bool {
       return Int(self) != nil
-  }
-  
-  func replaceSmartQuotes() -> String {
-    return self
-      .replacingOccurrences(of: "‘", with: "'")
-      .replacingOccurrences(of: "’", with: "'")
-      .replacingOccurrences(of: "“", with: "\"")
-      .replacingOccurrences(of: "”", with: "\"")
   }
 }

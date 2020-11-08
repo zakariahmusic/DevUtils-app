@@ -39,7 +39,18 @@ extension NSTextView {
     self.selectAll(self)
     self.insertText(
       value,
-      replacementRange: .init(location: 0, length: self.string.count)
+      replacementRange: .init(location: 0, length: self.textStorage?.length ?? 0)
     )
+  }
+  
+  func copyToClipboardFormatted() {
+    NSPasteboard.general.clearContents()
+    NSPasteboard.general.declareTypes([.string], owner: self)
+    NSPasteboard.general.writeObjects([self.attributedString()])
+  }
+  
+  func copyToClipboard() {
+    NSPasteboard.general.clearContents()
+    NSPasteboard.general.setString(self.string, forType: .string)
   }
 }

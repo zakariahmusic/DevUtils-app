@@ -9,12 +9,15 @@
 import Cocoa
 import JavaScriptCore
 
-class JSONFormatterViewController: ToolViewController, NSTextViewDelegate {
+class JSONFormatterViewController: ToolViewController, NSTextViewDelegate, NSTableViewDataSource, NSTableViewDelegate {
   @IBOutlet weak var optionPopUpButton: NSPopUpButton!
-  @IBOutlet var inputTextView: NSTextView!
+  @IBOutlet var inputTextView: JSONTextView!
   @IBOutlet var outputTextView: JSONTextView!
+  @IBOutlet weak var errorTableScrollView: NSScrollView!
+  @IBOutlet weak var errorTableView: NSTableView!
   
   var settingViewController: JSONFormatterSettingViewController!
+  var errors: [JSONParseError] = []
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -25,6 +28,8 @@ class JSONFormatterViewController: ToolViewController, NSTextViewDelegate {
       activate(input: pendingInput!)
       pendingInput = nil
     }
+    
+    errorTableView.sizeLastColumnToFit()
   }
   
   override func activate(input: ActivationValue) {
@@ -58,12 +63,7 @@ class JSONFormatterViewController: ToolViewController, NSTextViewDelegate {
         return false
     }
     
-    guard let replaceQuotes = NSUserDefaultsController.shared.value(
-      forKeyPath: "values.json-formatter-replace-smart-quotes") as? Bool else {
-        return true
-    }
-    
-    let inputString = replaceQuotes ? input.replaceSmartQuotes() : input
+    let inputString = input
     
     if !autoActivate {
       log.debug("JSONFormatter auto activate disabled")
@@ -92,7 +92,7 @@ class JSONFormatterViewController: ToolViewController, NSTextViewDelegate {
   
   static func ensureDefaults(_ forceDefaults: Bool = false) {
     AppState.ensureDefault("values.json-formatter-auto-activate-valid-json", true, forceDefaults)
-    AppState.ensureDefault("values.json-formatter-replace-smart-quotes", true, forceDefaults)
+    AppState.ensureDefault("values.json-formatter-allow-trailing-commas-comments", false, forceDefaults)
   }
   
   @IBAction func settingButtonAction(_ sender: NSButton) {
@@ -116,32 +116,9 @@ class JSONFormatterViewController: ToolViewController, NSTextViewDelegate {
   }
   
   @IBAction func loadFileButtonAction(_ sender: Any) {
-    let dialog = NSOpenPanel();
-    
-    dialog.title                   = "Select a JSON file"
-    dialog.showsResizeIndicator    = true
-    dialog.showsHiddenFiles        = true
-    dialog.canChooseDirectories    = true
-    dialog.canCreateDirectories    = false
-    dialog.allowsMultipleSelection = false
-    
-    if (dialog.runModal() == NSApplication.ModalResponse.OK) {
-      if let url = dialog.url {
-        do {
-          inputTextView.string = try String(contentsOf: url, encoding: .utf8)
-          refresh()
-        } catch {
-          let alert = NSAlert()
-          alert.messageText = "Cannot read the file."
-          alert.informativeText = "The file cannot be read because of this reason: " + error.localizedDescription
-          alert.alertStyle = .warning
-          alert.addButton(withTitle: "OK")
-          alert.runModal()
-        }
-      }
-    } else {
-      // User clicked on "Cancel"
-      return
+    if let fileContent = GeneralHelpers.loadFileAsUTF8(title: "Select a JSON file") {
+      inputTextView.string = fileContent
+      refresh()
     }
   }
   
@@ -155,8 +132,11 @@ class JSONFormatterViewController: ToolViewController, NSTextViewDelegate {
   }
   
   func refresh() {
+    self.errors = []
+    
     if inputTextView.string == "" {
       outputTextView.string = ""
+      refreshError()
       return
     }
     var format: Int? = nil
@@ -172,12 +152,27 @@ class JSONFormatterViewController: ToolViewController, NSTextViewDelegate {
       spaces = false
     }
     
-    let replaceQuotes = NSUserDefaultsController.shared.value(
-      forKeyPath: "values.json-formatter-replace-smart-quotes") as? Bool ?? true
+    let allowWeakJSON = NSUserDefaultsController.shared.value(
+      forKeyPath: "values.json-formatter-allow-trailing-commas-comments") as? Bool ?? false
     
-    let inputString = replaceQuotes ? inputTextView.string.replaceSmartQuotes() : inputTextView.string
+    let _ = outputTextView.setJSONString(
+      inputTextView.string,
+      format: format,
+      spaces: spaces,
+      allowWeakJSON: allowWeakJSON
+    )
     
-    outputTextView.setJSONString(inputString, format: format, spaces: spaces)
+    self.errors = inputTextView.validateJSON(allowWeakJSON: allowWeakJSON)
+    refreshError()
+  }
+  
+  func refreshError() {
+    if self.errors.count > 0 {
+      errorTableScrollView.isHidden = false
+      errorTableView.reloadData()
+    } else {
+      errorTableScrollView.isHidden = true
+    }
   }
   
   @IBAction func optionPopUpButtonAction(_ sender: Any) {
@@ -194,6 +189,42 @@ class JSONFormatterViewController: ToolViewController, NSTextViewDelegate {
   @IBAction func clearButtonAction(_ sender: Any) {
     inputTextView.setStringRetrainUndo("")
     refresh()
+  }
+  
+  func numberOfRows(in tableView: NSTableView) -> Int {
+    return self.errors.count
+  }
+  
+  func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+    guard let err = self.errors[safe: row] else {
+      return nil
+    }
+    
+    if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "jsonErrorDescription"), owner: nil) as? NSTableCellView {
+      cell.textField?.stringValue = err.toString()
+      cell.textField?.textColor = .systemRed
+      return cell
+    }
+    
+    return nil
+  }
+  
+  @IBAction func errorTableViewAction(_ sender: Any) {
+    guard let selectedIndex = errorTableView.selectedRowIndexes.first else {
+      inputTextView.setSelectedRange(.init(location: 0, length: 0))
+      return
+    }
+    
+    guard let error = self.errors[safe: selectedIndex] else {
+      log.error("error table index \(selectedIndex) is selected but couldn't found in self.errors.")
+      return
+    }
+    let range = NSRange.init(
+      location: error.offset == inputTextView.string.count ? error.offset - 1 : error.offset,
+      length: error.length == 0 ? 1 : error.length
+    )
+    inputTextView.scrollRangeToVisible(range)
+    inputTextView.showFindIndicator(for: range)
   }
   
 }

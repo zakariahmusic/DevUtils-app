@@ -72,7 +72,7 @@
                                     <items>
                                         <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
                                             <connections>
-                                                <action selector="newDocument:" target="Ady-hI-5gd" id="4Si-XN-c54"/>
+                                                <action selector="newMenuItemAction:" target="Voe-Tx-rLC" id="ZH2-Lz-AJB"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
@@ -369,6 +369,12 @@
                                                             <action selector="toolsSortOrderAlphabetAction:" target="Voe-Tx-rLC" id="3jT-k3-RVK"/>
                                                         </connections>
                                                     </menuItem>
+                                                    <menuItem title="Custom" id="Ixp-PD-erV">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="toolsSortOrderCustomAction:" target="Voe-Tx-rLC" id="f7d-Dk-Wht"/>
+                                                        </connections>
+                                                    </menuItem>
                                                 </items>
                                             </menu>
                                         </menuItem>
@@ -379,6 +385,12 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
                                     <items>
+                                        <menuItem title="Open Main Window" id="i7c-wJ-Vsn">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="newMenuItemAction:" target="Voe-Tx-rLC" id="Ibr-59-O4c"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Minimize" keyEquivalent="m" id="OY7-WF-poV">
                                             <connections>
                                                 <action selector="performMiniaturize:" target="Ady-hI-5gd" id="VwT-WD-YPe"/>
@@ -421,6 +433,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="DevUtils" customModuleProvider="target">
                     <connections>
                         <outlet property="toolsSortOrderAlphabetMenuItem" destination="4eZ-p7-3OG" id="AVx-U7-0T7"/>
+                        <outlet property="toolsSortOrderCustomMenuItem" destination="Ixp-PD-erV" id="HQK-O3-5E8"/>
                         <outlet property="toolsSortOrderDefaultMenuItem" destination="HLd-ph-pwo" id="7eR-Ng-2G4"/>
                     </connections>
                 </customObject>
@@ -481,25 +494,36 @@
             <objects>
                 <viewController id="56V-C1-g2w" customClass="OutlineViewController" customModule="DevUtils" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bC8-q3-lYD" customClass="NSVisualEffectView">
-                        <rect key="frame" x="0.0" y="0.0" width="280" height="436"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="440"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T2m-9A-hAY">
-                                <rect key="frame" x="0.0" y="0.0" width="280" height="422"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="412"/>
                                 <subviews>
+                                    <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nz8-dw-lkb">
+                                        <rect key="frame" x="20" y="390" width="260" height="22"/>
+                                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="mE4-1S-mKL">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </searchFieldCell>
+                                        <connections>
+                                            <outlet property="delegate" destination="56V-C1-g2w" id="zsm-rC-3ii"/>
+                                        </connections>
+                                    </searchField>
                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOH-gO-Axy">
-                                        <rect key="frame" x="0.0" y="75" width="280" height="347"/>
+                                        <rect key="frame" x="0.0" y="75" width="300" height="307"/>
                                         <clipView key="contentView" drawsBackground="NO" id="bDY-Pu-tgv">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="347"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="307"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="aoo-DF-9T7" id="oRB-zp-fLr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="280" height="347"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="307"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn width="277" minWidth="40" maxWidth="1000" id="aoo-DF-9T7">
+                                                        <tableColumn width="297" minWidth="40" maxWidth="1000" id="aoo-DF-9T7">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -513,7 +537,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView identifier="ItemCell" id="Cac-LM-I6w" customClass="ToolOutlineTableCellView" customModule="DevUtils" customModuleProvider="target">
-                                                                    <rect key="frame" x="1" y="1" width="277" height="17"/>
+                                                                    <rect key="frame" x="1" y="1" width="297" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ky3-de-nle">
@@ -580,7 +604,7 @@
                                         </scroller>
                                     </scrollView>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TUw-wd-mor">
-                                        <rect key="frame" x="60" y="39" width="161" height="32"/>
+                                        <rect key="frame" x="70" y="39" width="161" height="32"/>
                                         <buttonCell key="cell" type="push" title="Send Feedback" bezelStyle="rounded" image="NSTouchBarMailTemplate" imagePosition="leading" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ERU-kc-qpr">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -590,7 +614,7 @@
                                         </connections>
                                     </button>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ko1-bZ-iKj">
-                                        <rect key="frame" x="59" y="10" width="163" height="28"/>
+                                        <rect key="frame" x="69" y="10" width="163" height="28"/>
                                         <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" alignment="center" id="fAY-OT-pfD">
                                             <font key="font" metaFont="smallSystem"/>
                                             <string key="title">Developer Utilities for macOS
@@ -602,14 +626,19 @@ https://DevUtils.app</string>
                                 </subviews>
                                 <edgeInsets key="edgeInsets" left="0.0" right="0.0" top="0.0" bottom="10"/>
                                 <constraints>
-                                    <constraint firstItem="SOH-gO-Axy" firstAttribute="top" secondItem="T2m-9A-hAY" secondAttribute="top" id="q4h-lz-p7m"/>
+                                    <constraint firstItem="nz8-dw-lkb" firstAttribute="leading" secondItem="T2m-9A-hAY" secondAttribute="leading" constant="20" id="MSJ-sR-ihb"/>
+                                    <constraint firstAttribute="trailing" secondItem="SOH-gO-Axy" secondAttribute="trailing" id="O9l-cx-cWv"/>
+                                    <constraint firstItem="SOH-gO-Axy" firstAttribute="leading" secondItem="T2m-9A-hAY" secondAttribute="leading" id="WAG-Ab-bvV"/>
+                                    <constraint firstAttribute="trailing" secondItem="nz8-dw-lkb" secondAttribute="trailing" constant="20" id="WHO-me-VCK"/>
                                 </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -629,25 +658,26 @@ https://DevUtils.app</string>
                         <outlet property="outlineScrollView" destination="SOH-gO-Axy" id="uKv-M2-El3"/>
                         <outlet property="outlineView" destination="oRB-zp-fLr" id="Bac-B7-myf"/>
                         <outlet property="toolOutlineView" destination="bC8-q3-lYD" id="ChO-6G-lw9"/>
+                        <outlet property="toolSearchField" destination="nz8-dw-lkb" id="ax8-wD-Dtk"/>
                         <outlet property="versionLabel" destination="ko1-bZ-iKj" id="h0d-Zb-7jU"/>
                     </connections>
                 </viewController>
                 <customObject id="SKb-uj-2bD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6" y="1422.5"/>
+            <point key="canvasLocation" x="6" y="1422"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Tz0-lz-Vjr">
             <objects>
                 <viewController id="NVE-sc-k9I" customClass="DetailViewController" customModule="DevUtils" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="12m-Er-xtr">
-                        <rect key="frame" x="0.0" y="0.0" width="808" height="497"/>
+                        <rect key="frame" x="0.0" y="0.0" width="828" height="609"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="KNP-Vh-tqf">
-                                <rect key="frame" x="0.0" y="465" width="808" height="32"/>
+                                <rect key="frame" x="0.0" y="577" width="828" height="32"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X1k-Qm-cL5">
-                                        <rect key="frame" x="268" y="8" width="273" height="16"/>
+                                        <rect key="frame" x="278" y="8" width="273" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="DevUtils.app - Developer Utilities for MacOS" id="6ty-fd-xQI">
                                             <font key="font" usesAppearanceFont="YES"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -662,7 +692,7 @@ https://DevUtils.app</string>
                                 </constraints>
                             </customView>
                             <customView identifier="ContentView" translatesAutoresizingMaskIntoConstraints="NO" id="slF-5s-yqW">
-                                <rect key="frame" x="0.0" y="0.0" width="808" height="465"/>
+                                <rect key="frame" x="0.0" y="0.0" width="828" height="577"/>
                             </customView>
                         </subviews>
                         <constraints>
@@ -682,7 +712,7 @@ https://DevUtils.app</string>
                 <customObject id="l9K-Nf-NAq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="zon-bv-2os"/>
             </objects>
-            <point key="canvasLocation" x="570" y="1423.5"/>
+            <point key="canvasLocation" x="580" y="1479.5"/>
         </scene>
     </scenes>
     <resources>

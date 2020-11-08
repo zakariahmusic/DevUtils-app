@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate {
+class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate, NSTextFieldDelegate {
   
   class State {
     var selectedTool: Tool?
@@ -27,6 +27,7 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
   @IBOutlet weak var outlineView: NSOutlineView!
   @IBOutlet weak var outlineScrollView: NSScrollView!
   @IBOutlet weak var versionLabel: NSTextField!
+  @IBOutlet weak var toolSearchField: NSSearchField!
   
   var enableNotificationOnChange: Bool = true
   var state = State.emptyState()
@@ -46,9 +47,9 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
     https://DevUtils.app
     """
     
-
     refreshTools()
     outlineView.reloadData()
+    outlineView.registerForDraggedTypes([.init("public.data")])
     
     NotificationCenter.default.addObserver(
       self,
@@ -63,20 +64,58 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
       object: nil)
   }
   
+  func controlTextDidChange(_ obj: Notification) {
+    log.debug("Search: \(toolSearchField.stringValue)")
+    refreshTools()
+    outlineView.reloadData()
+  }
+  
+  func searchMatch(_ tool: Tool) -> Bool {
+    let searchTerm = toolSearchField.stringValue.lowercased()
+    if searchTerm == "" {
+      return true
+    }
+    return tool.name.lowercased().contains(searchTerm)
+  }
+  
   func refreshTools() {
-    tools = AppState.tools.map { $0 } // shallow copy
+    var tools = AppState.tools.map { $0 } // shallow copy
     
-    if AppState.getToolsSortOrder() == "alphabet" {
+    if AppState.getToolsSortOrder() == "custom" {
+      // Notes: Keep the order when new tools are added/removed in the future
+      if let orderedNames = AppState.getOrderedNames() {
+        tools.sort { (t1, t2) -> Bool in
+          let i1 = orderedNames.firstIndex { (name) -> Bool in
+            return t1.name == name
+          }
+          if i1 == nil {
+            return false
+          }
+          let i2 = orderedNames.firstIndex { (name) -> Bool in
+            return t2.name == name
+          }
+          if i2 == nil {
+            return false
+          }
+          return i1! < i2!
+        }
+      }
+    } else if AppState.getToolsSortOrder() == "alphabet" {
       tools.sort { (t1, t2) -> Bool in
         return t2.name.compare(t1.name).rawValue > 0
       }
     }
+    
+    // search keyword
+    // TODO: fuzzy search, UI text search (like in macOS's Preferences panel)
+    tools = tools.filter{ searchMatch($0) }
+
+    self.tools = tools
   }
   
   @objc
   func handleToolsOrderChanged(_ notification: Notification) {
-    refreshTools()
-    outlineView.reloadData()
+    refreshList()
   }
 
   @objc
@@ -183,5 +222,67 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
     } else {
       log.debug("Email client cannot be opened")
     }
+  }
+  
+  func saveCustomOrder() {
+    let orderedNames = self.tools.map{ $0.name }
+    AppState.setOrderedNames(orderedNames)
+    if AppState.getToolsSortOrder() != "custom" {
+      (NSApp.delegate as! AppDelegate).toolsSortOrderCustomAction(self)
+    }
+    refreshList()
+  }
+  
+  func refreshList() {
+    refreshTools()
+    outlineView.reloadData()
+  }
+  
+  func outlineView(_ outlineView: NSOutlineView, acceptDrop info: NSDraggingInfo, item: Any?, childIndex index: Int) -> Bool {
+    let pb = info.draggingPasteboard
+    
+    guard let toolName = pb.string(forType: .init(rawValue: "public.data")),
+      let toolIndex = self.tools.firstIndex(where: { (t) -> Bool in
+        return t.name == toolName
+      }) else {
+        return false
+    }
+    
+    self.tools.move(from: toolIndex, to: index)
+    saveCustomOrder()
+    return true
+  }
+  
+  func outlineView(_ outlineView: NSOutlineView, pasteboardWriterForItem item: Any) -> NSPasteboardWriting? {
+    let pp = NSPasteboardItem()
+    
+    if let tool = item as? Tool {
+      pp.setString( tool.name, forType: .init(rawValue: "public.data") )
+      log.debug( "pb write \(tool.name)")
+    } else {
+      log.debug( "pb write, not a tool item \(item)")
+    }
+    
+    return pp
+  }
+  
+  func outlineView(_ outlineView: NSOutlineView, validateDrop info: NSDraggingInfo, proposedItem item: Any?, proposedChildIndex index: Int) -> NSDragOperation {
+    
+    if toolSearchField.stringValue.count > 0 {
+      // No drag during search
+      return []
+    }
+    
+    if item != nil {
+      // Do not allow drop to another tool
+      // May add "folder" in the future
+      return []
+    }
+    
+    if index == -1 {
+      // Do not allow drag to the "background"
+      return []
+    }
+    return .move
   }
 }
