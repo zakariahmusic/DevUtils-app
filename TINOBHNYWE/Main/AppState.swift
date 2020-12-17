@@ -167,11 +167,19 @@ class AppState {
     implementation: ERBFormatterTool.self
   )
   
+  static var RegexTesterTool = Tool.init(
+    id: "regextester",
+    name: "RegExp Tester",
+    image: NSImage(named: "magic")!,
+    viewControllerType: RegexTesterViewController.self
+  )
+  
   static var tools: [Tool] = [
     UnixTimeTool,
-    URLEncodeTool,
     JSONFormatterTool,
     JWTTool,
+    RegexTesterTool,
+    URLEncodeTool,
     Base64EncodeTool,
     QueryStringParserTool,
     HTMLEncodeTool,
@@ -253,15 +261,21 @@ class AppState {
     }
   }
   
-  static func ensureDefaultsForAutoDetect() {
+  static func ensureAppDefaults() {
     ensureDefault("values.auto-use-clipboard-content-when-activate", true, false)
     ensureDefault("values.auto-clipboard-global-hotkey", true, false)
     ensureDefault("values.auto-clipboard-status-bar-icon", true, false)
+    ensureDefault("values.app-settings-theme", "System", false)
   }
   
   static func getAutoClipboardGlobalHotKey() -> Bool {
     return NSUserDefaultsController.shared.value(
       forKeyPath: "values.auto-clipboard-global-hotkey") as? Bool ?? true
+  }
+  
+  static func getUserPreferredTheme() -> String {
+    return NSUserDefaultsController.shared.value(
+      forKeyPath: "values.app-settings-theme") as? String ?? "System"
   }
   
   static func getAutoClipboardStatusBarIcon() -> Bool {
@@ -320,4 +334,14 @@ class AppState {
     UserDefaults.standard.set(value, forKey: "custom-tools-ordered-names")
   }
   
+  static func getAppBundleName() -> String {
+    var bundleName = "Direct download"
+    #if BUNDLE_APPSTORE
+    bundleName = "App Store"
+    #elseif BUNDLE_SETAPP
+    bundleName = "Setapp"
+    #endif
+    
+    return bundleName
+  }
 }

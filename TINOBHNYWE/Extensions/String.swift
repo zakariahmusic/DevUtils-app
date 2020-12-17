@@ -249,4 +249,8 @@ extension String {
   var isInt: Bool {
       return Int(self) != nil
   }
+  
+  var fullRange: NSRange {
+    return NSRange(self.startIndex ..< self.endIndex, in: self)
+  }
 }

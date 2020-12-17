@@ -143,6 +143,9 @@ class TextDiffViewController: ToolViewController, NSTextViewDelegate {
     if getOutputMode() == .formattedText {
       d.forEach({ (diff) in
         let item = diff as! Diff
+        
+        // TODO: this will not work well for strings with multi bytes characters
+        // like emojis.
         let length = item.text.lengthOfBytes(using: .utf8)
         
         if item.operation == DIFF_DELETE {
@@ -207,13 +210,14 @@ class TextDiffViewController: ToolViewController, NSTextViewDelegate {
   func focusDiffRange() {
     // log.debug("currentDiffRangesIndex: \(currentDiffRangesIndex)")
     if let range = diffRanges[safe: currentDiffRangesIndex] {
+      diffTextView.scrollRangeToVisible(range)
       diffTextView.showFindIndicator(for: range)
     }
   }
   
   func addedAttrStr(content: String) -> NSMutableAttributedString {
     var attributes = [
-      NSAttributedString.Key.backgroundColor: NSColor.green as Any,
+      NSAttributedString.Key.backgroundColor: NSColor.systemGreen as Any,
       NSAttributedString.Key.foregroundColor: NSColor.black as Any,
       NSAttributedString.Key.underlineStyle: 1 as Any
     ]
@@ -225,7 +229,7 @@ class TextDiffViewController: ToolViewController, NSTextViewDelegate {
   
   func deletedAttrStr(content: String) -> NSMutableAttributedString {
     var attributes = [
-      NSAttributedString.Key.backgroundColor: NSColor.red as Any,
+      NSAttributedString.Key.backgroundColor: NSColor.systemRed as Any,
       NSAttributedString.Key.foregroundColor: NSColor.black as Any,
       NSAttributedString.Key.strikethroughStyle: 1 as Any
     ]

@@ -128,6 +128,244 @@
 		A5D4A3A22488ED0D008ECAE9 /* JWTSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5D4A3A02488ED0D008ECAE9 /* JWTSettingViewController.xib */; };
 		A5D4A3A424894773008ECAE9 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4A3A324894773008ECAE9 /* Window.swift */; };
 		A5D4A3A6248947F0008ECAE9 /* PreferenceWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4A3A5248947F0008ECAE9 /* PreferenceWindow.swift */; };
+		A5D735AD2549084400F3C28D /* RegexTesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D735AB2549084400F3C28D /* RegexTesterViewController.swift */; };
+		A5D735AE2549084400F3C28D /* RegexTesterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5D735AC2549084400F3C28D /* RegexTesterViewController.xib */; };
+		A5D735B12555476D00F3C28D /* RegexTesterSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D735AF2555476D00F3C28D /* RegexTesterSettingViewController.swift */; };
+		A5D735B22555476D00F3C28D /* RegexTesterSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5D735B02555476D00F3C28D /* RegexTesterSettingViewController.xib */; };
+		A5D735BF2555802A00F3C28D /* FormatterTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E4825346A9A000067BF /* FormatterTool.swift */; };
+		A5D735C02555802A00F3C28D /* OutputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A504B9A424729DB9000A91D7 /* OutputTextField.swift */; };
+		A5D735C12555802A00F3C28D /* HotkeyRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A513041E24742AC10023D0CF /* HotkeyRecorder.swift */; };
+		A5D735C22555802A00F3C28D /* ToolSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A26E3C2494DBC400DB32A7 /* ToolSettingViewController.swift */; };
+		A5D735C32555802A00F3C28D /* ToolOutlineTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCEAF924B5853F00C38FB1 /* ToolOutlineTableCellView.swift */; };
+		A5D735C42555802A00F3C28D /* UnixTimeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52E1E90248009A20027F8AF /* UnixTimeSettingViewController.swift */; };
+		A5D735C52555802A00F3C28D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57D2C45253805380069A8FD /* Array.swift */; };
+		A5D735C62555802A00F3C28D /* JSONTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5114FDC24821C5B001A8DB5 /* JSONTextView.swift */; };
+		A5D735C72555802A00F3C28D /* UnixTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CB7B324701AA4006A468E /* UnixTimeViewController.swift */; };
+		A5D735C82555802A00F3C28D /* CSSFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E59253487D1000067BF /* CSSFormatter.swift */; };
+		A5D735C92555802A00F3C28D /* Header+FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4A39D2485594B008ECAE9 /* Header+FromJSON.swift */; };
+		A5D735CA2555802A00F3C28D /* ToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D29DA247B6A1B00B1E96F /* ToolViewController.swift */; };
+		A5D735CB2555802A00F3C28D /* HTMLEntityEndecodeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5861F092494771800EDC5AB /* HTMLEntityEndecodeTool.swift */; };
+		A5D735CC2555802A00F3C28D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A509FEC62472D0B8005ABCC2 /* CustomView.swift */; };
+		A5D735CD2555802A00F3C28D /* NSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB5A032472CBD200268B3A /* NSView.swift */; };
+		A5D735CE2555802A00F3C28D /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CB7A72470105A006A468E /* SplitViewController.swift */; };
+		A5D735CF2555802A00F3C28D /* SCSSFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E5D25348838000067BF /* SCSSFormatter.swift */; };
+		A5D735D02555802A00F3C28D /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5861EF1248FDC5D00EDC5AB /* URL.swift */; };
+		A5D735D12555802A00F3C28D /* HTMLFormatterTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E4A25346CD2000067BF /* HTMLFormatterTool.swift */; };
+		A5D735D22555802A00F3C28D /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CB7A3246FE06D006A468E /* Tool.swift */; };
+		A5D735D32555802A00F3C28D /* HTMLEntitySettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A26E3E2494DCD800DB32A7 /* HTMLEntitySettingViewController.swift */; };
+		A5D735D42555802A00F3C28D /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C95E3C2524302F00BED198 /* UUID.swift */; };
+		A5D735D52555802A00F3C28D /* BackslashEscapeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7D01224E38DCD001D762B /* BackslashEscapeSettingViewController.swift */; };
+		A5D735D62555802A00F3C28D /* Base64EndecodeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F534424A9E9FB00DC4C3E /* Base64EndecodeTool.swift */; };
+		A5D735D72555802A00F3C28D /* JSHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5640070252F5F5200273357 /* JSHelpers.swift */; };
+		A5D735D82555802A00F3C28D /* JSONFormatterSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52E1EA024820D340027F8AF /* JSONFormatterSettingViewController.swift */; };
+		A5D735D92555802A00F3C28D /* ERBFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E65253488DD000067BF /* ERBFormatter.swift */; };
+		A5D735DA2555802A00F3C28D /* RegexTesterSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D735AF2555476D00F3C28D /* RegexTesterSettingViewController.swift */; };
+		A5D735DB2555802A00F3C28D /* GeneralHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C95E3A25238F8700BED198 /* GeneralHelpers.swift */; };
+		A5D735DC2555802A00F3C28D /* LESSFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E5B253487F4000067BF /* LESSFormatter.swift */; };
+		A5D735DD2555802A00F3C28D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CB7A9247014BD006A468E /* AppState.swift */; };
+		A5D735DE2555802A00F3C28D /* QueryStringParserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5861EF4248FE09A00EDC5AB /* QueryStringParserViewController.swift */; };
+		A5D735DF2555802A00F3C28D /* URLEncodeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52E1E97248203AC0027F8AF /* URLEncodeSettingViewController.swift */; };
+		A5D735E02555802A00F3C28D /* ToolImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5861F0B2494861700EDC5AB /* ToolImpl.swift */; };
+		A5D735E12555802A00F3C28D /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CB79A246EED39006A468E /* WindowController.swift */; };
+		A5D735E22555802A00F3C28D /* SharedFormatterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E44253467CC000067BF /* SharedFormatterViewController.swift */; };
+		A5D735E32555802A00F3C28D /* JSFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E5F25348865000067BF /* JSFormatter.swift */; };
+		A5D735E42555802A00F3C28D /* FormatToolOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E4C25347273000067BF /* FormatToolOptions.swift */; };
+		A5D735E52555802A00F3C28D /* UnixTimeToISO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52E1E952480176D0027F8AF /* UnixTimeToISO.swift */; };
+		A5D735E62555802A00F3C28D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CB7A5246FF0CB006A468E /* DetailViewController.swift */; };
+		A5D735E72555802A00F3C28D /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5130420247533770023D0CF /* PreferencesViewController.swift */; };
+		A5D735E82555802A00F3C28D /* TestCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A509FECA2472D320005ABCC2 /* TestCustomView.swift */; };
+		A5D735E92555802A00F3C28D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59FBE6124362BCE00C5C9BF /* AppDelegate.swift */; };
+		A5D735EA2555802A00F3C28D /* SharedEndecodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5861F032494706100EDC5AB /* SharedEndecodeViewController.swift */; };
+		A5D735EB2555802A00F3C28D /* PreferenceWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4A3A5248947F0008ECAE9 /* PreferenceWindow.swift */; };
+		A5D735EC2555802A00F3C28D /* TextDiffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5075AF9252CB61500F8A320 /* TextDiffViewController.swift */; };
+		A5D735ED2555802A00F3C28D /* RegexTesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D735AB2549084400F3C28D /* RegexTesterViewController.swift */; };
+		A5D735EE2555802A00F3C28D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572CD7C2470EBC300394087 /* Date.swift */; };
+		A5D735EF2555802A00F3C28D /* JWTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CB7AD247015DA006A468E /* JWTViewController.swift */; };
+		A5D735F02555802A00F3C28D /* JSONFormatterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E11F62479258900ACF76D /* JSONFormatterViewController.swift */; };
+		A5D735F12555802A00F3C28D /* Base64SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A557A10E248CA97200BD90C3 /* Base64SettingViewController.swift */; };
+		A5D735F22555802A00F3C28D /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A513040D247418940023D0CF /* PreferencesWindowController.swift */; };
+		A5D735F32555802A00F3C28D /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D29DC247BFC8E00B1E96F /* NSTextView.swift */; };
+		A5D735F42555802A00F3C28D /* BackslashEscapeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7D01024E38928001D762B /* BackslashEscapeTool.swift */; };
+		A5D735F52555802A00F3C28D /* IntergerFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56A9CCE25237FE500ECF032 /* IntergerFormatter.swift */; };
+		A5D735F62555802A00F3C28D /* URLEndecodeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F534624AAC50200DC4C3E /* URLEndecodeTool.swift */; };
+		A5D735F72555802A00F3C28D /* QueryStringParserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5861EF82491290100EDC5AB /* QueryStringParserSettingViewController.swift */; };
+		A5D735F82555802A00F3C28D /* EndecodeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5861F07249473B500EDC5AB /* EndecodeTool.swift */; };
+		A5D735F92555802A00F3C28D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E11F42478FE3500ACF76D /* String.swift */; };
+		A5D735FA2555802A00F3C28D /* OutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CB79F246FDDA2006A468E /* OutlineViewController.swift */; };
+		A5D735FB2555802A00F3C28D /* UUIDToolSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C95E522527303D00BED198 /* UUIDToolSettingViewController.swift */; };
+		A5D735FC2555802A00F3C28D /* PrettydiffFormatterTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E4E25347C14000067BF /* PrettydiffFormatterTool.swift */; };
+		A5D735FD2555802A00F3C28D /* HTMLPreviewSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BFE4252A167700CA37E6 /* HTMLPreviewSettingViewController.swift */; };
+		A5D735FE2555802A00F3C28D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A513042624757CF30023D0CF /* WelcomeViewController.swift */; };
+		A5D735FF2555802A00F3C28D /* HighlightedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E3F2532B3C2000067BF /* HighlightedTextView.swift */; };
+		A5D736002555802A00F3C28D /* XMLFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E6125348896000067BF /* XMLFormatter.swift */; };
+		A5D736012555802A00F3C28D /* HTMLPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BFE02529F95200CA37E6 /* HTMLPreviewViewController.swift */; };
+		A5D736022555802A00F3C28D /* JWTSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4A39F2488ED0D008ECAE9 /* JWTSettingViewController.swift */; };
+		A5D736032555802A00F3C28D /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4A3A324894773008ECAE9 /* Window.swift */; };
+		A5D736042555802A00F3C28D /* UUIDToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56A9CC92523795A00ECF032 /* UUIDToolViewController.swift */; };
+		A5D736052555802A00F3C28D /* WrapableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E412532BD90000067BF /* WrapableTextView.swift */; };
+		A5D736072555802A00F3C28D /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5130415247422AB0023D0CF /* ShortcutRecorder.framework */; };
+		A5D736082555802A00F3C28D /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A5D735B62555802A00F3C28D /* SwiftDate */; };
+		A5D736092555802A00F3C28D /* HTMLEntities in Frameworks */ = {isa = PBXBuildFile; productRef = A5D735BA2555802A00F3C28D /* HTMLEntities */; };
+		A5D7360A2555802A00F3C28D /* SwiftJWT in Frameworks */ = {isa = PBXBuildFile; productRef = A5D735B82555802A00F3C28D /* SwiftJWT */; };
+		A5D7360B2555802A00F3C28D /* DiffMatchPatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A500D6BB252B795E00308FC6 /* DiffMatchPatch.framework */; };
+		A5D7360C2555802A00F3C28D /* Highlightr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5114FD7248214F6001A8DB5 /* Highlightr.framework */; };
+		A5D7360D2555802A00F3C28D /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = A5D735B42555802A00F3C28D /* HotKey */; };
+		A5D7360F2555802A00F3C28D /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = A5D735BC2555802A00F3C28D /* SwiftyBeaver */; };
+		A5D736112555802A00F3C28D /* JWTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A54CB7AE247015DA006A468E /* JWTViewController.xib */; };
+		A5D736122555802A00F3C28D /* RegexTesterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5D735AC2549084400F3C28D /* RegexTesterViewController.xib */; };
+		A5D736132555802A00F3C28D /* UUIDToolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A56A9CCA2523795A00ECF032 /* UUIDToolViewController.xib */; };
+		A5D736142555802A00F3C28D /* TextDiffViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5075AFA252CB61500F8A320 /* TextDiffViewController.xib */; };
+		A5D736152555802A00F3C28D /* BackslashEscapeSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5B7D01324E38DCD001D762B /* BackslashEscapeSettingViewController.xib */; };
+		A5D736162555802A00F3C28D /* UnixTimeSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52E1E91248009A20027F8AF /* UnixTimeSettingViewController.xib */; };
+		A5D736172555802A00F3C28D /* HTMLPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A599BFE12529F95200CA37E6 /* HTMLPreviewViewController.xib */; };
+		A5D736182555802A00F3C28D /* UnixTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A54CB7B424701AA4006A468E /* UnixTimeViewController.xib */; };
+		A5D736192555802A00F3C28D /* JSONFormatterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A57E11F72479258900ACF76D /* JSONFormatterViewController.xib */; };
+		A5D7361A2555802A00F3C28D /* JWTSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5D4A3A02488ED0D008ECAE9 /* JWTSettingViewController.xib */; };
+		A5D7361B2555802A00F3C28D /* QueryStringParserSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5861EF92491290100EDC5AB /* QueryStringParserSettingViewController.xib */; };
+		A5D7361C2555802A00F3C28D /* prettydiff.browser.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A5C15E3B2532A4DB000067BF /* prettydiff.browser.min.js */; };
+		A5D7361D2555802A00F3C28D /* HotkeyRecorder.xib in Resources */ = {isa = PBXBuildFile; fileRef = A513041C24742AB20023D0CF /* HotkeyRecorder.xib */; };
+		A5D7361E2555802A00F3C28D /* Base64SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A557A10F248CA97200BD90C3 /* Base64SettingViewController.xib */; };
+		A5D7361F2555802A00F3C28D /* SharedFormatterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5C15E45253467CC000067BF /* SharedFormatterViewController.xib */; };
+		A5D736202555802A00F3C28D /* HTMLEntitySettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5A26E3F2494DCD800DB32A7 /* HTMLEntitySettingViewController.xib */; };
+		A5D736212555802A00F3C28D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59FBE6524362BCF00C5C9BF /* Assets.xcassets */; };
+		A5D736222555802A00F3C28D /* JSONFormatterHelper.js in Resources */ = {isa = PBXBuildFile; fileRef = A5C15E3A2532A4DB000067BF /* JSONFormatterHelper.js */; };
+		A5D736232555802A00F3C28D /* QueryStringParserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5861EF5248FE09A00EDC5AB /* QueryStringParserViewController.xib */; };
+		A5D736242555802A00F3C28D /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = A599BFDE2529570E00CA37E6 /* LICENSE.md */; };
+		A5D736252555802A00F3C28D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59FBE6724362BCF00C5C9BF /* Main.storyboard */; };
+		A5D736262555802A00F3C28D /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A513042724757CF30023D0CF /* WelcomeViewController.xib */; };
+		A5D736272555802A00F3C28D /* OutputTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = A504B9A624729DDE000A91D7 /* OutputTextField.xib */; };
+		A5D736282555802A00F3C28D /* TestCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A509FEC82472D309005ABCC2 /* TestCustomView.xib */; };
+		A5D736292555802A00F3C28D /* JSONFormatterSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52E1EA124820D340027F8AF /* JSONFormatterSettingViewController.xib */; };
+		A5D7362A2555802A00F3C28D /* HTMLPreviewSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A599BFE5252A167700CA37E6 /* HTMLPreviewSettingViewController.xib */; };
+		A5D7362B2555802A00F3C28D /* RegexTesterSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5D735B02555476D00F3C28D /* RegexTesterSettingViewController.xib */; };
+		A5D7362C2555802A00F3C28D /* UUIDToolSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5C95E532527303D00BED198 /* UUIDToolSettingViewController.xib */; };
+		A5D7362D2555802A00F3C28D /* URLEncodeSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52E1E98248203AC0027F8AF /* URLEncodeSettingViewController.xib */; };
+		A5D7362E2555802A00F3C28D /* SharedEndecodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5861F042494706100EDC5AB /* SharedEndecodeViewController.xib */; };
+		A5D7362F2555802A00F3C28D /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A513040A247415930023D0CF /* Preferences.storyboard */; };
+		A5D736312555802A00F3C28D /* Highlightr.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5114FD7248214F6001A8DB5 /* Highlightr.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5D736332555802A00F3C28D /* ShortcutRecorder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5130415247422AB0023D0CF /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5D736342555802A00F3C28D /* DiffMatchPatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A500D6BB252B795E00308FC6 /* DiffMatchPatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5D736362555802A00F3C28D /* DevUtilsLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = A513042E247585B70023D0CF /* DevUtilsLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A5D7364925565D1E00F3C28D /* FormatterTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E4825346A9A000067BF /* FormatterTool.swift */; };
+		A5D7364A25565D1E00F3C28D /* OutputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A504B9A424729DB9000A91D7 /* OutputTextField.swift */; };
+		A5D7364B25565D1E00F3C28D /* HotkeyRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A513041E24742AC10023D0CF /* HotkeyRecorder.swift */; };
+		A5D7364C25565D1E00F3C28D /* ToolSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A26E3C2494DBC400DB32A7 /* ToolSettingViewController.swift */; };
+		A5D7364D25565D1E00F3C28D /* ToolOutlineTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCEAF924B5853F00C38FB1 /* ToolOutlineTableCellView.swift */; };
+		A5D7364E25565D1E00F3C28D /* UnixTimeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52E1E90248009A20027F8AF /* UnixTimeSettingViewController.swift */; };
+		A5D7364F25565D1E00F3C28D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57D2C45253805380069A8FD /* Array.swift */; };
+		A5D7365025565D1E00F3C28D /* JSONTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5114FDC24821C5B001A8DB5 /* JSONTextView.swift */; };
+		A5D7365125565D1E00F3C28D /* UnixTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CB7B324701AA4006A468E /* UnixTimeViewController.swift */; };
+		A5D7365225565D1E00F3C28D /* CSSFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E59253487D1000067BF /* CSSFormatter.swift */; };
+		A5D7365325565D1E00F3C28D /* Header+FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4A39D2485594B008ECAE9 /* Header+FromJSON.swift */; };
+		A5D7365425565D1E00F3C28D /* ToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D29DA247B6A1B00B1E96F /* ToolViewController.swift */; };
+		A5D7365525565D1E00F3C28D /* HTMLEntityEndecodeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5861F092494771800EDC5AB /* HTMLEntityEndecodeTool.swift */; };
+		A5D7365625565D1E00F3C28D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A509FEC62472D0B8005ABCC2 /* CustomView.swift */; };
+		A5D7365725565D1E00F3C28D /* NSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB5A032472CBD200268B3A /* NSView.swift */; };
+		A5D7365825565D1E00F3C28D /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CB7A72470105A006A468E /* SplitViewController.swift */; };
+		A5D7365925565D1E00F3C28D /* SCSSFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E5D25348838000067BF /* SCSSFormatter.swift */; };
+		A5D7365A25565D1E00F3C28D /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5861EF1248FDC5D00EDC5AB /* URL.swift */; };
+		A5D7365B25565D1E00F3C28D /* HTMLFormatterTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E4A25346CD2000067BF /* HTMLFormatterTool.swift */; };
+		A5D7365C25565D1E00F3C28D /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CB7A3246FE06D006A468E /* Tool.swift */; };
+		A5D7365D25565D1E00F3C28D /* HTMLEntitySettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A26E3E2494DCD800DB32A7 /* HTMLEntitySettingViewController.swift */; };
+		A5D7365E25565D1E00F3C28D /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C95E3C2524302F00BED198 /* UUID.swift */; };
+		A5D7365F25565D1E00F3C28D /* BackslashEscapeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7D01224E38DCD001D762B /* BackslashEscapeSettingViewController.swift */; };
+		A5D7366025565D1E00F3C28D /* Base64EndecodeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F534424A9E9FB00DC4C3E /* Base64EndecodeTool.swift */; };
+		A5D7366125565D1E00F3C28D /* JSHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5640070252F5F5200273357 /* JSHelpers.swift */; };
+		A5D7366225565D1E00F3C28D /* JSONFormatterSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52E1EA024820D340027F8AF /* JSONFormatterSettingViewController.swift */; };
+		A5D7366325565D1E00F3C28D /* ERBFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E65253488DD000067BF /* ERBFormatter.swift */; };
+		A5D7366425565D1E00F3C28D /* RegexTesterSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D735AF2555476D00F3C28D /* RegexTesterSettingViewController.swift */; };
+		A5D7366525565D1E00F3C28D /* GeneralHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C95E3A25238F8700BED198 /* GeneralHelpers.swift */; };
+		A5D7366625565D1E00F3C28D /* LESSFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E5B253487F4000067BF /* LESSFormatter.swift */; };
+		A5D7366725565D1E00F3C28D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CB7A9247014BD006A468E /* AppState.swift */; };
+		A5D7366825565D1E00F3C28D /* QueryStringParserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5861EF4248FE09A00EDC5AB /* QueryStringParserViewController.swift */; };
+		A5D7366925565D1E00F3C28D /* URLEncodeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52E1E97248203AC0027F8AF /* URLEncodeSettingViewController.swift */; };
+		A5D7366A25565D1E00F3C28D /* ToolImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5861F0B2494861700EDC5AB /* ToolImpl.swift */; };
+		A5D7366B25565D1E00F3C28D /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CB79A246EED39006A468E /* WindowController.swift */; };
+		A5D7366C25565D1E00F3C28D /* SharedFormatterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E44253467CC000067BF /* SharedFormatterViewController.swift */; };
+		A5D7366D25565D1E00F3C28D /* JSFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E5F25348865000067BF /* JSFormatter.swift */; };
+		A5D7366E25565D1E00F3C28D /* FormatToolOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E4C25347273000067BF /* FormatToolOptions.swift */; };
+		A5D7366F25565D1E00F3C28D /* UnixTimeToISO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52E1E952480176D0027F8AF /* UnixTimeToISO.swift */; };
+		A5D7367025565D1E00F3C28D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CB7A5246FF0CB006A468E /* DetailViewController.swift */; };
+		A5D7367125565D1E00F3C28D /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5130420247533770023D0CF /* PreferencesViewController.swift */; };
+		A5D7367225565D1E00F3C28D /* TestCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A509FECA2472D320005ABCC2 /* TestCustomView.swift */; };
+		A5D7367325565D1E00F3C28D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59FBE6124362BCE00C5C9BF /* AppDelegate.swift */; };
+		A5D7367425565D1E00F3C28D /* SharedEndecodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5861F032494706100EDC5AB /* SharedEndecodeViewController.swift */; };
+		A5D7367525565D1E00F3C28D /* PreferenceWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4A3A5248947F0008ECAE9 /* PreferenceWindow.swift */; };
+		A5D7367625565D1E00F3C28D /* TextDiffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5075AF9252CB61500F8A320 /* TextDiffViewController.swift */; };
+		A5D7367725565D1E00F3C28D /* RegexTesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D735AB2549084400F3C28D /* RegexTesterViewController.swift */; };
+		A5D7367825565D1E00F3C28D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572CD7C2470EBC300394087 /* Date.swift */; };
+		A5D7367925565D1E00F3C28D /* JWTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CB7AD247015DA006A468E /* JWTViewController.swift */; };
+		A5D7367A25565D1E00F3C28D /* JSONFormatterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E11F62479258900ACF76D /* JSONFormatterViewController.swift */; };
+		A5D7367B25565D1E00F3C28D /* Base64SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A557A10E248CA97200BD90C3 /* Base64SettingViewController.swift */; };
+		A5D7367C25565D1E00F3C28D /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A513040D247418940023D0CF /* PreferencesWindowController.swift */; };
+		A5D7367D25565D1E00F3C28D /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D29DC247BFC8E00B1E96F /* NSTextView.swift */; };
+		A5D7367E25565D1E00F3C28D /* BackslashEscapeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7D01024E38928001D762B /* BackslashEscapeTool.swift */; };
+		A5D7367F25565D1E00F3C28D /* IntergerFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56A9CCE25237FE500ECF032 /* IntergerFormatter.swift */; };
+		A5D7368025565D1E00F3C28D /* URLEndecodeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F534624AAC50200DC4C3E /* URLEndecodeTool.swift */; };
+		A5D7368125565D1E00F3C28D /* QueryStringParserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5861EF82491290100EDC5AB /* QueryStringParserSettingViewController.swift */; };
+		A5D7368225565D1E00F3C28D /* EndecodeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5861F07249473B500EDC5AB /* EndecodeTool.swift */; };
+		A5D7368325565D1E00F3C28D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E11F42478FE3500ACF76D /* String.swift */; };
+		A5D7368425565D1E00F3C28D /* OutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CB79F246FDDA2006A468E /* OutlineViewController.swift */; };
+		A5D7368525565D1E00F3C28D /* UUIDToolSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C95E522527303D00BED198 /* UUIDToolSettingViewController.swift */; };
+		A5D7368625565D1E00F3C28D /* PrettydiffFormatterTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E4E25347C14000067BF /* PrettydiffFormatterTool.swift */; };
+		A5D7368725565D1E00F3C28D /* HTMLPreviewSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BFE4252A167700CA37E6 /* HTMLPreviewSettingViewController.swift */; };
+		A5D7368825565D1E00F3C28D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A513042624757CF30023D0CF /* WelcomeViewController.swift */; };
+		A5D7368925565D1E00F3C28D /* HighlightedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E3F2532B3C2000067BF /* HighlightedTextView.swift */; };
+		A5D7368A25565D1E00F3C28D /* XMLFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E6125348896000067BF /* XMLFormatter.swift */; };
+		A5D7368B25565D1E00F3C28D /* HTMLPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599BFE02529F95200CA37E6 /* HTMLPreviewViewController.swift */; };
+		A5D7368C25565D1E00F3C28D /* JWTSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4A39F2488ED0D008ECAE9 /* JWTSettingViewController.swift */; };
+		A5D7368D25565D1E00F3C28D /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D4A3A324894773008ECAE9 /* Window.swift */; };
+		A5D7368E25565D1E00F3C28D /* UUIDToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56A9CC92523795A00ECF032 /* UUIDToolViewController.swift */; };
+		A5D7368F25565D1E00F3C28D /* WrapableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C15E412532BD90000067BF /* WrapableTextView.swift */; };
+		A5D7369125565D1E00F3C28D /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5130415247422AB0023D0CF /* ShortcutRecorder.framework */; };
+		A5D7369225565D1E00F3C28D /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A5D7364025565D1E00F3C28D /* SwiftDate */; };
+		A5D7369325565D1E00F3C28D /* HTMLEntities in Frameworks */ = {isa = PBXBuildFile; productRef = A5D7364425565D1E00F3C28D /* HTMLEntities */; };
+		A5D7369425565D1E00F3C28D /* SwiftJWT in Frameworks */ = {isa = PBXBuildFile; productRef = A5D7364225565D1E00F3C28D /* SwiftJWT */; };
+		A5D7369525565D1E00F3C28D /* DiffMatchPatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A500D6BB252B795E00308FC6 /* DiffMatchPatch.framework */; };
+		A5D7369625565D1E00F3C28D /* Highlightr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5114FD7248214F6001A8DB5 /* Highlightr.framework */; };
+		A5D7369725565D1E00F3C28D /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = A5D7363E25565D1E00F3C28D /* HotKey */; };
+		A5D7369925565D1E00F3C28D /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = A5D7364625565D1E00F3C28D /* SwiftyBeaver */; };
+		A5D7369B25565D1E00F3C28D /* JWTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A54CB7AE247015DA006A468E /* JWTViewController.xib */; };
+		A5D7369C25565D1E00F3C28D /* RegexTesterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5D735AC2549084400F3C28D /* RegexTesterViewController.xib */; };
+		A5D7369D25565D1E00F3C28D /* UUIDToolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A56A9CCA2523795A00ECF032 /* UUIDToolViewController.xib */; };
+		A5D7369E25565D1E00F3C28D /* TextDiffViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5075AFA252CB61500F8A320 /* TextDiffViewController.xib */; };
+		A5D7369F25565D1E00F3C28D /* BackslashEscapeSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5B7D01324E38DCD001D762B /* BackslashEscapeSettingViewController.xib */; };
+		A5D736A025565D1E00F3C28D /* UnixTimeSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52E1E91248009A20027F8AF /* UnixTimeSettingViewController.xib */; };
+		A5D736A125565D1E00F3C28D /* HTMLPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A599BFE12529F95200CA37E6 /* HTMLPreviewViewController.xib */; };
+		A5D736A225565D1E00F3C28D /* UnixTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A54CB7B424701AA4006A468E /* UnixTimeViewController.xib */; };
+		A5D736A325565D1E00F3C28D /* JSONFormatterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A57E11F72479258900ACF76D /* JSONFormatterViewController.xib */; };
+		A5D736A425565D1E00F3C28D /* JWTSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5D4A3A02488ED0D008ECAE9 /* JWTSettingViewController.xib */; };
+		A5D736A525565D1E00F3C28D /* QueryStringParserSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5861EF92491290100EDC5AB /* QueryStringParserSettingViewController.xib */; };
+		A5D736A625565D1E00F3C28D /* prettydiff.browser.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A5C15E3B2532A4DB000067BF /* prettydiff.browser.min.js */; };
+		A5D736A725565D1E00F3C28D /* HotkeyRecorder.xib in Resources */ = {isa = PBXBuildFile; fileRef = A513041C24742AB20023D0CF /* HotkeyRecorder.xib */; };
+		A5D736A825565D1E00F3C28D /* Base64SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A557A10F248CA97200BD90C3 /* Base64SettingViewController.xib */; };
+		A5D736A925565D1E00F3C28D /* SharedFormatterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5C15E45253467CC000067BF /* SharedFormatterViewController.xib */; };
+		A5D736AA25565D1E00F3C28D /* HTMLEntitySettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5A26E3F2494DCD800DB32A7 /* HTMLEntitySettingViewController.xib */; };
+		A5D736AB25565D1E00F3C28D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59FBE6524362BCF00C5C9BF /* Assets.xcassets */; };
+		A5D736AC25565D1E00F3C28D /* JSONFormatterHelper.js in Resources */ = {isa = PBXBuildFile; fileRef = A5C15E3A2532A4DB000067BF /* JSONFormatterHelper.js */; };
+		A5D736AD25565D1E00F3C28D /* QueryStringParserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5861EF5248FE09A00EDC5AB /* QueryStringParserViewController.xib */; };
+		A5D736AE25565D1E00F3C28D /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = A599BFDE2529570E00CA37E6 /* LICENSE.md */; };
+		A5D736AF25565D1E00F3C28D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59FBE6724362BCF00C5C9BF /* Main.storyboard */; };
+		A5D736B025565D1E00F3C28D /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A513042724757CF30023D0CF /* WelcomeViewController.xib */; };
+		A5D736B125565D1E00F3C28D /* OutputTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = A504B9A624729DDE000A91D7 /* OutputTextField.xib */; };
+		A5D736B225565D1E00F3C28D /* TestCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A509FEC82472D309005ABCC2 /* TestCustomView.xib */; };
+		A5D736B325565D1E00F3C28D /* JSONFormatterSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52E1EA124820D340027F8AF /* JSONFormatterSettingViewController.xib */; };
+		A5D736B425565D1E00F3C28D /* HTMLPreviewSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A599BFE5252A167700CA37E6 /* HTMLPreviewSettingViewController.xib */; };
+		A5D736B525565D1E00F3C28D /* RegexTesterSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5D735B02555476D00F3C28D /* RegexTesterSettingViewController.xib */; };
+		A5D736B625565D1E00F3C28D /* UUIDToolSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5C95E532527303D00BED198 /* UUIDToolSettingViewController.xib */; };
+		A5D736B725565D1E00F3C28D /* URLEncodeSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52E1E98248203AC0027F8AF /* URLEncodeSettingViewController.xib */; };
+		A5D736B825565D1E00F3C28D /* SharedEndecodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5861F042494706100EDC5AB /* SharedEndecodeViewController.xib */; };
+		A5D736B925565D1E00F3C28D /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A513040A247415930023D0CF /* Preferences.storyboard */; };
+		A5D736BB25565D1E00F3C28D /* Highlightr.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5114FD7248214F6001A8DB5 /* Highlightr.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5D736BD25565D1E00F3C28D /* ShortcutRecorder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5130415247422AB0023D0CF /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5D736BE25565D1E00F3C28D /* DiffMatchPatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A500D6BB252B795E00308FC6 /* DiffMatchPatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5D736C025565D1E00F3C28D /* DevUtilsLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = A513042E247585B70023D0CF /* DevUtilsLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A5D736CC2556703F00F3C28D /* SUUpdaterWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D736CA2556703900F3C28D /* SUUpdaterWrapper.swift */; };
+		A5D736CD2556711F00F3C28D /* SUUpdaterWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D736CA2556703900F3C28D /* SUUpdaterWrapper.swift */; };
+		A5D736CE2556712000F3C28D /* SUUpdaterWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D736CA2556703900F3C28D /* SUUpdaterWrapper.swift */; };
+		A5D736D0255796C600F3C28D /* RandomAccessCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D736CF255796C600F3C28D /* RandomAccessCollection.swift */; };
+		A5D736E12557A13B00F3C28D /* RandomAccessCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D736CF255796C600F3C28D /* RandomAccessCollection.swift */; };
+		A5D736E22557A13B00F3C28D /* RandomAccessCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D736CF255796C600F3C28D /* RandomAccessCollection.swift */; };
 		A5FB5A042472CBD200268B3A /* NSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB5A032472CBD200268B3A /* NSView.swift */; };
 /* End PBXBuildFile section */
 
@@ -174,6 +412,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A59F99DE2532A46200D42AC4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5D736302555802A00F3C28D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A5D736312555802A00F3C28D /* Highlightr.framework in Embed Frameworks */,
+				A5D736332555802A00F3C28D /* ShortcutRecorder.framework in Embed Frameworks */,
+				A5D736342555802A00F3C28D /* DiffMatchPatch.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5D736352555802A00F3C28D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				A5D736362555802A00F3C28D /* DevUtilsLauncher.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5D736372555802A00F3C28D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5D736BA25565D1E00F3C28D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A5D736BB25565D1E00F3C28D /* Highlightr.framework in Embed Frameworks */,
+				A5D736BD25565D1E00F3C28D /* ShortcutRecorder.framework in Embed Frameworks */,
+				A5D736BE25565D1E00F3C28D /* DiffMatchPatch.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5D736BF25565D1E00F3C28D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				A5D736C025565D1E00F3C28D /* DevUtilsLauncher.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5D736C125565D1E00F3C28D /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -268,7 +570,6 @@
 		A59FBE6524362BCF00C5C9BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A59FBE6824362BCF00C5C9BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A59FBE6A24362BCF00C5C9BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A59FBE6B24362BCF00C5C9BF /* TINOBHNYWE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TINOBHNYWE.entitlements; sourceTree = "<group>"; };
 		A5A26E3C2494DBC400DB32A7 /* ToolSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolSettingViewController.swift; sourceTree = "<group>"; };
 		A5A26E3E2494DCD800DB32A7 /* HTMLEntitySettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLEntitySettingViewController.swift; sourceTree = "<group>"; };
 		A5A26E3F2494DCD800DB32A7 /* HTMLEntitySettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMLEntitySettingViewController.xib; sourceTree = "<group>"; };
@@ -306,6 +607,22 @@
 		A5D4A3A02488ED0D008ECAE9 /* JWTSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JWTSettingViewController.xib; sourceTree = "<group>"; };
 		A5D4A3A324894773008ECAE9 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		A5D4A3A5248947F0008ECAE9 /* PreferenceWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceWindow.swift; sourceTree = "<group>"; };
+		A5D735AB2549084400F3C28D /* RegexTesterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexTesterViewController.swift; sourceTree = "<group>"; };
+		A5D735AC2549084400F3C28D /* RegexTesterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegexTesterViewController.xib; sourceTree = "<group>"; };
+		A5D735AF2555476D00F3C28D /* RegexTesterSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexTesterSettingViewController.swift; sourceTree = "<group>"; };
+		A5D735B02555476D00F3C28D /* RegexTesterSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegexTesterSettingViewController.xib; sourceTree = "<group>"; };
+		A5D7363B2555802A00F3C28D /* DevUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5D7363C2555802B00F3C28D /* DevUtils-Setapp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DevUtils-Setapp-Info.plist"; path = "TINOBHNYWE/DevUtils-Setapp-Info.plist"; sourceTree = "<absolute>"; };
+		A5D736C525565D1E00F3C28D /* DevUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5D736C625565D1E00F3C28D /* DevUtils-AppStore-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DevUtils-AppStore-Info.plist"; path = "TINOBHNYWE/DevUtils-AppStore-Info.plist"; sourceTree = "<absolute>"; };
+		A5D736C725565F9A00F3C28D /* DevUtils AppStore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DevUtils AppStore.entitlements"; sourceTree = "<group>"; };
+		A5D736C825565F9A00F3C28D /* DevUtils.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevUtils.entitlements; sourceTree = "<group>"; };
+		A5D736C925565F9B00F3C28D /* DevUtils Setapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DevUtils Setapp.entitlements"; sourceTree = "<group>"; };
+		A5D736CA2556703900F3C28D /* SUUpdaterWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUUpdaterWrapper.swift; sourceTree = "<group>"; };
+		A5D736CF255796C600F3C28D /* RandomAccessCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomAccessCollection.swift; sourceTree = "<group>"; };
+		A5D736E92557A48700F3C28D /* Setapp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Setapp.h; sourceTree = "<group>"; };
+		A5D736EA2557A48800F3C28D /* libSetapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSetapp.a; sourceTree = "<group>"; };
+		A5D736EC2557A9EA00F3C28D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A5FB5A032472CBD200268B3A /* NSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -338,6 +655,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5075B01252CBD7500F8A320 /* DiffMatchPatch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5D736062555802A00F3C28D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5D736072555802A00F3C28D /* ShortcutRecorder.framework in Frameworks */,
+				A5D736082555802A00F3C28D /* SwiftDate in Frameworks */,
+				A5D736092555802A00F3C28D /* HTMLEntities in Frameworks */,
+				A5D7360A2555802A00F3C28D /* SwiftJWT in Frameworks */,
+				A5D7360B2555802A00F3C28D /* DiffMatchPatch.framework in Frameworks */,
+				A5D7360C2555802A00F3C28D /* Highlightr.framework in Frameworks */,
+				A5D7360D2555802A00F3C28D /* HotKey in Frameworks */,
+				A5D7360F2555802A00F3C28D /* SwiftyBeaver in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5D7369025565D1E00F3C28D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5D7369125565D1E00F3C28D /* ShortcutRecorder.framework in Frameworks */,
+				A5D7369225565D1E00F3C28D /* SwiftDate in Frameworks */,
+				A5D7369325565D1E00F3C28D /* HTMLEntities in Frameworks */,
+				A5D7369425565D1E00F3C28D /* SwiftJWT in Frameworks */,
+				A5D7369525565D1E00F3C28D /* DiffMatchPatch.framework in Frameworks */,
+				A5D7369625565D1E00F3C28D /* Highlightr.framework in Frameworks */,
+				A5D7369725565D1E00F3C28D /* HotKey in Frameworks */,
+				A5D7369925565D1E00F3C28D /* SwiftyBeaver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +790,7 @@
 		A54CB7B724701AAC006A468E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A5D735AA2549082F00F3C28D /* RegexTester */,
 				A5861F012494703A00EDC5AB /* Shared */,
 				A5C15E58253487AA000067BF /* ERBFormatter */,
 				A5C15E5625348780000067BF /* XMLFormatter */,
@@ -507,6 +855,7 @@
 				A5861EF1248FDC5D00EDC5AB /* URL.swift */,
 				A5C95E3C2524302F00BED198 /* UUID.swift */,
 				A57D2C45253805380069A8FD /* Array.swift */,
+				A5D736CF255796C600F3C28D /* RandomAccessCollection.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -583,6 +932,8 @@
 				A5C95E432526D0F500BED198 /* DevUtilsTests */,
 				A59FBE5F24362BCE00C5C9BF /* Products */,
 				A513040F2474227E0023D0CF /* Frameworks */,
+				A5D7363C2555802B00F3C28D /* DevUtils-Setapp-Info.plist */,
+				A5D736C625565D1E00F3C28D /* DevUtils-AppStore-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -592,6 +943,8 @@
 				A59FBE5E24362BCE00C5C9BF /* DevUtils.app */,
 				A513042E247585B70023D0CF /* DevUtilsLauncher.app */,
 				A5C95E422526D0F500BED198 /* DevUtilsTests.xctest */,
+				A5D7363B2555802A00F3C28D /* DevUtils.app */,
+				A5D736C525565D1E00F3C28D /* DevUtils.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -599,6 +952,7 @@
 		A59FBE6024362BCE00C5C9BF /* TINOBHNYWE */ = {
 			isa = PBXGroup;
 			children = (
+				A5D736EB2557A51700F3C28D /* libSetapp */,
 				A56A9CCD25237FD100ECF032 /* Helpers */,
 				A5CD9C9925202314001D340D /* Main */,
 				A52E1E942480175A0027F8AF /* ValueTransformers */,
@@ -609,7 +963,9 @@
 				A59FBE6524362BCF00C5C9BF /* Assets.xcassets */,
 				A59FBE6724362BCF00C5C9BF /* Main.storyboard */,
 				A59FBE6A24362BCF00C5C9BF /* Info.plist */,
-				A59FBE6B24362BCF00C5C9BF /* TINOBHNYWE.entitlements */,
+				A5D736C725565F9A00F3C28D /* DevUtils AppStore.entitlements */,
+				A5D736C925565F9B00F3C28D /* DevUtils Setapp.entitlements */,
+				A5D736C825565F9A00F3C28D /* DevUtils.entitlements */,
 				A500D6BF252B7B7300308FC6 /* DevUtils-Bridging-Header.h */,
 			);
 			path = TINOBHNYWE;
@@ -738,6 +1094,7 @@
 				A54CB79F246FDDA2006A468E /* OutlineViewController.swift */,
 				A5CCEAF924B5853F00C38FB1 /* ToolOutlineTableCellView.swift */,
 				A54CB7A5246FF0CB006A468E /* DetailViewController.swift */,
+				A5D736CA2556703900F3C28D /* SUUpdaterWrapper.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -750,6 +1107,27 @@
 				A55F534424A9E9FB00DC4C3E /* Base64EndecodeTool.swift */,
 			);
 			path = Base64;
+			sourceTree = "<group>";
+		};
+		A5D735AA2549082F00F3C28D /* RegexTester */ = {
+			isa = PBXGroup;
+			children = (
+				A5D735AB2549084400F3C28D /* RegexTesterViewController.swift */,
+				A5D735AC2549084400F3C28D /* RegexTesterViewController.xib */,
+				A5D735AF2555476D00F3C28D /* RegexTesterSettingViewController.swift */,
+				A5D735B02555476D00F3C28D /* RegexTesterSettingViewController.xib */,
+			);
+			path = RegexTester;
+			sourceTree = "<group>";
+		};
+		A5D736EB2557A51700F3C28D /* libSetapp */ = {
+			isa = PBXGroup;
+			children = (
+				A5D736EA2557A48800F3C28D /* libSetapp.a */,
+				A5D736E92557A48700F3C28D /* Setapp.h */,
+				A5D736EC2557A9EA00F3C28D /* README.md */,
+			);
+			path = libSetapp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -818,6 +1196,60 @@
 			productReference = A5C95E422526D0F500BED198 /* DevUtilsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A5D735B32555802A00F3C28D /* DevUtils Setapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5D736382555802A00F3C28D /* Build configuration list for PBXNativeTarget "DevUtils Setapp" */;
+			buildPhases = (
+				A5D735BE2555802A00F3C28D /* Sources */,
+				A5D736062555802A00F3C28D /* Frameworks */,
+				A5D736102555802A00F3C28D /* Resources */,
+				A5D736302555802A00F3C28D /* Embed Frameworks */,
+				A5D736352555802A00F3C28D /* CopyFiles */,
+				A5D736372555802A00F3C28D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DevUtils Setapp";
+			packageProductDependencies = (
+				A5D735B42555802A00F3C28D /* HotKey */,
+				A5D735B62555802A00F3C28D /* SwiftDate */,
+				A5D735B82555802A00F3C28D /* SwiftJWT */,
+				A5D735BA2555802A00F3C28D /* HTMLEntities */,
+				A5D735BC2555802A00F3C28D /* SwiftyBeaver */,
+			);
+			productName = TINOBHNYWE;
+			productReference = A5D7363B2555802A00F3C28D /* DevUtils.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A5D7363D25565D1E00F3C28D /* DevUtils AppStore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5D736C225565D1E00F3C28D /* Build configuration list for PBXNativeTarget "DevUtils AppStore" */;
+			buildPhases = (
+				A5D7364825565D1E00F3C28D /* Sources */,
+				A5D7369025565D1E00F3C28D /* Frameworks */,
+				A5D7369A25565D1E00F3C28D /* Resources */,
+				A5D736BA25565D1E00F3C28D /* Embed Frameworks */,
+				A5D736BF25565D1E00F3C28D /* CopyFiles */,
+				A5D736C125565D1E00F3C28D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DevUtils AppStore";
+			packageProductDependencies = (
+				A5D7363E25565D1E00F3C28D /* HotKey */,
+				A5D7364025565D1E00F3C28D /* SwiftDate */,
+				A5D7364225565D1E00F3C28D /* SwiftJWT */,
+				A5D7364425565D1E00F3C28D /* HTMLEntities */,
+				A5D7364625565D1E00F3C28D /* SwiftyBeaver */,
+			);
+			productName = TINOBHNYWE;
+			productReference = A5D736C525565D1E00F3C28D /* DevUtils.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -849,6 +1281,12 @@
 				en,
 				Base,
 				English,
+				de,
+				es,
+				it,
+				"pt-BR",
+				ru,
+				fr,
 			);
 			mainGroup = A59FBE5524362BCE00C5C9BF;
 			packageReferences = (
@@ -863,6 +1301,8 @@
 			projectRoot = "";
 			targets = (
 				A59FBE5D24362BCE00C5C9BF /* DevUtils */,
+				A5D7363D25565D1E00F3C28D /* DevUtils AppStore */,
+				A5D735B32555802A00F3C28D /* DevUtils Setapp */,
 				A513042D247585B70023D0CF /* DevUtilsLauncher */,
 				A5C95E412526D0F500BED198 /* DevUtilsTests */,
 			);
@@ -884,6 +1324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A54CB7B0247015DA006A468E /* JWTViewController.xib in Resources */,
+				A5D735AE2549084400F3C28D /* RegexTesterViewController.xib in Resources */,
 				A56A9CCC2523795A00ECF032 /* UUIDToolViewController.xib in Resources */,
 				A5075AFC252CB61500F8A320 /* TextDiffViewController.xib in Resources */,
 				A5B7D01524E38DCD001D762B /* BackslashEscapeSettingViewController.xib in Resources */,
@@ -908,6 +1349,7 @@
 				A509FEC92472D309005ABCC2 /* TestCustomView.xib in Resources */,
 				A52E1EA324820D340027F8AF /* JSONFormatterSettingViewController.xib in Resources */,
 				A599BFE7252A167700CA37E6 /* HTMLPreviewSettingViewController.xib in Resources */,
+				A5D735B22555476D00F3C28D /* RegexTesterSettingViewController.xib in Resources */,
 				A5C95E57252732F100BED198 /* UUIDToolSettingViewController.xib in Resources */,
 				A52E1E9A248203AC0027F8AF /* URLEncodeSettingViewController.xib in Resources */,
 				A5861F062494706100EDC5AB /* SharedEndecodeViewController.xib in Resources */,
@@ -920,6 +1362,82 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5C95E552527303D00BED198 /* UUIDToolSettingViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5D736102555802A00F3C28D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5D736112555802A00F3C28D /* JWTViewController.xib in Resources */,
+				A5D736122555802A00F3C28D /* RegexTesterViewController.xib in Resources */,
+				A5D736132555802A00F3C28D /* UUIDToolViewController.xib in Resources */,
+				A5D736142555802A00F3C28D /* TextDiffViewController.xib in Resources */,
+				A5D736152555802A00F3C28D /* BackslashEscapeSettingViewController.xib in Resources */,
+				A5D736162555802A00F3C28D /* UnixTimeSettingViewController.xib in Resources */,
+				A5D736172555802A00F3C28D /* HTMLPreviewViewController.xib in Resources */,
+				A5D736182555802A00F3C28D /* UnixTimeViewController.xib in Resources */,
+				A5D736192555802A00F3C28D /* JSONFormatterViewController.xib in Resources */,
+				A5D7361A2555802A00F3C28D /* JWTSettingViewController.xib in Resources */,
+				A5D7361B2555802A00F3C28D /* QueryStringParserSettingViewController.xib in Resources */,
+				A5D7361C2555802A00F3C28D /* prettydiff.browser.min.js in Resources */,
+				A5D7361D2555802A00F3C28D /* HotkeyRecorder.xib in Resources */,
+				A5D7361E2555802A00F3C28D /* Base64SettingViewController.xib in Resources */,
+				A5D7361F2555802A00F3C28D /* SharedFormatterViewController.xib in Resources */,
+				A5D736202555802A00F3C28D /* HTMLEntitySettingViewController.xib in Resources */,
+				A5D736212555802A00F3C28D /* Assets.xcassets in Resources */,
+				A5D736222555802A00F3C28D /* JSONFormatterHelper.js in Resources */,
+				A5D736232555802A00F3C28D /* QueryStringParserViewController.xib in Resources */,
+				A5D736242555802A00F3C28D /* LICENSE.md in Resources */,
+				A5D736252555802A00F3C28D /* Main.storyboard in Resources */,
+				A5D736262555802A00F3C28D /* WelcomeViewController.xib in Resources */,
+				A5D736272555802A00F3C28D /* OutputTextField.xib in Resources */,
+				A5D736282555802A00F3C28D /* TestCustomView.xib in Resources */,
+				A5D736292555802A00F3C28D /* JSONFormatterSettingViewController.xib in Resources */,
+				A5D7362A2555802A00F3C28D /* HTMLPreviewSettingViewController.xib in Resources */,
+				A5D7362B2555802A00F3C28D /* RegexTesterSettingViewController.xib in Resources */,
+				A5D7362C2555802A00F3C28D /* UUIDToolSettingViewController.xib in Resources */,
+				A5D7362D2555802A00F3C28D /* URLEncodeSettingViewController.xib in Resources */,
+				A5D7362E2555802A00F3C28D /* SharedEndecodeViewController.xib in Resources */,
+				A5D7362F2555802A00F3C28D /* Preferences.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5D7369A25565D1E00F3C28D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5D7369B25565D1E00F3C28D /* JWTViewController.xib in Resources */,
+				A5D7369C25565D1E00F3C28D /* RegexTesterViewController.xib in Resources */,
+				A5D7369D25565D1E00F3C28D /* UUIDToolViewController.xib in Resources */,
+				A5D7369E25565D1E00F3C28D /* TextDiffViewController.xib in Resources */,
+				A5D7369F25565D1E00F3C28D /* BackslashEscapeSettingViewController.xib in Resources */,
+				A5D736A025565D1E00F3C28D /* UnixTimeSettingViewController.xib in Resources */,
+				A5D736A125565D1E00F3C28D /* HTMLPreviewViewController.xib in Resources */,
+				A5D736A225565D1E00F3C28D /* UnixTimeViewController.xib in Resources */,
+				A5D736A325565D1E00F3C28D /* JSONFormatterViewController.xib in Resources */,
+				A5D736A425565D1E00F3C28D /* JWTSettingViewController.xib in Resources */,
+				A5D736A525565D1E00F3C28D /* QueryStringParserSettingViewController.xib in Resources */,
+				A5D736A625565D1E00F3C28D /* prettydiff.browser.min.js in Resources */,
+				A5D736A725565D1E00F3C28D /* HotkeyRecorder.xib in Resources */,
+				A5D736A825565D1E00F3C28D /* Base64SettingViewController.xib in Resources */,
+				A5D736A925565D1E00F3C28D /* SharedFormatterViewController.xib in Resources */,
+				A5D736AA25565D1E00F3C28D /* HTMLEntitySettingViewController.xib in Resources */,
+				A5D736AB25565D1E00F3C28D /* Assets.xcassets in Resources */,
+				A5D736AC25565D1E00F3C28D /* JSONFormatterHelper.js in Resources */,
+				A5D736AD25565D1E00F3C28D /* QueryStringParserViewController.xib in Resources */,
+				A5D736AE25565D1E00F3C28D /* LICENSE.md in Resources */,
+				A5D736AF25565D1E00F3C28D /* Main.storyboard in Resources */,
+				A5D736B025565D1E00F3C28D /* WelcomeViewController.xib in Resources */,
+				A5D736B125565D1E00F3C28D /* OutputTextField.xib in Resources */,
+				A5D736B225565D1E00F3C28D /* TestCustomView.xib in Resources */,
+				A5D736B325565D1E00F3C28D /* JSONFormatterSettingViewController.xib in Resources */,
+				A5D736B425565D1E00F3C28D /* HTMLPreviewSettingViewController.xib in Resources */,
+				A5D736B525565D1E00F3C28D /* RegexTesterSettingViewController.xib in Resources */,
+				A5D736B625565D1E00F3C28D /* UUIDToolSettingViewController.xib in Resources */,
+				A5D736B725565D1E00F3C28D /* URLEncodeSettingViewController.xib in Resources */,
+				A5D736B825565D1E00F3C28D /* SharedEndecodeViewController.xib in Resources */,
+				A5D736B925565D1E00F3C28D /* Preferences.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -945,6 +1463,7 @@
 				A5CCEAFA24B5853F00C38FB1 /* ToolOutlineTableCellView.swift in Sources */,
 				A52E1E92248009A20027F8AF /* UnixTimeSettingViewController.swift in Sources */,
 				A57D2C46253805380069A8FD /* Array.swift in Sources */,
+				A5D736CD2556711F00F3C28D /* SUUpdaterWrapper.swift in Sources */,
 				A5114FDD24821C5B001A8DB5 /* JSONTextView.swift in Sources */,
 				A54CB7B524701AA4006A468E /* UnixTimeViewController.swift in Sources */,
 				A5C15E5A253487D1000067BF /* CSSFormatter.swift in Sources */,
@@ -963,8 +1482,10 @@
 				A5B7D01424E38DCD001D762B /* BackslashEscapeSettingViewController.swift in Sources */,
 				A55F534524A9E9FB00DC4C3E /* Base64EndecodeTool.swift in Sources */,
 				A5640071252F5F5200273357 /* JSHelpers.swift in Sources */,
+				A5D736D0255796C600F3C28D /* RandomAccessCollection.swift in Sources */,
 				A52E1EA224820D340027F8AF /* JSONFormatterSettingViewController.swift in Sources */,
 				A5C15E66253488DD000067BF /* ERBFormatter.swift in Sources */,
+				A5D735B12555476D00F3C28D /* RegexTesterSettingViewController.swift in Sources */,
 				A5C95E3B25238F8700BED198 /* GeneralHelpers.swift in Sources */,
 				A5C15E5C253487F4000067BF /* LESSFormatter.swift in Sources */,
 				A54CB7AA247014BD006A468E /* AppState.swift in Sources */,
@@ -983,6 +1504,7 @@
 				A5861F052494706100EDC5AB /* SharedEndecodeViewController.swift in Sources */,
 				A5D4A3A6248947F0008ECAE9 /* PreferenceWindow.swift in Sources */,
 				A5075AFB252CB61500F8A320 /* TextDiffViewController.swift in Sources */,
+				A5D735AD2549084400F3C28D /* RegexTesterViewController.swift in Sources */,
 				A572CD7D2470EBC300394087 /* Date.swift in Sources */,
 				A54CB7AF247015DA006A468E /* JWTViewController.swift in Sources */,
 				A57E11F82479258900ACF76D /* JSONFormatterViewController.swift in Sources */,
@@ -1019,6 +1541,166 @@
 				A5C95E4F2526D4D300BED198 /* UUID.swift in Sources */,
 				A5C95E512526D8F200BED198 /* UUIDTests.swift in Sources */,
 				A5C95E452526D0F500BED198 /* DevUtilsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5D735BE2555802A00F3C28D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5D735BF2555802A00F3C28D /* FormatterTool.swift in Sources */,
+				A5D735C02555802A00F3C28D /* OutputTextField.swift in Sources */,
+				A5D735C12555802A00F3C28D /* HotkeyRecorder.swift in Sources */,
+				A5D735C22555802A00F3C28D /* ToolSettingViewController.swift in Sources */,
+				A5D735C32555802A00F3C28D /* ToolOutlineTableCellView.swift in Sources */,
+				A5D735C42555802A00F3C28D /* UnixTimeSettingViewController.swift in Sources */,
+				A5D735C52555802A00F3C28D /* Array.swift in Sources */,
+				A5D736CE2556712000F3C28D /* SUUpdaterWrapper.swift in Sources */,
+				A5D735C62555802A00F3C28D /* JSONTextView.swift in Sources */,
+				A5D735C72555802A00F3C28D /* UnixTimeViewController.swift in Sources */,
+				A5D735C82555802A00F3C28D /* CSSFormatter.swift in Sources */,
+				A5D735C92555802A00F3C28D /* Header+FromJSON.swift in Sources */,
+				A5D735CA2555802A00F3C28D /* ToolViewController.swift in Sources */,
+				A5D735CB2555802A00F3C28D /* HTMLEntityEndecodeTool.swift in Sources */,
+				A5D735CC2555802A00F3C28D /* CustomView.swift in Sources */,
+				A5D735CD2555802A00F3C28D /* NSView.swift in Sources */,
+				A5D735CE2555802A00F3C28D /* SplitViewController.swift in Sources */,
+				A5D735CF2555802A00F3C28D /* SCSSFormatter.swift in Sources */,
+				A5D735D02555802A00F3C28D /* URL.swift in Sources */,
+				A5D735D12555802A00F3C28D /* HTMLFormatterTool.swift in Sources */,
+				A5D735D22555802A00F3C28D /* Tool.swift in Sources */,
+				A5D735D32555802A00F3C28D /* HTMLEntitySettingViewController.swift in Sources */,
+				A5D735D42555802A00F3C28D /* UUID.swift in Sources */,
+				A5D735D52555802A00F3C28D /* BackslashEscapeSettingViewController.swift in Sources */,
+				A5D735D62555802A00F3C28D /* Base64EndecodeTool.swift in Sources */,
+				A5D735D72555802A00F3C28D /* JSHelpers.swift in Sources */,
+				A5D736E22557A13B00F3C28D /* RandomAccessCollection.swift in Sources */,
+				A5D735D82555802A00F3C28D /* JSONFormatterSettingViewController.swift in Sources */,
+				A5D735D92555802A00F3C28D /* ERBFormatter.swift in Sources */,
+				A5D735DA2555802A00F3C28D /* RegexTesterSettingViewController.swift in Sources */,
+				A5D735DB2555802A00F3C28D /* GeneralHelpers.swift in Sources */,
+				A5D735DC2555802A00F3C28D /* LESSFormatter.swift in Sources */,
+				A5D735DD2555802A00F3C28D /* AppState.swift in Sources */,
+				A5D735DE2555802A00F3C28D /* QueryStringParserViewController.swift in Sources */,
+				A5D735DF2555802A00F3C28D /* URLEncodeSettingViewController.swift in Sources */,
+				A5D735E02555802A00F3C28D /* ToolImpl.swift in Sources */,
+				A5D735E12555802A00F3C28D /* WindowController.swift in Sources */,
+				A5D735E22555802A00F3C28D /* SharedFormatterViewController.swift in Sources */,
+				A5D735E32555802A00F3C28D /* JSFormatter.swift in Sources */,
+				A5D735E42555802A00F3C28D /* FormatToolOptions.swift in Sources */,
+				A5D735E52555802A00F3C28D /* UnixTimeToISO.swift in Sources */,
+				A5D735E62555802A00F3C28D /* DetailViewController.swift in Sources */,
+				A5D735E72555802A00F3C28D /* PreferencesViewController.swift in Sources */,
+				A5D735E82555802A00F3C28D /* TestCustomView.swift in Sources */,
+				A5D735E92555802A00F3C28D /* AppDelegate.swift in Sources */,
+				A5D735EA2555802A00F3C28D /* SharedEndecodeViewController.swift in Sources */,
+				A5D735EB2555802A00F3C28D /* PreferenceWindow.swift in Sources */,
+				A5D735EC2555802A00F3C28D /* TextDiffViewController.swift in Sources */,
+				A5D735ED2555802A00F3C28D /* RegexTesterViewController.swift in Sources */,
+				A5D735EE2555802A00F3C28D /* Date.swift in Sources */,
+				A5D735EF2555802A00F3C28D /* JWTViewController.swift in Sources */,
+				A5D735F02555802A00F3C28D /* JSONFormatterViewController.swift in Sources */,
+				A5D735F12555802A00F3C28D /* Base64SettingViewController.swift in Sources */,
+				A5D735F22555802A00F3C28D /* PreferencesWindowController.swift in Sources */,
+				A5D735F32555802A00F3C28D /* NSTextView.swift in Sources */,
+				A5D735F42555802A00F3C28D /* BackslashEscapeTool.swift in Sources */,
+				A5D735F52555802A00F3C28D /* IntergerFormatter.swift in Sources */,
+				A5D735F62555802A00F3C28D /* URLEndecodeTool.swift in Sources */,
+				A5D735F72555802A00F3C28D /* QueryStringParserSettingViewController.swift in Sources */,
+				A5D735F82555802A00F3C28D /* EndecodeTool.swift in Sources */,
+				A5D735F92555802A00F3C28D /* String.swift in Sources */,
+				A5D735FA2555802A00F3C28D /* OutlineViewController.swift in Sources */,
+				A5D735FB2555802A00F3C28D /* UUIDToolSettingViewController.swift in Sources */,
+				A5D735FC2555802A00F3C28D /* PrettydiffFormatterTool.swift in Sources */,
+				A5D735FD2555802A00F3C28D /* HTMLPreviewSettingViewController.swift in Sources */,
+				A5D735FE2555802A00F3C28D /* WelcomeViewController.swift in Sources */,
+				A5D735FF2555802A00F3C28D /* HighlightedTextView.swift in Sources */,
+				A5D736002555802A00F3C28D /* XMLFormatter.swift in Sources */,
+				A5D736012555802A00F3C28D /* HTMLPreviewViewController.swift in Sources */,
+				A5D736022555802A00F3C28D /* JWTSettingViewController.swift in Sources */,
+				A5D736032555802A00F3C28D /* Window.swift in Sources */,
+				A5D736042555802A00F3C28D /* UUIDToolViewController.swift in Sources */,
+				A5D736052555802A00F3C28D /* WrapableTextView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5D7364825565D1E00F3C28D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5D7364925565D1E00F3C28D /* FormatterTool.swift in Sources */,
+				A5D7364A25565D1E00F3C28D /* OutputTextField.swift in Sources */,
+				A5D7364B25565D1E00F3C28D /* HotkeyRecorder.swift in Sources */,
+				A5D7364C25565D1E00F3C28D /* ToolSettingViewController.swift in Sources */,
+				A5D7364D25565D1E00F3C28D /* ToolOutlineTableCellView.swift in Sources */,
+				A5D7364E25565D1E00F3C28D /* UnixTimeSettingViewController.swift in Sources */,
+				A5D7364F25565D1E00F3C28D /* Array.swift in Sources */,
+				A5D7365025565D1E00F3C28D /* JSONTextView.swift in Sources */,
+				A5D7365125565D1E00F3C28D /* UnixTimeViewController.swift in Sources */,
+				A5D7365225565D1E00F3C28D /* CSSFormatter.swift in Sources */,
+				A5D7365325565D1E00F3C28D /* Header+FromJSON.swift in Sources */,
+				A5D7365425565D1E00F3C28D /* ToolViewController.swift in Sources */,
+				A5D7365525565D1E00F3C28D /* HTMLEntityEndecodeTool.swift in Sources */,
+				A5D7365625565D1E00F3C28D /* CustomView.swift in Sources */,
+				A5D7365725565D1E00F3C28D /* NSView.swift in Sources */,
+				A5D7365825565D1E00F3C28D /* SplitViewController.swift in Sources */,
+				A5D7365925565D1E00F3C28D /* SCSSFormatter.swift in Sources */,
+				A5D7365A25565D1E00F3C28D /* URL.swift in Sources */,
+				A5D7365B25565D1E00F3C28D /* HTMLFormatterTool.swift in Sources */,
+				A5D7365C25565D1E00F3C28D /* Tool.swift in Sources */,
+				A5D7365D25565D1E00F3C28D /* HTMLEntitySettingViewController.swift in Sources */,
+				A5D7365E25565D1E00F3C28D /* UUID.swift in Sources */,
+				A5D7365F25565D1E00F3C28D /* BackslashEscapeSettingViewController.swift in Sources */,
+				A5D7366025565D1E00F3C28D /* Base64EndecodeTool.swift in Sources */,
+				A5D7366125565D1E00F3C28D /* JSHelpers.swift in Sources */,
+				A5D7366225565D1E00F3C28D /* JSONFormatterSettingViewController.swift in Sources */,
+				A5D736E12557A13B00F3C28D /* RandomAccessCollection.swift in Sources */,
+				A5D7366325565D1E00F3C28D /* ERBFormatter.swift in Sources */,
+				A5D7366425565D1E00F3C28D /* RegexTesterSettingViewController.swift in Sources */,
+				A5D7366525565D1E00F3C28D /* GeneralHelpers.swift in Sources */,
+				A5D7366625565D1E00F3C28D /* LESSFormatter.swift in Sources */,
+				A5D7366725565D1E00F3C28D /* AppState.swift in Sources */,
+				A5D7366825565D1E00F3C28D /* QueryStringParserViewController.swift in Sources */,
+				A5D7366925565D1E00F3C28D /* URLEncodeSettingViewController.swift in Sources */,
+				A5D7366A25565D1E00F3C28D /* ToolImpl.swift in Sources */,
+				A5D7366B25565D1E00F3C28D /* WindowController.swift in Sources */,
+				A5D7366C25565D1E00F3C28D /* SharedFormatterViewController.swift in Sources */,
+				A5D7366D25565D1E00F3C28D /* JSFormatter.swift in Sources */,
+				A5D7366E25565D1E00F3C28D /* FormatToolOptions.swift in Sources */,
+				A5D7366F25565D1E00F3C28D /* UnixTimeToISO.swift in Sources */,
+				A5D7367025565D1E00F3C28D /* DetailViewController.swift in Sources */,
+				A5D7367125565D1E00F3C28D /* PreferencesViewController.swift in Sources */,
+				A5D7367225565D1E00F3C28D /* TestCustomView.swift in Sources */,
+				A5D7367325565D1E00F3C28D /* AppDelegate.swift in Sources */,
+				A5D7367425565D1E00F3C28D /* SharedEndecodeViewController.swift in Sources */,
+				A5D7367525565D1E00F3C28D /* PreferenceWindow.swift in Sources */,
+				A5D7367625565D1E00F3C28D /* TextDiffViewController.swift in Sources */,
+				A5D7367725565D1E00F3C28D /* RegexTesterViewController.swift in Sources */,
+				A5D7367825565D1E00F3C28D /* Date.swift in Sources */,
+				A5D7367925565D1E00F3C28D /* JWTViewController.swift in Sources */,
+				A5D7367A25565D1E00F3C28D /* JSONFormatterViewController.swift in Sources */,
+				A5D7367B25565D1E00F3C28D /* Base64SettingViewController.swift in Sources */,
+				A5D7367C25565D1E00F3C28D /* PreferencesWindowController.swift in Sources */,
+				A5D7367D25565D1E00F3C28D /* NSTextView.swift in Sources */,
+				A5D7367E25565D1E00F3C28D /* BackslashEscapeTool.swift in Sources */,
+				A5D7367F25565D1E00F3C28D /* IntergerFormatter.swift in Sources */,
+				A5D7368025565D1E00F3C28D /* URLEndecodeTool.swift in Sources */,
+				A5D736CC2556703F00F3C28D /* SUUpdaterWrapper.swift in Sources */,
+				A5D7368125565D1E00F3C28D /* QueryStringParserSettingViewController.swift in Sources */,
+				A5D7368225565D1E00F3C28D /* EndecodeTool.swift in Sources */,
+				A5D7368325565D1E00F3C28D /* String.swift in Sources */,
+				A5D7368425565D1E00F3C28D /* OutlineViewController.swift in Sources */,
+				A5D7368525565D1E00F3C28D /* UUIDToolSettingViewController.swift in Sources */,
+				A5D7368625565D1E00F3C28D /* PrettydiffFormatterTool.swift in Sources */,
+				A5D7368725565D1E00F3C28D /* HTMLPreviewSettingViewController.swift in Sources */,
+				A5D7368825565D1E00F3C28D /* WelcomeViewController.swift in Sources */,
+				A5D7368925565D1E00F3C28D /* HighlightedTextView.swift in Sources */,
+				A5D7368A25565D1E00F3C28D /* XMLFormatter.swift in Sources */,
+				A5D7368B25565D1E00F3C28D /* HTMLPreviewViewController.swift in Sources */,
+				A5D7368C25565D1E00F3C28D /* JWTSettingViewController.swift in Sources */,
+				A5D7368D25565D1E00F3C28D /* Window.swift in Sources */,
+				A5D7368E25565D1E00F3C28D /* UUIDToolViewController.swift in Sources */,
+				A5D7368F25565D1E00F3C28D /* WrapableTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1105,6 +1787,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_BUNDLE_ID = tonyapp.devutils;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1135,6 +1818,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 34;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1153,9 +1837,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 1.5.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1166,6 +1852,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_BUNDLE_ID = tonyapp.devutils;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1196,6 +1883,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 34;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1208,8 +1896,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 1.5.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1221,11 +1911,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = TINOBHNYWE/TINOBHNYWE.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TINOBHNYWE/DevUtils.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = "${CURRENT_PROJECT_VERSION}";
 				DEVELOPMENT_TEAM = 432TM87K7L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1239,8 +1929,13 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.1;
-				PRODUCT_BUNDLE_IDENTIFIER = tonyapp.devutils;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TINOBHNYWE/Setapp",
+				);
+				MARKETING_VERSION = "${MARKETING_VERSION}";
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "${APP_BUNDLE_ID}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TINOBHNYWE/DevUtils-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1253,11 +1948,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = TINOBHNYWE/TINOBHNYWE.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TINOBHNYWE/DevUtils.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = "${CURRENT_PROJECT_VERSION}";
 				DEVELOPMENT_TEAM = 432TM87K7L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1271,8 +1966,13 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.1;
-				PRODUCT_BUNDLE_IDENTIFIER = tonyapp.devutils;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TINOBHNYWE/Setapp",
+				);
+				MARKETING_VERSION = "${MARKETING_VERSION}";
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "${APP_BUNDLE_ID}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TINOBHNYWE/DevUtils-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Osize";
@@ -1330,6 +2030,188 @@
 			};
 			name = Release;
 		};
+		A5D736392555802A00F3C28D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "TINOBHNYWE/DevUtils Setapp.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = "${CURRENT_PROJECT_VERSION}";
+				DEVELOPMENT_TEAM = 432TM87K7L;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Sparkle-1.23.0",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DevUtils-Setapp-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TINOBHNYWE/Setapp",
+				);
+				MARKETING_VERSION = "${MARKETING_VERSION}";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"\"$(PROJECT_DIR)/TINOBHNYWE/libSetapp/libSetapp.a\"",
+					"-framework",
+					Security,
+					"-framework",
+					IOKit,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					Cocoa,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "me.tdinh.devutils-setapp";
+				PRODUCT_NAME = DevUtils;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG BUNDLE_SETAPP NO_SPARKLE";
+				SWIFT_OBJC_BRIDGING_HEADER = "TINOBHNYWE/DevUtils-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A5D7363A2555802A00F3C28D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "TINOBHNYWE/DevUtils Setapp.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = "${CURRENT_PROJECT_VERSION}";
+				DEVELOPMENT_TEAM = 432TM87K7L;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Sparkle-1.23.0",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				INFOPLIST_FILE = "DevUtils-Setapp-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TINOBHNYWE/Setapp",
+				);
+				MARKETING_VERSION = "${MARKETING_VERSION}";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"\"$(PROJECT_DIR)/TINOBHNYWE/libSetapp/libSetapp.a\"",
+					"-framework",
+					Security,
+					"-framework",
+					IOKit,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					Cocoa,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "me.tdinh.devutils-setapp";
+				PRODUCT_NAME = DevUtils;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "BUNDLE_SETAPP NO_SPARKLE";
+				SWIFT_OBJC_BRIDGING_HEADER = "TINOBHNYWE/DevUtils-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Osize";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A5D736C325565D1E00F3C28D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "TINOBHNYWE/DevUtils AppStore.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = "${CURRENT_PROJECT_VERSION}";
+				DEVELOPMENT_TEAM = 432TM87K7L;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Sparkle-1.23.0",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DevUtils-AppStore-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TINOBHNYWE/Setapp",
+				);
+				MARKETING_VERSION = "${MARKETING_VERSION}";
+				PRODUCT_BUNDLE_IDENTIFIER = "${APP_BUNDLE_ID}";
+				PRODUCT_NAME = DevUtils;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG BUNDLE_APPSTORE NO_SPARKLE";
+				SWIFT_OBJC_BRIDGING_HEADER = "TINOBHNYWE/DevUtils-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A5D736C425565D1E00F3C28D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "TINOBHNYWE/DevUtils AppStore.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = "${CURRENT_PROJECT_VERSION}";
+				DEVELOPMENT_TEAM = 432TM87K7L;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Sparkle-1.23.0",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				INFOPLIST_FILE = "DevUtils-AppStore-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TINOBHNYWE/Setapp",
+				);
+				MARKETING_VERSION = "${MARKETING_VERSION}";
+				PRODUCT_BUNDLE_IDENTIFIER = "${APP_BUNDLE_ID}";
+				PRODUCT_NAME = DevUtils;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "BUNDLE_APPSTORE NO_SPARKLE";
+				SWIFT_OBJC_BRIDGING_HEADER = "TINOBHNYWE/DevUtils-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Osize";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1365,6 +2247,24 @@
 			buildConfigurations = (
 				A5C95E4A2526D0F500BED198 /* Debug */,
 				A5C95E4B2526D0F500BED198 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5D736382555802A00F3C28D /* Build configuration list for PBXNativeTarget "DevUtils Setapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5D736392555802A00F3C28D /* Debug */,
+				A5D7363A2555802A00F3C28D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5D736C225565D1E00F3C28D /* Build configuration list for PBXNativeTarget "DevUtils AppStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5D736C325565D1E00F3C28D /* Debug */,
+				A5D736C425565D1E00F3C28D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1412,6 +2312,86 @@
 				version = 3.6.1;
 			};
 		};
+		A5D735B52555802A00F3C28D /* XCRemoteSwiftPackageReference "HotKey" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/soffes/HotKey";
+			requirement = {
+				kind = exactVersion;
+				version = 0.1.3;
+			};
+		};
+		A5D735B72555802A00F3C28D /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.1.0;
+			};
+		};
+		A5D735B92555802A00F3C28D /* XCRemoteSwiftPackageReference "Swift-JWT" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IBM-Swift/Swift-JWT";
+			requirement = {
+				kind = exactVersion;
+				version = 3.6.1;
+			};
+		};
+		A5D735BB2555802A00F3C28D /* XCRemoteSwiftPackageReference "swift-html-entities" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IBM-Swift/swift-html-entities.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.0.14;
+			};
+		};
+		A5D735BD2555802A00F3C28D /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.9.1;
+			};
+		};
+		A5D7363F25565D1E00F3C28D /* XCRemoteSwiftPackageReference "HotKey" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/soffes/HotKey";
+			requirement = {
+				kind = exactVersion;
+				version = 0.1.3;
+			};
+		};
+		A5D7364125565D1E00F3C28D /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.1.0;
+			};
+		};
+		A5D7364325565D1E00F3C28D /* XCRemoteSwiftPackageReference "Swift-JWT" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IBM-Swift/Swift-JWT";
+			requirement = {
+				kind = exactVersion;
+				version = 3.6.1;
+			};
+		};
+		A5D7364525565D1E00F3C28D /* XCRemoteSwiftPackageReference "swift-html-entities" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IBM-Swift/swift-html-entities.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.0.14;
+			};
+		};
+		A5D7364725565D1E00F3C28D /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1439,6 +2419,56 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A5D4A39A24838E37008ECAE9 /* XCRemoteSwiftPackageReference "Swift-JWT" */;
 			productName = SwiftJWT;
+		};
+		A5D735B42555802A00F3C28D /* HotKey */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5D735B52555802A00F3C28D /* XCRemoteSwiftPackageReference "HotKey" */;
+			productName = HotKey;
+		};
+		A5D735B62555802A00F3C28D /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5D735B72555802A00F3C28D /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+		A5D735B82555802A00F3C28D /* SwiftJWT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5D735B92555802A00F3C28D /* XCRemoteSwiftPackageReference "Swift-JWT" */;
+			productName = SwiftJWT;
+		};
+		A5D735BA2555802A00F3C28D /* HTMLEntities */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5D735BB2555802A00F3C28D /* XCRemoteSwiftPackageReference "swift-html-entities" */;
+			productName = HTMLEntities;
+		};
+		A5D735BC2555802A00F3C28D /* SwiftyBeaver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5D735BD2555802A00F3C28D /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
+			productName = SwiftyBeaver;
+		};
+		A5D7363E25565D1E00F3C28D /* HotKey */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5D7363F25565D1E00F3C28D /* XCRemoteSwiftPackageReference "HotKey" */;
+			productName = HotKey;
+		};
+		A5D7364025565D1E00F3C28D /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5D7364125565D1E00F3C28D /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+		A5D7364225565D1E00F3C28D /* SwiftJWT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5D7364325565D1E00F3C28D /* XCRemoteSwiftPackageReference "Swift-JWT" */;
+			productName = SwiftJWT;
+		};
+		A5D7364425565D1E00F3C28D /* HTMLEntities */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5D7364525565D1E00F3C28D /* XCRemoteSwiftPackageReference "swift-html-entities" */;
+			productName = HTMLEntities;
+		};
+		A5D7364625565D1E00F3C28D /* SwiftyBeaver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5D7364725565D1E00F3C28D /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
+			productName = SwiftyBeaver;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

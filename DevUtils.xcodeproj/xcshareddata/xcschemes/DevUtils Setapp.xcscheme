@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A59FBE5D24362BCE00C5C9BF"
+               BlueprintIdentifier = "A5D735B32555802A00F3C28D"
                BuildableName = "DevUtils.app"
-               BlueprintName = "DevUtils"
+               BlueprintName = "DevUtils Setapp"
                ReferencedContainer = "container:DevUtils.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A5C95E412526D0F500BED198"
-               BuildableName = "DevUtilsTests.xctest"
-               BlueprintName = "DevUtilsTests"
-               ReferencedContainer = "container:DevUtils.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -54,9 +44,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A59FBE5D24362BCE00C5C9BF"
+            BlueprintIdentifier = "A5D735B32555802A00F3C28D"
             BuildableName = "DevUtils.app"
-            BlueprintName = "DevUtils"
+            BlueprintName = "DevUtils Setapp"
             ReferencedContainer = "container:DevUtils.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -71,9 +61,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A59FBE5D24362BCE00C5C9BF"
+            BlueprintIdentifier = "A5D735B32555802A00F3C28D"
             BuildableName = "DevUtils.app"
-            BlueprintName = "DevUtils"
+            BlueprintName = "DevUtils Setapp"
             ReferencedContainer = "container:DevUtils.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -83,6 +73,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "DevUtils Setapp"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

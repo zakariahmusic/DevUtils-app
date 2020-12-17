@@ -31,47 +31,17 @@
             <objects>
                 <viewController id="6HZ-ko-cfY" customClass="PreferencesViewController" customModule="DevUtils" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="N7o-5c-FHd">
-                        <rect key="frame" x="0.0" y="0.0" width="420" height="454"/>
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box borderType="line" title="App settings" translatesAutoresizingMaskIntoConstraints="NO" id="Cuw-FZ-7s3">
-                                <rect key="frame" x="17" y="230" width="386" height="204"/>
+                                <rect key="frame" x="17" y="230" width="386" height="250"/>
                                 <view key="contentView" id="ZMd-yk-FEh">
-                                    <rect key="frame" x="3" y="3" width="380" height="186"/>
+                                    <rect key="frame" x="3" y="3" width="380" height="232"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PC2-8W-HDa">
-                                            <rect key="frame" x="18" y="116" width="344" height="18"/>
-                                            <buttonCell key="cell" type="check" title="Show Dock Icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="MYf-MR-w8z">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="showDockIconAction:" target="6HZ-ko-cfY" id="Lnt-EY-PbH"/>
-                                            </connections>
-                                        </button>
-                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jna-2L-IaX">
-                                            <rect key="frame" x="18" y="82" width="344" height="18"/>
-                                            <buttonCell key="cell" type="check" title="Show Status Icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Qhp-94-sWv">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="showStatusIconAction:" target="6HZ-ko-cfY" id="Gl1-Dw-6ng"/>
-                                            </connections>
-                                        </button>
-                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zik-Jg-36U">
-                                            <rect key="frame" x="18" y="150" width="344" height="18"/>
-                                            <buttonCell key="cell" type="check" title="Launch at login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="UuJ-Fh-KMO">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="launchAtLoginAction:" target="6HZ-ko-cfY" id="2Fj-n8-9sb"/>
-                                            </connections>
-                                        </button>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YRI-aK-1Qg">
-                                            <rect key="frame" x="18" y="48" width="217" height="18"/>
+                                            <rect key="frame" x="18" y="52" width="217" height="18"/>
                                             <buttonCell key="cell" type="check" title="Automatically check for updates" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="o53-SW-8hS">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -81,7 +51,7 @@
                                             </connections>
                                         </button>
                                         <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="giQ-ov-AJ6">
-                                            <rect key="frame" x="239" y="44" width="87" height="25"/>
+                                            <rect key="frame" x="239" y="48" width="87" height="25"/>
                                             <popUpButtonCell key="cell" type="push" title="Hourly" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="3600" imageScaling="proportionallyDown" inset="2" selectedItem="33c-q6-Aj4" id="a7y-8Z-PDU">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="menu"/>
@@ -102,17 +72,17 @@
                                             </connections>
                                         </popUpButton>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Irs-sZ-FjY">
-                                            <rect key="frame" x="18" y="14" width="126" height="18"/>
+                                            <rect key="frame" x="18" y="18" width="126" height="18"/>
                                             <buttonCell key="cell" type="check" title="Write debug logs" bezelStyle="regularSquare" imagePosition="left" inset="2" id="v2I-SC-XoV">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="writeDebugLogsCheckboxAction:" target="6HZ-ko-cfY" id="BqA-WE-fxM"/>
+                                                <action selector="writeDebugLogsCheckboxAction:" target="6HZ-ko-cfY" id="ixX-KU-8pV"/>
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Cw-6Z-6Vc">
-                                            <rect key="frame" x="145" y="8" width="130" height="27"/>
+                                            <rect key="frame" x="145" y="12" width="130" height="27"/>
                                             <buttonCell key="cell" type="push" title="Open logs directory" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="glc-s8-tox">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="smallSystem"/>
@@ -122,7 +92,7 @@
                                             </connections>
                                         </button>
                                         <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5bw-FU-IV4">
-                                            <rect key="frame" x="331" y="48" width="21" height="17"/>
+                                            <rect key="frame" x="331" y="52" width="21" height="17"/>
                                             <buttonCell key="cell" type="recessed" title="?" bezelStyle="recessed" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QQa-k6-RWZ">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="systemBold" size="12"/>
@@ -131,31 +101,110 @@
                                                 <action selector="autoUpdateQuestionButtonAction:" target="6HZ-ko-cfY" id="AAg-yu-Jgf"/>
                                             </connections>
                                         </button>
+                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FkX-A6-S8j">
+                                            <rect key="frame" x="20" y="88" width="128" height="124"/>
+                                            <subviews>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zik-Jg-36U">
+                                                    <rect key="frame" x="-2" y="108" width="115" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Launch at login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="UuJ-Fh-KMO">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="launchAtLoginAction:" target="6HZ-ko-cfY" id="2Fj-n8-9sb"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jna-2L-IaX">
+                                                    <rect key="frame" x="-2" y="74" width="127" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Show Status Icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Qhp-94-sWv">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="showStatusIconAction:" target="6HZ-ko-cfY" id="Gl1-Dw-6ng"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PC2-8W-HDa">
+                                                    <rect key="frame" x="-2" y="40" width="120" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Show Dock Icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="MYf-MR-w8z">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="showDockIconAction:" target="6HZ-ko-cfY" id="Lnt-EY-PbH"/>
+                                                    </connections>
+                                                </button>
+                                                <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="evd-IH-A8z">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="22"/>
+                                                    <subviews>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="swR-I0-uti">
+                                                            <rect key="frame" x="-2" y="3" width="46" height="16"/>
+                                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Theme" id="L63-oi-GPV">
+                                                                <font key="font" usesAppearanceFont="YES"/>
+                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                        <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Uv4-ZO-ncg">
+                                                            <rect key="frame" x="48" y="-2" width="83" height="25"/>
+                                                            <popUpButtonCell key="cell" type="push" title="System" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="c5N-mb-8n7" id="v2q-DP-ZlW">
+                                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="menu"/>
+                                                                <menu key="menu" id="oP6-yF-A7i">
+                                                                    <items>
+                                                                        <menuItem title="System" state="on" id="c5N-mb-8n7"/>
+                                                                        <menuItem title="Light" id="ikl-Zm-2H9"/>
+                                                                        <menuItem title="Dark" id="91c-Yv-uqQ"/>
+                                                                    </items>
+                                                                </menu>
+                                                            </popUpButtonCell>
+                                                            <connections>
+                                                                <action selector="themeOptionChanged:" target="6HZ-ko-cfY" id="sAc-ho-eBJ"/>
+                                                                <binding destination="r98-Ge-maq" name="selectedValue" keyPath="values.app-settings-theme" id="Ykc-1D-etx"/>
+                                                            </connections>
+                                                        </popUpButton>
+                                                    </subviews>
+                                                    <visibilityPriorities>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                    </visibilityPriorities>
+                                                    <customSpacing>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                    </customSpacing>
+                                                </stackView>
+                                            </subviews>
+                                            <visibilityPriorities>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                            </visibilityPriorities>
+                                            <customSpacing>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                            </customSpacing>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="5bw-FU-IV4" firstAttribute="leading" secondItem="giQ-ov-AJ6" secondAttribute="trailing" constant="8" id="0uV-ML-pIZ"/>
                                         <constraint firstItem="giQ-ov-AJ6" firstAttribute="centerY" secondItem="YRI-aK-1Qg" secondAttribute="centerY" id="1yo-Wy-fzM"/>
-                                        <constraint firstAttribute="trailing" secondItem="Jna-2L-IaX" secondAttribute="trailing" constant="20" id="BMA-wi-sga"/>
-                                        <constraint firstAttribute="trailing" secondItem="Zik-Jg-36U" secondAttribute="trailing" constant="20" id="FK4-en-X7E"/>
-                                        <constraint firstItem="PC2-8W-HDa" firstAttribute="top" secondItem="Zik-Jg-36U" secondAttribute="bottom" constant="20" id="Kfw-0U-Ir2"/>
+                                        <constraint firstAttribute="bottom" secondItem="Irs-sZ-FjY" secondAttribute="bottom" constant="20" id="BaG-Pj-wiD"/>
+                                        <constraint firstItem="FkX-A6-S8j" firstAttribute="top" secondItem="ZMd-yk-FEh" secondAttribute="top" constant="20" id="ErA-2b-ZSD"/>
                                         <constraint firstItem="giQ-ov-AJ6" firstAttribute="leading" secondItem="YRI-aK-1Qg" secondAttribute="trailing" constant="8" id="Ljy-ya-Qw7"/>
                                         <constraint firstItem="5bw-FU-IV4" firstAttribute="centerY" secondItem="giQ-ov-AJ6" secondAttribute="centerY" id="Mhl-1e-hsO"/>
-                                        <constraint firstAttribute="trailing" secondItem="PC2-8W-HDa" secondAttribute="trailing" constant="20" id="P30-0N-eYU"/>
-                                        <constraint firstItem="YRI-aK-1Qg" firstAttribute="top" secondItem="Jna-2L-IaX" secondAttribute="bottom" constant="20" id="Vvw-i9-Nsy"/>
                                         <constraint firstItem="Irs-sZ-FjY" firstAttribute="leading" secondItem="ZMd-yk-FEh" secondAttribute="leading" constant="20" id="Y1u-fq-BQL"/>
-                                        <constraint firstItem="Zik-Jg-36U" firstAttribute="top" secondItem="ZMd-yk-FEh" secondAttribute="top" constant="20" id="cEI-OA-gO1"/>
-                                        <constraint firstItem="Jna-2L-IaX" firstAttribute="leading" secondItem="ZMd-yk-FEh" secondAttribute="leading" constant="20" id="cx6-br-tjA"/>
                                         <constraint firstItem="Irs-sZ-FjY" firstAttribute="top" secondItem="YRI-aK-1Qg" secondAttribute="bottom" constant="20" id="fZ1-ER-4ek"/>
-                                        <constraint firstItem="PC2-8W-HDa" firstAttribute="leading" secondItem="ZMd-yk-FEh" secondAttribute="leading" constant="20" id="gur-n9-Npm"/>
                                         <constraint firstItem="YRI-aK-1Qg" firstAttribute="leading" secondItem="ZMd-yk-FEh" secondAttribute="leading" constant="20" id="hbd-I5-BXB"/>
                                         <constraint firstItem="6Cw-6Z-6Vc" firstAttribute="centerY" secondItem="Irs-sZ-FjY" secondAttribute="centerY" id="k5k-52-3OZ"/>
-                                        <constraint firstItem="Jna-2L-IaX" firstAttribute="top" secondItem="PC2-8W-HDa" secondAttribute="bottom" constant="20" id="nTB-GQ-qj9"/>
-                                        <constraint firstItem="Zik-Jg-36U" firstAttribute="leading" secondItem="ZMd-yk-FEh" secondAttribute="leading" constant="20" id="q3W-wx-Xd6"/>
+                                        <constraint firstItem="FkX-A6-S8j" firstAttribute="leading" secondItem="ZMd-yk-FEh" secondAttribute="leading" constant="20" id="wTG-IG-bCc"/>
                                         <constraint firstItem="6Cw-6Z-6Vc" firstAttribute="leading" secondItem="Irs-sZ-FjY" secondAttribute="trailing" constant="8" id="ype-16-Fu2"/>
+                                        <constraint firstItem="YRI-aK-1Qg" firstAttribute="top" secondItem="FkX-A6-S8j" secondAttribute="bottom" constant="20" id="zjF-s9-WgY"/>
                                     </constraints>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Jev-PT-Dl9"/>
                                     <constraint firstAttribute="width" constant="380" id="cFx-Iw-D6C"/>
                                 </constraints>
                             </box>
@@ -295,15 +344,15 @@
                         <outlet property="launchAtLoginCheckbox" destination="Zik-Jg-36U" id="Mnd-ic-w6B"/>
                         <outlet property="showDockIconCheckbox" destination="PC2-8W-HDa" id="0RK-zA-poP"/>
                         <outlet property="showStatusIconCheckbox" destination="Jna-2L-IaX" id="BfH-q4-xDE"/>
-                        <outlet property="writeDebugLogCheckbox" destination="ZMd-yk-FEh" id="94G-hD-uVG"/>
-                        <outlet property="writeDebugLogsCheckbox" destination="Irs-sZ-FjY" id="hGo-Fs-4wj"/>
+                        <outlet property="themeOptionView" destination="evd-IH-A8z" id="1Ue-Hs-gHI"/>
+                        <outlet property="writeDebugLogsCheckbox" destination="Irs-sZ-FjY" id="fU9-H0-GQS"/>
                     </connections>
                 </viewController>
                 <customObject id="Lqy-Nm-mvo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="r98-Ge-maq"/>
-                <customObject id="emr-Ku-gbi" customClass="SUUpdater"/>
+                <customObject id="emr-Ku-gbi" customClass="SUUpdaterWrapper" customModule="DevUtils" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="712" y="476.5"/>
+            <point key="canvasLocation" x="712" y="474"/>
         </scene>
     </scenes>
 </document>

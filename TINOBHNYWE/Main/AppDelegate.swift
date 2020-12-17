@@ -54,15 +54,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     checkUpdateItem?.isHidden = true
   }
   
-
-  func setUpSandboxed() {
-    log.info("App sandbox: \(AppState.isSandboxed())")
-    
-    if !AppState.isSandboxed() {
-      return;
-    }
-    
+  func setUpCustomAppBundle() {
+    #if NO_SPARKLE
     disableSparkleUpdate()
+    #endif
   }
   
   @IBAction func preferenceMenuAction(_ sender: Any) {
@@ -78,21 +73,62 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   
   func setupLogging() {
     let console = ConsoleDestination()  // log to Xcode Console
-    let file = FileDestination()  // log to default swiftybeaver.log file
 
     console.format = "$Dyyyy-MM-dd HH:mm:ss.SSS$d $C$L$c $N.$F:$l - $M"
-    file.format = "$J" // JSON
 
     // add the destinations to SwiftyBeaver
     log.addDestination(console)
     
     if (AppState.getWriteDebugLog()) {
+      let file = FileDestination()  // log to default swiftybeaver.log file
+      file.format = "$J" // JSON
       log.addDestination(file)
       log.info("Debug log is enabled, log file is at: \(file.logFileURL?.absoluteString ?? "(empty)")")
     }
+    
+    log.info("App sandbox: \(AppState.isSandboxed())")
+    
     log.info("App version: \(AppState.getAppVersion())")
+    
+    #if BUNDLE_APPSTORE
+    log.info("App bundle: AppStore")
+    #elseif BUNDLE_SETAPP
+    log.info("App bundle: Setapp")
+    log.info("Setapp lib version: \(SCLibraryVersion)")
+    #else
+    log.info("App bundle: Default")
+    #endif
+    
+    #if NO_SPARKLE
+    log.info("App update: Managed")
+    #else
+    log.info("App update: Sparkle")
+    #endif
+    
+    #if DEBUG
+    #if BUNDLE_SETAPP
+    log.info("Setapp debug logging enabled")
+    SCEnableDebugLogging(true)
+    #endif
+    #endif
   }
-
+  
+  func setupSetapp() {
+    #if BUNDLE_SETAPP
+    SCShowReleaseNotesWindowIfNeeded()
+    #endif
+  }
+  
+  @IBAction func releaseNotesMenuAction(_ sender: Any) {
+    #if BUNDLE_SETAPP
+    SCShowReleaseNotesWindow()
+    #else
+    if let url = URL(string: "https://devutils.app/changelog/") {
+      NSWorkspace.shared.open(url)
+    }
+    #endif
+  }
+  
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     // resetAllDefaults()
     
@@ -101,24 +137,44 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // paramater will be passed if the app is launched by our launcher.
     // Note that our app is sandboxed so we can't use this arguments correctly.
     manualLaunch = ProcessInfo.processInfo.arguments.count == 1
-
+    
+    AppState.ensureAppDefaults()
+    
     setupLogging()
     setupAppWindow()
     setupHotkey()
     setupStatusIcon()
-    setUpSandboxed()
+    setUpCustomAppBundle()
     refreshAppIconsStatus()
     setupObservers()
     killLauncherApp()
     setToolOrderMenuState()
+    setUserPreferredTheme()
+    setupSetapp()
     
     NSApp.servicesProvider = self
     
     ValueTransformer.setValueTransformer(
       UnixTimeToISOString(), forName: .init("UnixTimeToISOString"))
     
-    AppState.ensureDefaultsForAutoDetect()
     testMe()
+  }
+  
+  func setUserPreferredTheme(force: Bool = false) {
+    if #available(OSX 10.14, *) {
+      let theme = AppState.getUserPreferredTheme()
+      if theme == "System" {
+        if force {
+          NSApp.appearance = nil
+        }
+      } else if theme == "Dark" {
+        NSApp.appearance = NSAppearance(named: .darkAqua)
+      } else if theme == "Light" {
+        NSApp.appearance = NSAppearance(named: .vibrantLight)
+      } else {
+        log.error("Incorrect config for theme: \(theme)")
+      }
+    }
   }
   
   @IBAction func newMenuItemAction(_ sender: Any) {
