@@ -28,7 +28,7 @@ class QueryStringParserViewController: ToolViewController, NSTextViewDelegate {
     if let autoDetectEnabled = NSUserDefaultsController.shared.value(
       forKeyPath: "values.query-string-parser-auto-detect-variables") as? Bool {
       if autoDetectEnabled {
-        return parseQueryString(input).count > 1
+        return input.starts(with: "http") && parseQueryString(input).count > 1
       }
     }
     return false

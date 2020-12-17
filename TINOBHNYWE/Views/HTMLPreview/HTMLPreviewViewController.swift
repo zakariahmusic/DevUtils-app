@@ -86,8 +86,6 @@ class HTMLPreviewViewController: ToolViewController, WKUIDelegate, NSTextViewDel
         }
       }
     }
-    
-    
   }
   
   override func activate(input: ActivationValue) {

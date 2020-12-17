@@ -9,7 +9,6 @@
 import Cocoa
 import ShortcutRecorder
 import SwiftyBeaver
-import Sparkle
 
 class PreferencesViewController: NSViewController, HotkeyRecorderDelegate {
   @IBOutlet weak var showDockIconCheckbox: NSButton!
@@ -21,6 +20,7 @@ class PreferencesViewController: NSViewController, HotkeyRecorderDelegate {
   @IBOutlet weak var autoUpdateQuestionButton: NSButton!
   @IBOutlet weak var autoUpdateCheckbox: NSButton!
   @IBOutlet weak var autoUpdateIntervalButton: NSPopUpButton!
+  @IBOutlet weak var themeOptionView: NSStackView!
   
   struct NotificationNames {
     static let userDefaultsChanged = Notification.Name(rawValue: "userDefaultsChanged")
@@ -77,17 +77,26 @@ class PreferencesViewController: NSViewController, HotkeyRecorderDelegate {
     automaticClipboardCheckbox.objectValue = AppState.getAutomaticClipboard()
     writeDebugLogsCheckbox.objectValue = AppState.getWriteDebugLog()
     
-    if AppState.isSandboxed() {
-      autoUpdateQuestionButton.isHidden = false
-      autoUpdateCheckbox.isEnabled = false
-      autoUpdateIntervalButton.isEnabled = false
+    #if NO_SPARKLE
+    disableSparkleUpdate()
+    #endif
+    
+    if #available(OSX 10.14, *) {
+    } else {
+      themeOptionView.isHidden = true
     }
+  }
+  
+  func disableSparkleUpdate() {
+    autoUpdateQuestionButton.isHidden = false
+    autoUpdateCheckbox.isEnabled = false
+    autoUpdateIntervalButton.isEnabled = false
   }
   
   @IBAction func autoUpdateQuestionButtonAction(_ sender: Any) {
     let alert = NSAlert()
-    alert.messageText = "App installed via App Store"
-    alert.informativeText = "You are running the app installed from App Store. Updates will be managed by App Store."
+    alert.messageText = "App installed via \(AppState.getAppBundleName())"
+    alert.informativeText = "You are running the app installed and managed by \(AppState.getAppBundleName()). Please check your \(AppState.getAppBundleName()) settings to manage app updates."
     alert.alertStyle = .warning
     alert.addButton(withTitle: "Ok")
     alert.runModal()
@@ -140,5 +149,9 @@ class PreferencesViewController: NSViewController, HotkeyRecorderDelegate {
     alert.alertStyle = .informational
     alert.addButton(withTitle: "Ok")
     alert.runModal()
+  }
+  
+  @IBAction func themeOptionChanged(_ sender: Any) {
+    (NSApp.delegate as! AppDelegate).setUserPreferredTheme(force: true)
   }
 }

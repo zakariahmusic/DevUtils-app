@@ -416,6 +416,12 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
+                                        <menuItem title="Release Notes..." id="84l-Or-xHl">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="releaseNotesMenuAction:" target="Voe-Tx-rLC" id="Nwk-69-yAW"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="DevUtils Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
@@ -439,7 +445,7 @@
                 </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="T8O-WY-UtC" customClass="SUUpdater"/>
+                <customObject id="T8O-WY-UtC" customClass="SUUpdaterWrapper" customModule="DevUtils" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
@@ -494,13 +500,13 @@
             <objects>
                 <viewController id="56V-C1-g2w" customClass="OutlineViewController" customModule="DevUtils" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bC8-q3-lYD" customClass="NSVisualEffectView">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="440"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="437"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T2m-9A-hAY">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="412"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="405"/>
                                 <subviews>
                                     <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nz8-dw-lkb">
-                                        <rect key="frame" x="20" y="390" width="260" height="22"/>
+                                        <rect key="frame" x="20" y="383" width="260" height="22"/>
                                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="mE4-1S-mKL">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -511,13 +517,13 @@
                                         </connections>
                                     </searchField>
                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOH-gO-Axy">
-                                        <rect key="frame" x="0.0" y="75" width="300" height="307"/>
+                                        <rect key="frame" x="0.0" y="75" width="300" height="300"/>
                                         <clipView key="contentView" drawsBackground="NO" id="bDY-Pu-tgv">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="307"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="aoo-DF-9T7" id="oRB-zp-fLr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="307"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -657,7 +663,6 @@ https://DevUtils.app</string>
                     <connections>
                         <outlet property="outlineScrollView" destination="SOH-gO-Axy" id="uKv-M2-El3"/>
                         <outlet property="outlineView" destination="oRB-zp-fLr" id="Bac-B7-myf"/>
-                        <outlet property="toolOutlineView" destination="bC8-q3-lYD" id="ChO-6G-lw9"/>
                         <outlet property="toolSearchField" destination="nz8-dw-lkb" id="ax8-wD-Dtk"/>
                         <outlet property="versionLabel" destination="ko1-bZ-iKj" id="h0d-Zb-7jU"/>
                     </connections>
