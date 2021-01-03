@@ -15,7 +15,7 @@ class UUIDToolViewController: ToolViewController, NSTextFieldDelegate, ToolSetti
   @IBOutlet weak var namespaceInputView: NSView!
   @IBOutlet weak var namespaceTextField: NSTextField!
   @IBOutlet weak var nameTextField: NSTextField!
-  @IBOutlet var generatedUUIDTextView: NSTextView!
+  @IBOutlet var generatedUUIDTextView: CodeTextView!
   @IBOutlet weak var lowercasedCheckbox: NSButton!
   @IBOutlet weak var inputUUIDTextField: NSTextField!
   
@@ -34,8 +34,6 @@ class UUIDToolViewController: ToolViewController, NSTextFieldDelegate, ToolSetti
   override func viewDidLoad() {
     super.viewDidLoad()
     batchSizeTextField.formatter = IntegerFormatter()
-    
-    generatedUUIDTextView.setupStandardTextview()
     
     loadOptions()
     

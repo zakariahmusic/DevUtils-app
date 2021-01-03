@@ -32,6 +32,9 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
   var enableNotificationOnChange: Bool = true
   var state = State.emptyState()
   var tools: [Tool] = []
+  let fuse = Fuse()
+  var searchHighlights: [String: [CountableClosedRange<Int>]] = [:]
+  var currentSelectedTool: Tool?
   
   struct NotificationNames {
     static let selectionChanged = "selectionChangedNotification"
@@ -46,9 +49,10 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
     Developer Utilities for macOS \(AppState.getAppVersion())
     https://DevUtils.app
     """
+    outlineView.action = #selector(onItemClicked)
     
     refreshTools()
-    outlineView.reloadData()
+    reloadData()
     outlineView.registerForDraggedTypes([.init("public.data")])
     
     NotificationCenter.default.addObserver(
@@ -67,7 +71,20 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
   func controlTextDidChange(_ obj: Notification) {
     log.debug("Search: \(toolSearchField.stringValue)")
     refreshTools()
+    reloadData()
+  }
+  
+  func reloadData() {
     outlineView.reloadData()
+    
+    guard
+      let selectedTool = self.currentSelectedTool,
+      let index = tools.firstIndex(of: selectedTool) else {
+        outlineView.deselectAll(self)
+        return
+    }
+    
+    outlineView.selectRowIndexes(.init(integer: index), byExtendingSelection: false)
   }
   
   func searchMatch(_ tool: Tool) -> Bool {
@@ -79,6 +96,8 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
   }
   
   func refreshTools() {
+    self.searchHighlights = [:]
+    
     var tools = AppState.tools.map { $0 } // shallow copy
     
     if AppState.getToolsSortOrder() == "custom" {
@@ -107,10 +126,21 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
     }
     
     // search keyword
-    // TODO: fuzzy search, UI text search (like in macOS's Preferences panel)
-    tools = tools.filter{ searchMatch($0) }
+    // TODO: UI text search (like in macOS's Preferences panel)
+    let searchTerm = toolSearchField.stringValue.lowercased()
+    if searchTerm != "" {
+      tools = fuzzyFilterTools(keyword: searchTerm, tools: tools)
+    }
 
     self.tools = tools
+  }
+  
+  func fuzzyFilterTools(keyword: String, tools: [Tool]) -> [Tool] {
+    let results = fuse.search(keyword, in: tools.map {$0.name})
+    return results.map { (index, _, matchedRanges)  in
+      self.searchHighlights[tools[index].id] = matchedRanges
+      return tools[index]
+    }
   }
   
   @objc
@@ -137,17 +167,9 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
       log.debug("showing matched icon for \(tool.id)")
     }
     
-    guard
-      let selectedTool = self.state.selectedTool,
-      let index = tools.firstIndex(of: selectedTool) else {
-        outlineView.deselectAll(self)
-        return
-    }
+    currentSelectedTool = self.state.selectedTool
     
-    outlineView.reloadData()
-    
-    // Select row index must come after reload data!
-    outlineView.selectRowIndexes(.init(integer: index), byExtendingSelection: false)
+    reloadData()
   }
   
   func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
@@ -179,7 +201,20 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
     }
     
     if let textField = view?.textField {
-      textField.stringValue = tool.name
+      let attributedString = NSMutableAttributedString(string: tool.name)
+      if let ranges = searchHighlights[tool.id] {
+        ranges
+          .map(Range.init)
+          .map(NSRange.init)
+          .forEach {
+              attributedString.addAttributes([
+                NSAttributedString.Key.underlineStyle: true,
+                NSAttributedString.Key.underlineColor: NSColor.systemYellow
+              ], range: $0)
+          }
+      }
+      
+      textField.attributedStringValue = attributedString
     }
     
     if let imageView = view?.imageView {
@@ -206,6 +241,9 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
       return
     }
     let selectedIndex = outlineView.selectedRow
+    
+    self.currentSelectedTool = self.tools[safe: selectedIndex]
+    
     NotificationCenter.default.post(
       name: Notification.Name(
         OutlineViewController.NotificationNames.selectionChanged
@@ -214,14 +252,32 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
     )
   }
   
-  @IBAction func sendFeedbackButtonAction(_ sender: Any) {
-    let emailUrl = URL(string: "mailto:feedback@devutils.app?subject=\("Feedback for DevUtils.app version \(AppState.getAppVersion())".encodeUrl() ?? "unknown")")!
-    
-    if NSWorkspace.shared.open(emailUrl) {
-      log.debug("Email client opened")
-    } else {
-      log.debug("Email client cannot be opened")
+  @objc private func onItemClicked() {
+    guard let clickedTool = tools[safe: outlineView.clickedRow] else {
+      return
     }
+    
+    // clear matched icon
+    let matchedTool = state.matchedTools.first(where: { (t) -> Bool in
+      t.id == clickedTool.id
+    })
+    
+    if matchedTool != nil {
+      let newTools = state.matchedTools.filter { (t) -> Bool in
+        t.id != clickedTool.id
+      }
+      state.matchedTools = newTools
+      
+      if let view = outlineView.view(atColumn: 0, row: outlineView.clickedRow, makeIfNecessary: false) as? ToolOutlineTableCellView {
+        if let statusImageView = view.statusImageView {
+            statusImageView.isHidden = true
+        }
+      }
+    }
+  }
+  
+  @IBAction func sendFeedbackButtonAction(_ sender: Any) {
+    (NSApp.delegate as? AppDelegate)?.sendFeedback(sender)
   }
   
   func saveCustomOrder() {
@@ -235,7 +291,7 @@ class OutlineViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
   
   func refreshList() {
     refreshTools()
-    outlineView.reloadData()
+    reloadData()
   }
   
   func outlineView(_ outlineView: NSOutlineView, acceptDrop info: NSDraggingInfo, item: Any?, childIndex index: Int) -> Bool {

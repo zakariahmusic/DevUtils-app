@@ -32,9 +32,9 @@ Development environment:
    - https://help.apple.com/xcode/mac/current/#/dev60b6fbbc7 
  - Run the app in Xcode.
  
-# License
-- This project is made available under a GPLv3 license for personal use only.
-- For enterprise/commercial usages, please contact license@devutils.app to purchase a commercial license.
+# Contributing
+
+Please see [CONTRIBUTING.md](https://github.com/DevUtilsApp/DevUtils-app/blob/master/CONTRIBUTING.md)
 
 # Contact
 - **FAQs**: Please check https://devutils.app/faqs

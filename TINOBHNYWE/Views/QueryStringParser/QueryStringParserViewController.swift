@@ -9,14 +9,12 @@
 import Cocoa
 
 class QueryStringParserViewController: ToolViewController, NSTextViewDelegate {
-  @IBOutlet var inputTextView: NSTextView!
+  @IBOutlet var inputTextView: CodeTextView!
   @IBOutlet var outputTextView: JSONTextView!
   var settingViewController: QueryStringParserSettingViewController!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    inputTextView.setupStandardTextview()
-    outputTextView.setupStandardTextview()
     QueryStringParserViewController.ensureDefaults()
     if pendingInput != nil {
       activate(input: pendingInput!)

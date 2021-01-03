@@ -26,7 +26,7 @@ class CustomClaims: Claims {
 
 
 class JWTViewController: ToolViewController, NSTextViewDelegate, NSTextFieldDelegate {
-  @IBOutlet var inputTextView: NSTextView!
+  @IBOutlet var inputTextView: CodeTextView!
   @IBOutlet var headerTextView: JSONTextView!
   @IBOutlet var payloadTextView: JSONTextView!
   @IBOutlet weak var secretTextField: NSTextField!
@@ -36,8 +36,8 @@ class JWTViewController: ToolViewController, NSTextViewDelegate, NSTextFieldDele
   @IBOutlet weak var verificationStatusBox: NSBox!
   @IBOutlet weak var algoPopUpButton: NSPopUpButton!
   @IBOutlet weak var secretTabView: NSTabView!
-  @IBOutlet var publicKeyTextView: NSTextView!
-  @IBOutlet var privateKeyTextView: NSTextView!
+  @IBOutlet var publicKeyTextView: CodeTextView!
+  @IBOutlet var privateKeyTextView: CodeTextView!
   @IBOutlet weak var publicPrivateLabel: NSTextField!
   @IBOutlet weak var publicPrivateLabel2: NSTextField!
   @IBOutlet weak var publicPrivateLabel3: NSTextField!
@@ -128,11 +128,6 @@ class JWTViewController: ToolViewController, NSTextViewDelegate, NSTextFieldDele
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    inputTextView.setupStandardTextview()
-    headerTextView.setupStandardTextview()
-    payloadTextView.setupStandardTextview()
-    publicKeyTextView.setupStandardTextview()
-    privateKeyTextView.setupStandardTextview()
     
     headerTextView.setHighlight(false)
     headerTextView.textColor = #colorLiteral(red: 0.9843137255, green: 0.003921568627, blue: 0.3568627451, alpha: 1)
@@ -289,7 +284,7 @@ class JWTViewController: ToolViewController, NSTextViewDelegate, NSTextFieldDele
     headerTextView.string = ""
     if let header = JWTDecoder.data(base64urlEncoded: components[0]) {
       if let headerJson = String(data: header, encoding: .utf8) {
-        headerTextView.setJSONString(headerJson)
+        let _ = headerTextView.setJSONString(headerJson)
       } else {
         showInvalidField("Header", "Encoding Error")
         success = false
@@ -303,7 +298,7 @@ class JWTViewController: ToolViewController, NSTextViewDelegate, NSTextFieldDele
     if components.count > 1 {
       if let payload = JWTDecoder.data(base64urlEncoded: components[1]) {
         if let payloadJson = String(data: payload, encoding: .utf8) {
-          payloadTextView.setJSONString(payloadJson)
+          let _ = payloadTextView.setJSONString(payloadJson)
         } else {
           showInvalidField("Payload", "Encoding Error")
           success = false
@@ -733,4 +728,13 @@ class JWTViewController: ToolViewController, NSTextViewDelegate, NSTextFieldDele
     refreshStatus()
     refreshJWTSyntaxHighlight()
   }
+  
+  @IBAction func signatureInfoButtonAction(_ sender: Any) {
+    GeneralHelpers.alert(title: "Signature", text: """
+    When you modify the secret, private key, or public key, the JWT token will be re-signed and updated back to the input.
+
+    If you want to verify a token, first enter the secret, then paste the token in the input.
+    """)
+  }
+  
 }

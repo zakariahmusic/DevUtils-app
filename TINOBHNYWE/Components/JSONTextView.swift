@@ -9,23 +9,37 @@
 import Cocoa
 import Highlightr
 
-class JSONTextView: WrapableTextView {
+class JSONTextView: CodeTextView {
   
   var highlightr: Highlightr! = Highlightr()
   var enableHighlight: Bool = true
   var currentFormat: Int?
   var currentSpaces: Bool = true
   
+  override var string: String {
+    didSet{
+      refreshLineNumberView()
+    }
+  }
+  
   required init?(coder: NSCoder) {
     super.init(coder: coder)
     
     setTheme()
+    
+    highlightr.ignoreIllegals = true
     
     DistributedNotificationCenter.default.addObserver(
       self,
       selector: #selector(interfaceModeChanged(sender:)),
       name: NSNotification.Name(
         rawValue: "AppleInterfaceThemeChangedNotification"),
+      object: nil)
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(interfaceModeChanged(sender:)),
+      name: NSNotification.Name(
+        rawValue: "UserPreferenceThemeChangedNotification"),
       object: nil)
   }
 
@@ -49,7 +63,13 @@ class JSONTextView: WrapableTextView {
       self.string = ""
       if self.enableHighlight {
         if let attributedString = highlightr.highlight(output!, as: "json") {
-          self.textStorage?.setAttributedString(attributedString)
+          let mutableAttrString = NSMutableAttributedString.init(attributedString: attributedString)
+          if let menlo = NSFont(name: AppState.TEXTVIEW_MONO_FONT, size: 12) {
+            mutableAttrString.addAttributes([
+              NSAttributedString.Key.font: menlo
+            ], range: .init(location: 0, length: mutableAttrString.length))
+          }
+          self.textStorage?.setAttributedString(mutableAttrString)
         }
       } else {
         self.string = output!
@@ -59,6 +79,8 @@ class JSONTextView: WrapableTextView {
     } else {
       self.string = "Invalid JSON"
     }
+    
+    refreshLineNumberView()
     
     return errors
   }

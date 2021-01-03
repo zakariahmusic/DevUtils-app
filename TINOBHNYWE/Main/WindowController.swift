@@ -9,6 +9,10 @@
 import Cocoa
 
 class WindowController: NSWindowController, NSWindowDelegate {
+  override func windowDidLoad() {
+    super.windowDidLoad()
+    self.windowFrameAutosaveName = "DevUtils.app"
+  }
   func windowDidBecomeMain(_ notification: Notification) {
     self.window?.title = "https://DevUtils.app - Developer Utilities for MacOS \(AppState.getAppVersion())"
   }

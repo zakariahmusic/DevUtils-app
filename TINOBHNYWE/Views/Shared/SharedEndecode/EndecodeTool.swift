@@ -9,8 +9,8 @@
 import Foundation
 
 class EndecodeTool: ToolImpl {
-  required init() {
-    super.init()
+  required init(tool: Tool) {
+    super.init(tool: tool)
   }
   
   func hasSetting() -> Bool {
@@ -28,6 +28,15 @@ class EndecodeTool: ToolImpl {
   
   func getDecodeLabel() -> String {
     return "Decode"
+  }
+  
+  func matchInput(input: String, options: ToolOptions) -> Bool {
+    do {
+      return try decode(input, options) != input
+    } catch {
+      log.debug("matchInput failed: \(error)")
+      return false
+    }
   }
   
   /*

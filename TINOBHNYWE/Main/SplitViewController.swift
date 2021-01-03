@@ -32,6 +32,8 @@ class SplitViewController: NSSplitViewController {
      the first to take on additional width if the split view grows or shrinks.
      */
     
+    splitView.autosaveName = "MainSplitView"
+    
     NotificationCenter.default.addObserver(
       self,
       selector: #selector(handleSelectionChange(_:)),
@@ -70,14 +72,14 @@ class SplitViewController: NSSplitViewController {
         if let settingVcType = tool.settingViewControllerType {
           settingVc = settingVcType.init(nibName: settingVcType.className())
         }
-        vc = t.init(endecodeTool: impl.init(), settingViewController: settingVc)
+        vc = t.init(endecodeTool: impl.init(tool: tool), settingViewController: settingVc)
       } else if let t = tool.viewControllerType as? SharedFormatterViewController.Type {
         let impl = tool.implementation as! FormatterTool.Type
         var settingVc: ToolSettingViewController? = nil
         if let settingVcType = tool.settingViewControllerType {
           settingVc = settingVcType.init(nibName: settingVcType.className())
         }
-        vc = t.init(formatterTool: impl.init(), settingViewController: settingVc)
+        vc = t.init(formatterTool: impl.init(tool: tool), settingViewController: settingVc)
       } else {
         vc = tool.viewControllerType.init(nibName: tool.viewControllerType.className())
       }

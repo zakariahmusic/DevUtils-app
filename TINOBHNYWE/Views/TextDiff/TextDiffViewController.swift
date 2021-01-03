@@ -9,9 +9,9 @@
 import Cocoa
 
 class TextDiffViewController: ToolViewController, NSTextViewDelegate {
-  @IBOutlet var input1TextView: NSTextView!
-  @IBOutlet var input2TextView: NSTextView!
-  @IBOutlet var diffTextView: NSTextView!
+  @IBOutlet var input1TextView: CodeTextView!
+  @IBOutlet var input2TextView: CodeTextView!
+  @IBOutlet var diffTextView: CodeTextView!
   @IBOutlet weak var diffModeCharacterCheckbox: NSButton!
   @IBOutlet weak var diffModeWordCheckbox: NSButton!
   @IBOutlet weak var diffModeLineCheckbox: NSButton!
@@ -43,9 +43,6 @@ class TextDiffViewController: ToolViewController, NSTextViewDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    input1TextView.setupStandardTextview()
-    input2TextView.setupStandardTextview()
-    diffTextView.setupStandardTextview()
   }
   
   func getOutputMode() -> OutputMode {
@@ -176,6 +173,7 @@ class TextDiffViewController: ToolViewController, NSTextViewDelegate {
     }
     
     diffTextView.textStorage?.setAttributedString(s)
+    diffTextView.refreshLineNumberView()
   }
   
   func updateNextPrevButtonState() {

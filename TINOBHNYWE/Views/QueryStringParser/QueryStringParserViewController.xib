@@ -18,11 +18,11 @@
         <customView translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
             <rect key="frame" x="0.0" y="0.0" width="791" height="376"/>
             <subviews>
-                <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CbJ-Pf-geQ">
+                <splitView identifier="query-string-parser-split" arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CbJ-Pf-geQ" customClass="AutosaveSplitView" customModule="DevUtils" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="791" height="376"/>
                     <subviews>
                         <customView id="CfO-CB-Um3">
-                            <rect key="frame" x="0.0" y="0.0" width="397" height="376"/>
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="376"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vNU-O6-mh1">
@@ -34,17 +34,17 @@
                                     </textFieldCell>
                                 </textField>
                                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ah7-Wm-uXL">
-                                    <rect key="frame" x="20" y="20" width="357" height="312"/>
+                                    <rect key="frame" x="20" y="20" width="321" height="312"/>
                                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="pcO-9o-Jko">
-                                        <rect key="frame" x="0.0" y="0.0" width="357" height="312"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="321" height="312"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" allowsUndo="YES" smartInsertDelete="YES" id="Utn-BI-uac">
-                                                <rect key="frame" x="0.0" y="0.0" width="357" height="312"/>
+                                            <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" allowsUndo="YES" smartInsertDelete="YES" id="Utn-BI-uac" customClass="CodeTextView" customModule="DevUtils" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="321" height="312"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                <size key="minSize" width="357" height="312"/>
+                                                <size key="minSize" width="321" height="312"/>
                                                 <size key="maxSize" width="444" height="10000000"/>
                                                 <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <connections>
@@ -128,7 +128,7 @@
                             </constraints>
                         </customView>
                         <customView id="pRq-Ks-ZmY">
-                            <rect key="frame" x="398" y="0.0" width="393" height="376"/>
+                            <rect key="frame" x="362" y="0.0" width="429" height="376"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pLe-Ki-XCm">
@@ -140,17 +140,17 @@
                                     </textFieldCell>
                                 </textField>
                                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ys7-W7-sPB">
-                                    <rect key="frame" x="20" y="20" width="353" height="312"/>
+                                    <rect key="frame" x="20" y="20" width="389" height="312"/>
                                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="aVk-KV-wkt">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="312"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="389" height="312"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <textView editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="lgX-ed-UA6" customClass="JSONTextView" customModule="DevUtils" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="353" height="312"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="389" height="312"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                <size key="minSize" width="353" height="312"/>
+                                                <size key="minSize" width="389" height="312"/>
                                                 <size key="maxSize" width="439" height="10000000"/>
                                                 <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             </textView>
@@ -170,7 +170,7 @@
                                     </scroller>
                                 </scrollView>
                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jng-vr-qBs">
-                                    <rect key="frame" x="297" y="333" width="82" height="32"/>
+                                    <rect key="frame" x="333" y="333" width="82" height="32"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="70" id="qV4-Yy-5b7"/>
                                     </constraints>
@@ -196,7 +196,7 @@
                         </customView>
                     </subviews>
                     <holdingPriorities>
-                        <real value="250"/>
+                        <real value="251"/>
                         <real value="250"/>
                     </holdingPriorities>
                 </splitView>

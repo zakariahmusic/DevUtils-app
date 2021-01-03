@@ -21,8 +21,6 @@ class JSONFormatterViewController: ToolViewController, NSTextViewDelegate, NSTab
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    inputTextView.setupStandardTextview()
-    outputTextView.setupStandardTextview()
     JSONFormatterViewController.ensureDefaults()
     if pendingInput != nil {
       activate(input: pendingInput!)
@@ -76,7 +74,10 @@ class JSONFormatterViewController: ToolViewController, NSTextViewDelegate, NSTab
     }
     
     do {
-      try JSONSerialization.jsonObject(with: jsonData, options: [.allowFragments])
+      // Don't allow fragments (default, which is why the options param is empty)
+      // This way we will have less false positive results like numbers and
+      // simple quoted strings.
+      try JSONSerialization.jsonObject(with: jsonData, options: [])
     } catch {
       log.debug("JSONFormatter cannot json deserialize the string: \(error)")
       return false

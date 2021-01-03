@@ -41,7 +41,7 @@ class AppState {
   )
   static var JSONFormatterTool = Tool.init(
     id: "jsonformatter",
-    name: "JSON Formatter/Validator",
+    name: "JSON Format/Validate",
     image: NSImage(named: "jsonformatter")!,
     viewControllerType: JSONFormatterViewController.self
   )
@@ -53,13 +53,13 @@ class AppState {
   )
   static var QueryStringParserTool = Tool.init(
     id: "querystringparser",
-    name: "Query String Parser",
+    name: "Query String to JSON",
     image: NSImage(named: "querystring")!,
     viewControllerType: QueryStringParserViewController.self
   )
   static var HTMLEncodeTool = Tool.init(
     id: "htmlencode",
-    name: "HTML Entity Encoder/Decoder",
+    name: "HTML Entity Encode/Decode",
     image: NSImage(named: "htmlentities")!,
     viewControllerType: SharedEndecodeViewController.self,
     implementation: HTMLEntityEndecodeTool.self,
@@ -67,7 +67,7 @@ class AppState {
   )
   static var Base64EncodeTool = Tool.init(
     id: "base64encode",
-    name: "Base64 Encoder/Decoder",
+    name: "Base64 Encode/Decode",
     image: NSImage(named: "base64")!,
     viewControllerType: SharedEndecodeViewController.self,
     implementation: Base64EndecodeTool.self,
@@ -75,7 +75,7 @@ class AppState {
   )
   static var URLEncodeTool = Tool.init(
     id: "urlencode",
-    name: "URL Encoder/Decoder",
+    name: "URL Encode/Decode",
     image: NSImage(named: "percent")!,
     viewControllerType: SharedEndecodeViewController.self,
     implementation: URLEndecodeTool.self,
@@ -83,7 +83,7 @@ class AppState {
   )
   static var BackslashTool = Tool.init(
     id: "backslash",
-    name: "Backslash Escaper/Unescaper",
+    name: "Backslash Escape/Unescape",
     image: NSImage(named: "backslash")!,
     viewControllerType: SharedEndecodeViewController.self,
     implementation: BackslashEscapeTool.self,
@@ -92,7 +92,7 @@ class AppState {
   
   static var UUIDTool = Tool.init(
     id: "uuidtool",
-    name: "UUID Generator/Decoder",
+    name: "UUID Generate/Decode",
     image: NSImage(named: "uuid")!,
     viewControllerType: UUIDToolViewController.self
   )
@@ -113,7 +113,7 @@ class AppState {
   
   static var HTMLBeautifierTool = Tool.init(
     id: "htmlformatter",
-    name: "HTML Beautifier/Minifier",
+    name: "HTML Beautify/Minify",
     image: NSImage(named: "magic")!,
     viewControllerType: SharedFormatterViewController.self,
     implementation: HTMLFormatterTool.self
@@ -121,31 +121,31 @@ class AppState {
   
   static var CSSBeautifierTool = Tool.init(
     id: "cssformatter",
-    name: "CSS Beautifier/Minifier",
+    name: "CSS Beautify/Minify",
     image: NSImage(named: "magic")!,
     viewControllerType: SharedFormatterViewController.self,
     implementation: CSSFormatterTool.self
   )
   
-  static var LESSBeautifierTool = Tool.init(
-    id: "lessformatter",
-    name: "LESS Beautifier/Minifier",
-    image: NSImage(named: "magic")!,
-    viewControllerType: SharedFormatterViewController.self,
-    implementation: LESSFormatterTool.self
-  )
-  
-  static var SCSSBeautifierTool = Tool.init(
-    id: "scssformatter",
-    name: "SCSS Beautifier/Minifier",
-    image: NSImage(named: "magic")!,
-    viewControllerType: SharedFormatterViewController.self,
-    implementation: SCSSFormatterTool.self
-  )
+//  static var LESSBeautifierTool = Tool.init(
+//    id: "lessformatter",
+//    name: "LESS Beautifier/Minifier",
+//    image: NSImage(named: "magic")!,
+//    viewControllerType: SharedFormatterViewController.self,
+//    implementation: LESSFormatterTool.self
+//  )
+//
+//  static var SCSSBeautifierTool = Tool.init(
+//    id: "scssformatter",
+//    name: "SCSS Beautifier/Minifier",
+//    image: NSImage(named: "magic")!,
+//    viewControllerType: SharedFormatterViewController.self,
+//    implementation: SCSSFormatterTool.self
+//  )
   
   static var JSBeautifierTool = Tool.init(
     id: "jsformatter",
-    name: "JS Beautifier/Minifier",
+    name: "JS Beautify/Minify",
     image: NSImage(named: "magic")!,
     viewControllerType: SharedFormatterViewController.self,
     implementation: JSFormatterTool.self
@@ -153,25 +153,48 @@ class AppState {
   
   static var XMLBeautifierTool = Tool.init(
     id: "xmlformatter",
-    name: "XML Beautifier/Minifier",
+    name: "XML Beautify/Minify",
     image: NSImage(named: "magic")!,
     viewControllerType: SharedFormatterViewController.self,
     implementation: XMLFormatterTool.self
   )
   
-  static var ERBBeautifierTool = Tool.init(
-    id: "erbformatter",
-    name: "ERB (Ruby) Beautifier/Minifier",
-    image: NSImage(named: "magic")!,
-    viewControllerType: SharedFormatterViewController.self,
-    implementation: ERBFormatterTool.self
-  )
+//  static var ERBBeautifierTool = Tool.init(
+//    id: "erbformatter",
+//    name: "ERB (Ruby) Beautifier/Minifier",
+//    image: NSImage(named: "magic")!,
+//    viewControllerType: SharedFormatterViewController.self,
+//    implementation: ERBFormatterTool.self
+//  )
   
   static var RegexTesterTool = Tool.init(
     id: "regextester",
     name: "RegExp Tester",
-    image: NSImage(named: "magic")!,
+    image: NSImage(named: "regex")!,
     viewControllerType: RegexTesterViewController.self
+  )
+  
+  static var YAML2JSONTool = Tool.init(
+    id: "yaml2json",
+    name: "YAML to JSON",
+    image: NSImage(named: "convert")!,
+    viewControllerType: SharedFormatterViewController.self,
+    implementation: YAML2JSONConverterTool.self
+  )
+  
+  static var JSON2YAMLTool = Tool.init(
+    id: "json2yaml",
+    name: "JSON to YAML",
+    image: NSImage(named: "convert")!,
+    viewControllerType: SharedFormatterViewController.self,
+    implementation: JSON2YAMLConverterTool.self
+  )
+  
+  static var NumberBaseTool = Tool.init(
+    id: "numberbase",
+    name: "Number Base Converter",
+    image: NSImage(named: "binary")!,
+    viewControllerType: NumberBaseViewController.self
   )
   
   static var tools: [Tool] = [
@@ -187,6 +210,9 @@ class AppState {
     UUIDTool,
     HTMLPreviewTool,
     TextDiffTool,
+    YAML2JSONTool,
+    JSON2YAMLTool,
+    NumberBaseTool,
     HTMLBeautifierTool,
     CSSBeautifierTool,
     JSBeautifierTool,
@@ -247,18 +273,22 @@ class AppState {
     UserDefaults.standard.set(shortcut.dictionaryRepresentation, forKey: "global-hotkey")
   }
   
+  static func getSetting(_ keyPath: String, defaultValue: Bool = false) -> Bool {
+    return UserDefaults.standard.value(forKey: keyPath) as? Bool ?? defaultValue
+  }
+  
+  static func getSetting(_ keyPath: String, defaultValue: String = "") -> String {
+    return UserDefaults.standard.value(forKey: keyPath) as? String ?? defaultValue
+  }
+  
+  static func getSetting(_ keyPath: String, defaultValue: Int = 0) -> Int {
+    return UserDefaults.standard.value(forKey: keyPath) as? Int ?? defaultValue
+  }
+  
   static func getAppVersion() -> String {
-    let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
-    let versionNumber = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-    if let versionNumber = versionNumber, let buildNumber = buildNumber {
-      return "\(versionNumber) (\(buildNumber))"
-    } else if let versionNumber = versionNumber {
-      return versionNumber
-    } else if let buildNumber = buildNumber {
-      return buildNumber
-    } else {
-      return ""
-    }
+    let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""
+    let versionNumber = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+    return "\(versionNumber) (\(buildNumber)\(getAppBundleCode()))"
   }
   
   static func ensureAppDefaults() {
@@ -266,6 +296,8 @@ class AppState {
     ensureDefault("values.auto-clipboard-global-hotkey", true, false)
     ensureDefault("values.auto-clipboard-status-bar-icon", true, false)
     ensureDefault("values.app-settings-theme", "System", false)
+    ensureDefault("values.app-settings-text-view-show-line-numbers", true, false)
+    ensureDefault("values.app-settings-text-view-wrap-lines", true, false)
   }
   
   static func getAutoClipboardGlobalHotKey() -> Bool {
@@ -335,11 +367,21 @@ class AppState {
   }
   
   static func getAppBundleName() -> String {
-    var bundleName = "Direct download"
+    var bundleName = "devutils.app"
     #if BUNDLE_APPSTORE
     bundleName = "App Store"
     #elseif BUNDLE_SETAPP
     bundleName = "Setapp"
+    #endif
+    
+    return bundleName
+  }
+  static func getAppBundleCode() -> String {
+    var bundleName = "D"
+    #if BUNDLE_APPSTORE
+    bundleName = "A"
+    #elseif BUNDLE_SETAPP
+    bundleName = "S"
     #endif
     
     return bundleName

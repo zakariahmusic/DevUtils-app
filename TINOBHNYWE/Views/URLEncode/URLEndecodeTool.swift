@@ -69,4 +69,15 @@ class URLEndecodeTool: EndecodeTool {
   override func getSampleString() -> String? {
     return "abc 0123 !@#$%^&*()|+?\"<>',.;:`"
   }
+  
+  override func matchInput(input: String, options: ToolOptions) -> Bool {
+    do {
+      let standardizedInput = input.replacingOccurrences(of: "+", with: "")
+      // Ignoring "+" characeters as it results in many false positive when auto detect
+      return try decode(standardizedInput, options) != standardizedInput
+    } catch {
+      log.debug("matchInput failed: \(error)")
+      return false
+    }
+  }
 }

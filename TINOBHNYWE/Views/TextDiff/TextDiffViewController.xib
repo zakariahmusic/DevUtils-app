@@ -29,14 +29,14 @@
         <customView translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
             <rect key="frame" x="0.0" y="0.0" width="1015" height="544"/>
             <subviews>
-                <splitView arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="voD-gc-fv8">
+                <splitView identifier="text-diff-split-1" arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="voD-gc-fv8" customClass="AutosaveSplitView" customModule="DevUtils" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="1015" height="544"/>
                     <subviews>
                         <customView id="hix-b3-9tu">
                             <rect key="frame" x="0.0" y="0.0" width="1015" height="275"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PYf-OP-wEh">
+                                <splitView identifier="text-diff-split-2" arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PYf-OP-wEh" customClass="AutosaveSplitView" customModule="DevUtils" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="1015" height="275"/>
                                     <subviews>
                                         <customView id="l7l-Ie-eOW">
@@ -57,13 +57,13 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="467" height="211"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
-                                                            <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="HVm-pj-RVI">
+                                                            <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="HVm-pj-RVI" customClass="CodeTextView" customModule="DevUtils" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="467" height="211"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 <size key="minSize" width="467" height="211"/>
-                                                                <size key="maxSize" width="467" height="10000000"/>
+                                                                <size key="maxSize" width="482" height="10000000"/>
                                                                 <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                 <connections>
                                                                     <outlet property="delegate" destination="-2" id="bve-4r-d2q"/>
@@ -156,7 +156,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="437" height="211"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
-                                                            <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="xnR-tU-bII">
+                                                            <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="xnR-tU-bII" customClass="CodeTextView" customModule="DevUtils" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="437" height="211"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -261,13 +261,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="960" height="207"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <textView editable="NO" importsGraphics="NO" verticallyResizable="YES" smartInsertDelete="YES" id="PdU-nr-ymM">
+                                            <textView editable="NO" importsGraphics="NO" verticallyResizable="YES" smartInsertDelete="YES" id="PdU-nr-ymM" customClass="CodeTextView" customModule="DevUtils" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="960" height="207"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 <size key="minSize" width="960" height="207"/>
-                                                <size key="maxSize" width="960" height="10000000"/>
+                                                <size key="maxSize" width="975" height="10000000"/>
                                                 <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             </textView>
                                         </subviews>

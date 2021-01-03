@@ -11,7 +11,6 @@ import HotKey
 import ShortcutRecorder
 import ServiceManagement
 import SwiftyBeaver
-import JavaScriptCore
 
 let log = SwiftyBeaver.self
 
@@ -31,6 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   var hotKey: HotKey!
   var myWindowController: WindowController!
   var preferenceWindowController: NSWindowController!
+  var aboutWindowController: NSWindowController!
   let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
   var manualLaunch: Bool = true
   let launcherAppId = "tonyapp.devutils.launcher"
@@ -39,12 +39,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @IBOutlet weak var toolsSortOrderCustomMenuItem: NSMenuItem!
   
   func testMe() {
-    // Test
+    // openTestWindow()
   }
 
   struct NotificationNames {
     static let AppActivated = Notification.Name("AppActivatedNotification")
     static let AppToolsOrderChanged = Notification.Name("AppToolsOrderChanged")
+  }
+  
+  @IBAction func aboutMenuItemAction(_ sender: Any) {
+    if aboutWindowController == nil {
+      self.aboutWindowController = NSStoryboard(name: "AboutWindow", bundle: nil)
+        .instantiateInitialController() as? NSWindowController
+    }
+    self.myWindowController.window?.addChildWindow((self.aboutWindowController?.window)!, ordered: .above)
+    self.aboutWindowController.showWindow(self)
   }
   
   func disableSparkleUpdate() {
@@ -129,9 +138,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     #endif
   }
   
+  @IBAction func ackButtonAction(_ sender: Any) {
+    if let url = URL(string: "https://devutils.app/acknowledgments/") {
+      NSWorkspace.shared.open(url)
+    }
+  }
   func applicationDidFinishLaunching(_ aNotification: Notification) {
-    // resetAllDefaults()
-    
     // Check if this is a manual launch or a launch by launcher (login item)
     // This check rely on an undocumented behavior of MacOS that a random
     // paramater will be passed if the app is launched by our launcher.
@@ -228,6 +240,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       alert.addButton(withTitle: "OK")
       alert.runModal()
     }
+  }
+  
+  func openTestWindow() {
+    let testWindowController = NSStoryboard(name: "TestWindow", bundle: nil)
+        .instantiateInitialController() as? NSWindowController
+    self.myWindowController.window?.addChildWindow((testWindowController?.window)!, ordered: .above)
+    testWindowController?.showWindow(self)
   }
   
   func openPreferenceWindow() {
@@ -441,5 +460,45 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
   }
   
+  @IBAction func factoryResetButtonAction(_ sender: Any) {
+    let sure = GeneralHelpers.confirm(question: "Reset all settings to default?", text: """
+    This action will reset all settings to factory defaults, including:
+      - Hotkey mapping, auto-update, and other preferences...
+      - Custom tool list order
+      - Window and split size/position
+      - Tool specific settings: auto-detect and configs
+
+    You cannot undo this. Are you sure?
+    """)
+    
+    if sure {
+      resetAllDefaults()
+      GeneralHelpers.alert(title: "All done!", text: """
+      Please restart the app for the change to take effect.
+      """)
+    }
+  }
+  
+  @IBAction func sendFeedback(_ sender: Any) {
+    let emailUrl = URL(string: "mailto:feedback@devutils.app?subject=\("Feedback for DevUtils.app version \(AppState.getAppVersion())".encodeUrl() ?? "unknown")")!
+    
+    if NSWorkspace.shared.open(emailUrl) {
+      log.debug("Email client opened")
+    } else {
+      log.debug("Email client cannot be opened")
+    }
+  }
+  
+  @IBAction func followOnTwitter(_ sender: Any) {
+    if let url = URL(string: "https://twitter.com/devutils_app") {
+      NSWorkspace.shared.open(url)
+    }
+  }
+  
+  @IBAction func visitWebsite(_ sender: Any) {
+    if let url = URL(string: "https://devutils.app") {
+      NSWorkspace.shared.open(url)
+    }
+  }
 }
 

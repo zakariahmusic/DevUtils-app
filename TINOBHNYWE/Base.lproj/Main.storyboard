@@ -19,7 +19,7 @@
                                         <menuItem title="About DevUtils" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                                <action selector="aboutMenuItemAction:" target="Voe-Tx-rLC" id="aju-vz-rPb"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Check for Updates..." id="DoJ-et-J6E">
@@ -378,6 +378,18 @@
                                                 </items>
                                             </menu>
                                         </menuItem>
+                                        <menuItem title="Show line numbers" state="on" hidden="YES" id="RfG-PR-wHQ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <binding destination="GvM-kS-J7m" name="value" keyPath="values.app-settings-text-view-show-line-numbers" id="W9B-nP-ELP"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Wrap lines" state="on" id="uYk-lt-z0f">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <binding destination="GvM-kS-J7m" name="value" keyPath="values.app-settings-text-view-wrap-lines" id="oRK-sD-zAX"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -416,15 +428,41 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="Release Notes..." id="84l-Or-xHl">
+                                        <menuItem title="Visit Website" id="kp0-df-rnx">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="visitWebsite:" target="Voe-Tx-rLC" id="TFa-yd-Oyq"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Release Notes" id="84l-Or-xHl">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="releaseNotesMenuAction:" target="Voe-Tx-rLC" id="Nwk-69-yAW"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="DevUtils Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="Acknowledgments" id="G7B-XN-Pw6">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
+                                                <action selector="ackButtonAction:" target="Voe-Tx-rLC" id="cZH-ws-nLa"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Send Feedback" id="E0w-Vp-3Sg">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="sendFeedback:" target="Voe-Tx-rLC" id="gjC-sh-MM7"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Follow on Twitter" id="tZQ-dh-oPD">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="followOnTwitter:" target="Voe-Tx-rLC" id="shG-FU-WZA"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="uku-OP-rAc"/>
+                                        <menuItem title="Factory Reset" id="lfo-ES-ZHD">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="factoryResetButtonAction:" target="Voe-Tx-rLC" id="u1i-9L-MsD"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -446,6 +484,7 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="T8O-WY-UtC" customClass="SUUpdaterWrapper" customModule="DevUtils" customModuleProvider="target"/>
+                <userDefaultsController id="GvM-kS-J7m"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
@@ -478,7 +517,7 @@
                         <splitViewItem holdingPriority="255" behavior="contentList" id="Zhb-Hk-EYT"/>
                         <splitViewItem holdingPriority="199" id="NGo-sV-BGC"/>
                     </splitViewItems>
-                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="hlE-zu-ZQh">
+                    <splitView key="splitView" autosaveName="" dividerStyle="thin" vertical="YES" id="hlE-zu-ZQh">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
@@ -499,8 +538,8 @@
         <scene sceneID="d3S-9C-YZy">
             <objects>
                 <viewController id="56V-C1-g2w" customClass="OutlineViewController" customModule="DevUtils" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bC8-q3-lYD" customClass="NSVisualEffectView">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="437"/>
+                    <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="bC8-q3-lYD" customClass="NSVisualEffectView">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="433"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T2m-9A-hAY">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="405"/>
@@ -531,7 +570,7 @@
                                                     <tableColumns>
                                                         <tableColumn width="297" minWidth="40" maxWidth="1000" id="aoo-DF-9T7">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                                <font key="font" metaFont="smallSystem"/>
+                                                                <font key="font" metaFont="message" size="11"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                             </tableHeaderCell>
@@ -610,7 +649,7 @@
                                         </scroller>
                                     </scrollView>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TUw-wd-mor">
-                                        <rect key="frame" x="70" y="39" width="161" height="32"/>
+                                        <rect key="frame" x="74" y="39" width="152" height="32"/>
                                         <buttonCell key="cell" type="push" title="Send Feedback" bezelStyle="rounded" image="NSTouchBarMailTemplate" imagePosition="leading" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ERU-kc-qpr">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -622,7 +661,7 @@
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ko1-bZ-iKj">
                                         <rect key="frame" x="69" y="10" width="163" height="28"/>
                                         <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" alignment="center" id="fAY-OT-pfD">
-                                            <font key="font" metaFont="smallSystem"/>
+                                            <font key="font" metaFont="message" size="11"/>
                                             <string key="title">Developer Utilities for macOS
 https://DevUtils.app</string>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
