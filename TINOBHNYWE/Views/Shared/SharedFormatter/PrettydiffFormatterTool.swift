@@ -17,6 +17,10 @@ class PrettydiffFormatterTool: FormatterTool {
   }
   
   func formatLanguage(input: String, options: FormatToolOptions, language: String) throws -> String {
+    if input.count == 0 {
+      return ""
+    }
+    
     let c = JSContext()!
     c.evaluateScript("var window = {};")
     c.evaluateScript(JSHelpers.readPrettyDiff())

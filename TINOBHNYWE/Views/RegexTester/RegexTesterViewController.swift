@@ -10,8 +10,8 @@ import Cocoa
 
 class RegexTesterViewController: ToolViewController, NSTextFieldDelegate, NSTextViewDelegate, ToolSettingDelegate {
   @IBOutlet weak var inputTextField: NSTextField!
-  @IBOutlet var matchesTextView: NSTextView!
-  @IBOutlet var testTextView: NSTextView!
+  @IBOutlet var matchesTextView: CodeTextView!
+  @IBOutlet var testTextView: CodeTextView!
   @IBOutlet weak var matchesCountLabel: NSTextField!
   @IBOutlet weak var navBackButton: NSButton!
   @IBOutlet weak var navForwardButton: NSButton!
@@ -32,8 +32,6 @@ class RegexTesterViewController: ToolViewController, NSTextFieldDelegate, NSText
       inputTextField.font = menlo
       flagsLabel.font = menlo
     }
-    testTextView.setupStandardTextview()
-    matchesTextView.setupStandardTextview()
     matchesTextView.isEditable = false
     updateFlagsLabel()
     updateNavigationState()

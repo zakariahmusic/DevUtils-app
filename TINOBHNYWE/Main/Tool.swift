@@ -8,13 +8,19 @@
 
 import Cocoa
 
-class Tool: NSObject {
+class Tool: NSObject, Fuseable {
   let id: String
-  let name: String
+  dynamic let name: String
   let image: NSImage
   let viewControllerType: ToolViewController.Type
   let implementation: ToolImpl.Type?
   let settingViewControllerType: ToolSettingViewController.Type?
+  
+  var properties: [FuseProperty] {
+      return [
+          FuseProperty(name: "name", weight: 1),
+      ]
+  }
   
   init(
     id: String,

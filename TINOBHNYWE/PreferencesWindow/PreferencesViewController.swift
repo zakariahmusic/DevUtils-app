@@ -153,5 +153,9 @@ class PreferencesViewController: NSViewController, HotkeyRecorderDelegate {
   
   @IBAction func themeOptionChanged(_ sender: Any) {
     (NSApp.delegate as! AppDelegate).setUserPreferredTheme(force: true)
+    NotificationCenter.default.post(
+      name: .init(rawValue: "UserPreferenceThemeChangedNotification"),
+      object: nil
+    )
   }
 }

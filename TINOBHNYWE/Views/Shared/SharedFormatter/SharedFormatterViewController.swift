@@ -9,9 +9,11 @@
 import Cocoa
 
 class SharedFormatterViewController: ToolViewController, NSTextViewDelegate {
-  @IBOutlet var inputTextView: NSTextView!
+  @IBOutlet var inputTextView: CodeTextView!
   @IBOutlet var outputTextView: HighlightedTextView!
   @IBOutlet weak var sampleButton: NSButton!
+  @IBOutlet weak var formatOptionsPopUpButton: NSPopUpButton!
+  @IBOutlet weak var splitView: NSSplitView!
   
   var formatterTool: FormatterTool!
   var options: FormatToolOptions = .init(formatMode: .twoSpaces)
@@ -32,10 +34,15 @@ class SharedFormatterViewController: ToolViewController, NSTextViewDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    inputTextView.setupStandardTextview()
-    outputTextView.setupStandardTextview()
+    
+    splitView.autosaveName = "auto-save-split-" + formatterTool.tool.id
+    
     if let language = formatterTool.getHighlighterLanguage() {
       outputTextView.setLanguage(language: language)
+    }
+    
+    if !self.formatterTool.useFormatterOptions() {
+      formatOptionsPopUpButton.isHidden = true
     }
     
     if self.formatterTool.getSampleString() != nil {

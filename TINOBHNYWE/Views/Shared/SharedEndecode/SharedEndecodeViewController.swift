@@ -9,12 +9,13 @@
 import Cocoa
 
 class SharedEndecodeViewController: ToolViewController, NSTextViewDelegate, ToolSettingDelegate {
-  @IBOutlet var inputTextView: NSTextView!
-  @IBOutlet var outputTextView: NSTextView!
+  @IBOutlet var inputTextView: CodeTextView!
+  @IBOutlet var outputTextView: CodeTextView!
   @IBOutlet weak var encodeButton: NSButton!
   @IBOutlet weak var decodeButton: NSButton!
   @IBOutlet weak var sampleButton: NSButton!
   @IBOutlet weak var settingButton: NSButton!
+  @IBOutlet weak var splitView: NSSplitView!
   
   var endecodeTool: EndecodeTool!
   var settingViewController: ToolSettingViewController?
@@ -40,8 +41,7 @@ class SharedEndecodeViewController: ToolViewController, NSTextViewDelegate, Tool
   override func viewDidLoad() {
     super.viewDidLoad()
     log.debug("viewDidLoad: \(String(describing: endecodeTool))")
-    inputTextView.setupStandardTextview()
-    outputTextView.setupStandardTextview()
+    splitView.autosaveName = "auto-save-split-" + endecodeTool.tool.id
     
     self.settingViewController?.delegate = self
     if self.endecodeTool.getSampleString() != nil {
@@ -74,12 +74,7 @@ class SharedEndecodeViewController: ToolViewController, NSTextViewDelegate, Tool
       return false
     }
     
-    do {
-      return try endecodeTool.decode(input, ops) != input
-    } catch {
-      log.debug("matchInput failed: \(error)")
-      return false
-    }
+    return endecodeTool.matchInput(input: input, options: ops)
   }
   
   override func activate(input: ActivationValue) {

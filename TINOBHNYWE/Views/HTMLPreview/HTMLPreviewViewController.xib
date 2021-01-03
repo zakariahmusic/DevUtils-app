@@ -18,7 +18,7 @@
         <customView translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
             <rect key="frame" x="0.0" y="0.0" width="792" height="349"/>
             <subviews>
-                <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxj-QS-cMy">
+                <splitView identifier="html-preview-split" arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxj-QS-cMy" customClass="AutosaveSplitView" customModule="DevUtils" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="792" height="349"/>
                     <subviews>
                         <customView id="Gwu-fu-Yft">
@@ -31,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="346" height="285"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="H5L-K8-eWC">
+                                            <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="H5L-K8-eWC" customClass="CodeTextView" customModule="DevUtils" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="346" height="285"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -127,6 +127,7 @@
                                 <constraint firstItem="l9m-Wp-u0T" firstAttribute="leading" secondItem="Gwu-fu-Yft" secondAttribute="leading" constant="20" id="N2j-9d-SvR"/>
                                 <constraint firstItem="l9m-Wp-u0T" firstAttribute="top" secondItem="6hD-qm-dCi" secondAttribute="bottom" constant="11" id="UxP-nu-eh8"/>
                                 <constraint firstItem="Cr2-Fa-ssU" firstAttribute="centerY" secondItem="6hD-qm-dCi" secondAttribute="centerY" id="bHJ-VP-Ous"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Cr2-Fa-ssU" secondAttribute="trailing" constant="20" id="bpu-jH-whM"/>
                                 <constraint firstAttribute="trailing" secondItem="l9m-Wp-u0T" secondAttribute="trailing" constant="20" id="dDm-R7-PkR"/>
                                 <constraint firstItem="6hD-qm-dCi" firstAttribute="leading" secondItem="Gwu-fu-Yft" secondAttribute="leading" constant="20" id="nPe-uR-B8C"/>
                             </constraints>
@@ -166,6 +167,7 @@
                                 <constraint firstAttribute="trailing" secondItem="8BV-MT-f0L" secondAttribute="trailing" constant="20" id="c9u-qd-4bm"/>
                                 <constraint firstAttribute="trailing" secondItem="dEd-0O-guZ" secondAttribute="trailing" constant="20" id="hMZ-ba-H2E"/>
                                 <constraint firstItem="8BV-MT-f0L" firstAttribute="leading" secondItem="hac-9c-cwJ" secondAttribute="leading" constant="20" id="tjX-Cf-sg9"/>
+                                <constraint firstItem="dEd-0O-guZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="j69-Ve-gOu" secondAttribute="trailing" constant="10" id="yrv-Q5-gvP"/>
                             </constraints>
                         </customView>
                     </subviews>

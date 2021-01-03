@@ -30,4 +30,8 @@ class JSHelpers {
   public static func readPrettyDiff() -> String {
     return readScript("prettydiff.browser.min")
   }
+  
+  public static func readJsYaml() -> String {
+    return readScript("js-yaml.min")
+  }
 }

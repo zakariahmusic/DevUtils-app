@@ -13,7 +13,7 @@ extension NSTextView {
     if let menlo = NSFont(name: AppState.TEXTVIEW_MONO_FONT, size: 12) {
       self.typingAttributes = [
         NSAttributedString.Key.font: menlo,
-        NSAttributedString.Key.foregroundColor: NSColor.textColor
+        NSAttributedString.Key.foregroundColor: textColor ?? NSColor.textColor
       ]
     }
   }
@@ -53,4 +53,21 @@ extension NSTextView {
     NSPasteboard.general.clearContents()
     NSPasteboard.general.setString(self.string, forType: .string)
   }
+  
+  // Manually set the text view frame in case it is somehow messed up.
+  // Like when the vertical ruler is show/hide continuously.
+  func refreshFrame() {
+    guard let scrollView = enclosingScrollView else {
+      log.error("cannot refresh frame, enclosingScrollView is nil")
+      return
+    }
+    
+    self.setFrameSize(
+      .init(
+        width: scrollView.contentSize.width,
+        height: self.frame.height
+      )
+    )
+  }
+
 }

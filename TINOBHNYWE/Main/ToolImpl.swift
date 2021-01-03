@@ -9,7 +9,9 @@
 import Foundation
 
 class ToolImpl {
-  required init() {
+  var tool: Tool
+  required init(tool: Tool) {
+    self.tool = tool
   }
 }
 

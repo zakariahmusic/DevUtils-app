@@ -17,6 +17,10 @@ class FormatterTool: ToolImpl {
     return nil
   }
   
+  func useFormatterOptions() -> Bool {
+    return true
+  }
+  
   func format(input: String, options: FormatToolOptions) throws -> String {
     return input
   }

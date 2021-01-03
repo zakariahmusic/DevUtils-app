@@ -21,6 +21,11 @@ extension NSView {
   }
   
   var hasDarkAppearance: Bool {
+    
+    if AppState.getUserPreferredTheme() != "System" {
+      return AppState.getUserPreferredTheme() == "Dark"
+    }
+    
     guard let style = UserDefaults.standard.string(forKey: "AppleInterfaceStyle") else {
       return false
     }

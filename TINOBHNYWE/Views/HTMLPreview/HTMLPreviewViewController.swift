@@ -11,7 +11,7 @@ import WebKit
 
 class HTMLPreviewViewController: ToolViewController, WKUIDelegate, NSTextViewDelegate, WKNavigationDelegate, ToolSettingDelegate {
   
-  @IBOutlet var inputHTMLTextView: NSTextView!
+  @IBOutlet var inputHTMLTextView: CodeTextView!
   @IBOutlet weak var webViewContainer: NSView!
   private var webView: WKWebView!
   
@@ -22,8 +22,6 @@ class HTMLPreviewViewController: ToolViewController, WKUIDelegate, NSTextViewDel
     super.viewDidLoad()
     loadOptions()
     setupWebView()
-    
-    inputHTMLTextView.setupStandardTextview()
         
     if pendingInput != nil {
       activate(input: pendingInput!)

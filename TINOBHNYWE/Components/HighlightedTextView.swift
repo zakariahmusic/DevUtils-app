@@ -11,8 +11,7 @@ import Foundation
 import Cocoa
 import Highlightr
 
-class HighlightedTextView: WrapableTextView {
-  
+class HighlightedTextView: CodeTextView {
   var highlightr: Highlightr! = Highlightr()
   var enableHighlight: Bool = true
   var language: String?
@@ -40,7 +39,12 @@ class HighlightedTextView: WrapableTextView {
     }
     
     if let attributedString = highlightr.highlight(self.string, as: language) {
-      self.textStorage?.setAttributedString(attributedString)
+      let mutableAttrString = NSMutableAttributedString.init(attributedString: attributedString)
+      if let menlo = NSFont(name: AppState.TEXTVIEW_MONO_FONT, size: 12) {
+        mutableAttrString.addAttributes([NSAttributedString.Key.font: menlo], range: .init(location: 0, length: mutableAttrString.length))
+      }
+      self.textStorage?.setAttributedString(mutableAttrString)
+      refreshLineNumberView()
     }
   }
   

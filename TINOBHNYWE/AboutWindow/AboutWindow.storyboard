@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYx-of-SC3">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="Dmo-3s-615">
+            <objects>
+                <windowController id="BYx-of-SC3" sceneMemberID="viewController">
+                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="xXu-dI-Czh">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <rect key="contentRect" x="604" y="461" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="3440" height="1417"/>
+                        <connections>
+                            <outlet property="delegate" destination="BYx-of-SC3" id="Hf4-HC-xHe"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="s9f-69-rvW" kind="relationship" relationship="window.shadowedContentViewController" id="F6a-wN-9Pr"/>
+                    </connections>
+                </windowController>
+                <customObject id="3fi-Qe-cjT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="124"/>
+        </scene>
+        <!--About Window View Controller-->
+        <scene sceneID="RLB-qf-rzq">
+            <objects>
+                <viewController id="s9f-69-rvW" customClass="AboutWindowViewController" customModule="DevUtils" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="snp-XT-zTK">
+                        <rect key="frame" x="0.0" y="0.0" width="357" height="536"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c71-cu-g6d">
+                                <rect key="frame" x="54" y="266" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="WxT-nf-teZ"/>
+                                    <constraint firstAttribute="height" constant="250" id="xZg-eC-tgY"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon" id="JTm-iY-jmF"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fDS-1F-dbc">
+                                <rect key="frame" x="127" y="237" width="103" height="19"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="DevUtils.app" id="xE6-sZ-Gib">
+                                    <font key="font" metaFont="systemBold" size="15"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S3K-BE-XEh">
+                                <rect key="frame" x="152" y="211" width="54" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Version" id="Hys-Wd-KEx">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Px-rQ-MLY">
+                                <rect key="frame" x="116" y="146" width="125" height="19"/>
+                                <buttonCell key="cell" type="roundRect" title="Acknowledgements" bezelStyle="roundedRect" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0Lw-lC-KQH">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="label" size="12"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="ackButtonAction:" target="s9f-69-rvW" id="icD-NG-ESW"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ESc-dl-egU">
+                                <rect key="frame" x="131" y="120" width="95" height="19"/>
+                                <buttonCell key="cell" type="roundRect" title="Release Notes" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wky-ah-BWt">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="label" size="12"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="releaseNotesButtonAction:" target="s9f-69-rvW" id="XXZ-Kf-nPO"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="d6t-Zm-dFE">
+                                <rect key="frame" x="128" y="94" width="102" height="19"/>
+                                <buttonCell key="cell" type="roundRect" title="Send Feedback" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wUy-vx-G0C">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="label" size="12"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="sendFeedbackButtonAction:" target="s9f-69-rvW" id="xze-iL-dTk"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oPj-gY-h4g">
+                                <rect key="frame" x="123" y="68" width="111" height="19"/>
+                                <buttonCell key="cell" type="roundRect" title="Follow on Twitter" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IsJ-V3-7Rf">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="label" size="12"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="followOnTwitterButtonAction:" target="s9f-69-rvW" id="wyx-KN-aIy"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uPB-kh-3yP">
+                                <rect key="frame" x="126" y="33" width="106" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="© DevUtils Team" id="aGg-iS-47j">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EFJ-25-o3W">
+                                <rect key="frame" x="135" y="172" width="88" height="19"/>
+                                <buttonCell key="cell" type="roundRect" title="Visit Website" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4aW-Cc-25g">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="label" size="12"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="visitWebsiteButtonAction:" target="s9f-69-rvW" id="cWG-xQ-2Jp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="d6t-Zm-dFE" firstAttribute="centerX" secondItem="6Px-rQ-MLY" secondAttribute="centerX" id="1Ax-dm-syq"/>
+                            <constraint firstItem="oPj-gY-h4g" firstAttribute="top" secondItem="d6t-Zm-dFE" secondAttribute="bottom" constant="8" id="2Pk-W4-nUi"/>
+                            <constraint firstItem="c71-cu-g6d" firstAttribute="centerX" secondItem="snp-XT-zTK" secondAttribute="centerX" id="9Vl-q6-0fb"/>
+                            <constraint firstItem="6Px-rQ-MLY" firstAttribute="top" secondItem="EFJ-25-o3W" secondAttribute="bottom" constant="8" id="BAe-Ta-cSI"/>
+                            <constraint firstItem="S3K-BE-XEh" firstAttribute="top" secondItem="fDS-1F-dbc" secondAttribute="bottom" constant="10" id="J2G-6U-mIx"/>
+                            <constraint firstItem="oPj-gY-h4g" firstAttribute="centerX" secondItem="6Px-rQ-MLY" secondAttribute="centerX" id="Jad-KB-bA2"/>
+                            <constraint firstItem="S3K-BE-XEh" firstAttribute="centerX" secondItem="c71-cu-g6d" secondAttribute="centerX" id="LnS-vX-UXV"/>
+                            <constraint firstItem="fDS-1F-dbc" firstAttribute="top" secondItem="c71-cu-g6d" secondAttribute="bottom" constant="10" id="RAK-4S-NgL"/>
+                            <constraint firstItem="EFJ-25-o3W" firstAttribute="top" secondItem="S3K-BE-XEh" secondAttribute="bottom" constant="20" id="SXT-wl-kJn"/>
+                            <constraint firstItem="d6t-Zm-dFE" firstAttribute="top" secondItem="ESc-dl-egU" secondAttribute="bottom" constant="8" id="Toa-g2-UXh"/>
+                            <constraint firstItem="6Px-rQ-MLY" firstAttribute="centerX" secondItem="c71-cu-g6d" secondAttribute="centerX" id="Tzd-3b-QOr"/>
+                            <constraint firstItem="EFJ-25-o3W" firstAttribute="centerX" secondItem="snp-XT-zTK" secondAttribute="centerX" id="Xxu-FK-6Oj"/>
+                            <constraint firstItem="ESc-dl-egU" firstAttribute="centerX" secondItem="6Px-rQ-MLY" secondAttribute="centerX" id="ZW7-nU-X32"/>
+                            <constraint firstItem="ESc-dl-egU" firstAttribute="top" secondItem="6Px-rQ-MLY" secondAttribute="bottom" constant="8" id="e9b-4X-x2y"/>
+                            <constraint firstItem="c71-cu-g6d" firstAttribute="top" secondItem="snp-XT-zTK" secondAttribute="top" constant="20" id="fDk-LT-RiB"/>
+                            <constraint firstItem="uPB-kh-3yP" firstAttribute="top" secondItem="oPj-gY-h4g" secondAttribute="bottom" constant="20" id="hdB-mH-HAM"/>
+                            <constraint firstItem="uPB-kh-3yP" firstAttribute="centerX" secondItem="snp-XT-zTK" secondAttribute="centerX" id="jhf-JH-Mip"/>
+                            <constraint firstItem="fDS-1F-dbc" firstAttribute="centerX" secondItem="c71-cu-g6d" secondAttribute="centerX" id="ztw-sv-Lth"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="copyrightLabel" destination="uPB-kh-3yP" id="PCz-lu-6s2"/>
+                        <outlet property="versionLabel" destination="S3K-BE-XEh" id="vyc-kP-jGb"/>
+                    </connections>
+                </viewController>
+                <customObject id="tBJ-8H-N91" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="256.5" y="721"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon" width="1024" height="1024"/>
+    </resources>
+</document>
