@@ -7,14 +7,13 @@
   <a href="https://devutils.app/#download">🚀 &nbsp; Download</a> | <a href="https://devutils.app/demo">🎬 &nbsp; Demo & Screenshots</a> | <a href="https://github.com/DevUtilsApp/DevUtils-app/tree/master/TINOBHNYWE">📝 &nbsp; View source</a> | <a href="https://twitter.com/devutils_app">📣 &nbsp; Follow on Twitter</a>
 </p>
 
-# Overview
+Format/Validate JSON, encode/decode Base64, convert timestamps, debug JWT… with just one click! Native macOS app, works offline, and open source.
 
-<b>DevUtils</b> helps you with your tiny daily tasks with just a single click! It's totally open source and work offline. You can buy the pre-built app by visiting the website https://devutils.app or you can build the app from source by yourself!
-
-# A friendly note from author
-DevUtils is a **paid open source** app. That means I'm selling the [pre-built version of the app](https://devutils.app) to earn some revenue for my time. I'm glad that you like the app and you are free to build it for your own use. I trust that you will not redistribute the app in any other means. Thank you very much! :)
+# A friendly note
+DevUtils is a **paid open source** app. It takes time and effort to develop, distribute, maintain, and provide supports. If you like the app, please consider [buying the app here](https://devutils.app). It's a one-time purchase. Thank you very much! :)
 
 # Source code
+
 Development environment:
 - Swift 5.1+
 - Xcode 11.1+
@@ -37,6 +36,6 @@ Development environment:
 Please see [CONTRIBUTING.md](https://github.com/DevUtilsApp/DevUtils-app/blob/master/CONTRIBUTING.md)
 
 # Contact
-- **FAQs**: Please check https://devutils.app/faqs
+- **FAQs**: https://devutils.app/faqs
 - **Email**: admin@devutils.app
 - **Twitter**: https://twitter.com/devutils_app
