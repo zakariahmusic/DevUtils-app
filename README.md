@@ -26,7 +26,7 @@ Development environment:
  
      `carthage bootstrap --platform macOS`
  
- - Update signing Team to be your Personal or organizational Team in Xcode. This is needed to build the app locally. As the signing step could be different between Xcode versions, I may not be able to support you on this (help wanted, feel free to open a PR to update this instruction). Please also check these articles to see if it helps:
+ - Update signing Team to be your Personal or organizational Team in Xcode. This is needed to build the app locally. If you have problems with code signing, please also check these articles to see if it helps:
    - https://developer.apple.com/support/code-signing/
    - https://help.apple.com/xcode/mac/current/#/dev60b6fbbc7 
  - Run the app in Xcode.
