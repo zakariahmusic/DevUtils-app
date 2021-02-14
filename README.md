@@ -7,10 +7,10 @@
   <a href="https://devutils.app/">🚀 &nbsp; Download</a> | <a href="https://devutils.app/demo">🎬 &nbsp; Demo & Screenshots</a> | <a href="https://github.com/DevUtilsApp/DevUtils-app/tree/master/TINOBHNYWE">📝 &nbsp; View source</a> | <a href="https://twitter.com/devutils_app">📣 &nbsp; Follow on Twitter</a>
 </p>
 
-Format/Validate JSON, encode/decode Base64, convert timestamps, debug JWT… with just one click! Native macOS app, works offline, and open source.
+Format/Validate JSON, encode/decode Base64, convert timestamps, debug JWT… with just one click! Native macOS app and works offline.
 
 # A friendly note ❤️
-DevUtils is a **paid open source** app. That means I'm selling the pre-built version of the app. It takes time and effort to develop, distribute, maintain, and provide supports. If you like the app, please consider [buying here](https://devutils.app) (one-time purchase). That would help me a lot! Thank you very much! 🙏
+DevUtils is a **paid source available** app. That means I'm selling the pre-built version of the app. It takes time and effort to develop, distribute, maintain, and provide supports. If you like the app, please consider [buying here](https://devutils.app) (one-time purchase). That would help me a lot! Thank you very much! 🙏
 
 # Source code
 
