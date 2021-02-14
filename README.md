@@ -14,6 +14,8 @@ DevUtils is a **paid source available** app. That means I'm selling the pre-buil
 
 # Source code
 
+This source code is a delayed version of DevUtils.
+
 Development environment:
 - Swift 5.1+
 - Xcode 11.1+
