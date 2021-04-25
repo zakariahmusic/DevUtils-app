@@ -7,7 +7,7 @@
   <a href="https://devutils.app/">🚀 &nbsp; Download</a> | <a href="https://devutils.app/demo">🎬 &nbsp; Demo & Screenshots</a> | <a href="https://github.com/DevUtilsApp/DevUtils-app/tree/master/TINOBHNYWE">📝 &nbsp; View source</a> | <a href="https://twitter.com/devutils_app">📣 &nbsp; Follow on Twitter</a>
   <br/>
   <br/>
-  <a href="https://apps.apple.com/us/app/id1533756032"><img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg" /></a> <a href="https://go.setapp.com/stp307?utm_medium=vendor_program&utm_source=Devuap+Ltd.&utm_content=link"><img src="https://developer.setapp.com/setapp-button/setapp.b6aff864.svg" /></a>
+  <a href="https://apps.apple.com/us/app/id1533756032"><img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg" /></a> <a href="https://go.setapp.com/stp307?refAppID=445"><img src="https://developer.setapp.com/setapp-button/setapp.b6aff864.svg" /></a>
   
 </p>
 
