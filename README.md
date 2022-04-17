@@ -15,7 +15,7 @@
 Format/Validate JSON, encode/decode Base64, convert timestamps, debug JWT… with just one click! Native macOS app and works offline.
 
 # A friendly note ❤️
-DevUtils is a **paid source available** app. That means I'm selling the pre-built version of the app. It takes time and effort to develop, distribute, maintain, and provide supports. If you like the app, please consider [buying here](https://devutils.app) (one-time purchase). That would help me a lot! Thank you very much! 🙏
+DevUtils is a **paid "source-available"** app. That means I'm selling the pre-built version of the app. It takes time and effort to develop, distribute, maintain, and provide supports. If you like the app, please consider [buying here](https://devutils.app) (one-time purchase). That would help me a lot! Thank you very much! 🙏
 
 # Source code
 
