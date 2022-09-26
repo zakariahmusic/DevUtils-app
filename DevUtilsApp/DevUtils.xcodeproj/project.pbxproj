@@ -416,6 +416,31 @@
 		A5FB5A042472CBD200268B3A /* NSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB5A032472CBD200268B3A /* NSView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		EAD232EE28E0A783007AA086 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = sourcecode.dtrace;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "/usr/sbin/dtrace\n";
+		};
+		EAD232EF28E0A78F007AA086 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXContainerItemProxy section */
 		A5C95E472526D0F500BED198 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1328,6 +1353,8 @@
 				A5C95E402526D0F500BED198 /* Resources */,
 			);
 			buildRules = (
+				EAD232EF28E0A78F007AA086 /* PBXBuildRule */,
+				EAD232EE28E0A783007AA086 /* PBXBuildRule */,
 			);
 			dependencies = (
 				A5C95E482526D0F500BED198 /* PBXTargetDependency */,
@@ -1401,7 +1428,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1110;
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = "Tony Dinh";
 				TargetAttributes = {
 					A513042D247585B70023D0CF = {
@@ -1424,7 +1451,6 @@
 			knownRegions = (
 				en,
 				Base,
-				English,
 				de,
 				es,
 				it,
@@ -1934,9 +1960,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LauncherApplicationTINO/LauncherApplicationTINO.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 432TM87K7L;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 248ARFGC4N;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = LauncherApplicationTINO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1956,9 +1984,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LauncherApplicationTINO/LauncherApplicationTINO.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 432TM87K7L;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 248ARFGC4N;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = LauncherApplicationTINO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1977,6 +2007,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APP_BUNDLE_ID = tonyapp.devutils;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2008,6 +2039,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 39;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -2042,6 +2074,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APP_BUNDLE_ID = tonyapp.devutils;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2073,6 +2106,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 39;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2105,6 +2139,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = "${CURRENT_PROJECT_VERSION}";
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 432TM87K7L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2114,6 +2149,7 @@
 					"$(PROJECT_DIR)/Sparkle-1.23.0",
 				);
 				INFOPLIST_FILE = TINOBHNYWE/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2142,6 +2178,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = "${CURRENT_PROJECT_VERSION}";
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 432TM87K7L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2151,6 +2188,7 @@
 					"$(PROJECT_DIR)/Sparkle-1.23.0",
 				);
 				INFOPLIST_FILE = TINOBHNYWE/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2172,9 +2210,11 @@
 		A5C95E4A2526D0F500BED198 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 432TM87K7L;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2190,16 +2230,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tonyapp.DevUtilsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevUtils.app/Contents/MacOS/DevUtils";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevUtils.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DevUtils";
 			};
 			name = Debug;
 		};
 		A5C95E4B2526D0F500BED198 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 432TM87K7L;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2215,7 +2257,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tonyapp.DevUtilsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevUtils.app/Contents/MacOS/DevUtils";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevUtils.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DevUtils";
 			};
 			name = Release;
 		};
@@ -2229,6 +2271,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = "${CURRENT_PROJECT_VERSION}";
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 432TM87K7L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2282,6 +2325,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = "${CURRENT_PROJECT_VERSION}";
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 432TM87K7L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2332,6 +2376,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = "${CURRENT_PROJECT_VERSION}";
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 432TM87K7L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2373,6 +2418,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = "${CURRENT_PROJECT_VERSION}";
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 432TM87K7L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
